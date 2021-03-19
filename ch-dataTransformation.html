@@ -24,7 +24,7 @@
 <meta name="author" content="김길환" />
 
 
-<meta name="date" content="2021-03-12" />
+<meta name="date" content="2021-03-19" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -354,7 +354,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul>
 <p>정돈 데이터 형식을 그림 <a href="ch-dataTransformation.html#fig:tidyData">4.1</a>처럼 표현할 수 있다.</p>
 <div class="figure" style="text-align: center"><span id="fig:tidyData"></span>
-<img src="img/tidyData.png" alt="정돈 데이터" width="60%" />
+<img src="img/tidyData.png" alt="정돈 데이터" width="90%" />
 <p class="caption">
 Figure 4.1: 정돈 데이터
 </p>
@@ -401,7 +401,7 @@ Figure 4.2: 비정돈 데이터
 </div>
 <div id="정돈-데이터-변환의-종류" class="section level3" number="4.3.2">
 <h3><span class="header-section-number">4.3.2</span> 정돈 데이터 변환의 종류</h3>
-<p>정돈 데이터의 변환은 크게 5가지 변환 작업이 있다.</p>
+<p><code>dplyr</code> 패키지가 수행하는 정돈 데이터의 변환은 크게 5가지 변환 작업이 있다.</p>
 <ul>
 <li><code>filter()</code>: 데이터에서 관측(대상)을 측정값을 기준으로 선택한다.</li>
 <li><code>arrange()</code>: 관측(대상)을 기준으로 데이터를 정렬한다.</li>
@@ -409,12 +409,18 @@ Figure 4.2: 비정돈 데이터
 <li><code>mutate()</code>: 기존 변수를 사용하여 새로운 변수를 데이터에 추가한다.</li>
 <li><code>summarize()</code>: 여러 측정치를 하나의 통계량으로 요약한다.</li>
 </ul>
-<p>그리고 위의 작업은 <code>group_by()</code> 함수와 같이 사용되어 전체 데이터에서 작업이 수행되는 것이 아니라 관측(대상)의 그룹별로 수행되도록 조정할 수 있다.</p>
+<p>그리고 위의 작업은 <code>group_by()</code> 함수와 같이 사용되어 전체 데이터에서 작업이 수행되는 것이 아니라 관측(대상)의 그룹별로 수행되도록 조정할 수 있다. Figure <a href="ch-dataTransformation.html#fig:dplyr-intro">4.3</a>는 <code>dplyr</code> 패키지가 수행하는 정돈 데이터의 변환의 예를 보여준다.</p>
+<div class="figure" style="text-align: center"><span id="fig:dplyr-intro"></span>
+<img src="img/dplyr-intro.png" alt="정돈데이터의 변환" width="90%" />
+<p class="caption">
+Figure 4.3: 정돈데이터의 변환
+</p>
+</div>
 <p>일반적으로 데이터의 변환 작업은 위의 6가지 작업이 여러 차례 순서대로 결합하여 진행된다.</p>
 </div>
 <div id="mpg-데이터" class="section level3" number="4.3.3">
 <h3><span class="header-section-number">4.3.3</span> <code>mpg</code> 데이터</h3>
-<p>이 장에서는 <code>ggplot2()</code> 패키지에서 제공하는 <code>mpg</code> 데이터를 이용하여 정돈 데이터를 변환하는 함수를 설명한다.</p>
+<p>이 장에서는 <code>ggplot2</code> 패키지에서 제공하는 <code>mpg</code> 데이터를 이용하여 정돈 데이터를 변환하는 함수를 설명한다.</p>
 <p>다음 명령을 이용하여 <code>mpg</code> 데이터를 출력해 보자. 화면의 크기에 따라 출력되는 내용이 책과는 조금 다를 수 있다.</p>
 <div class="sourceCode" id="cb270"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb270-1"><a href="ch-dataTransformation.html#cb270-1" aria-hidden="true"></a><span class="op">&gt;</span><span class="st"> </span>mpg</span></code></pre></div>
 <pre><code># A tibble: 234 x 11
