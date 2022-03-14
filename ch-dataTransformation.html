@@ -4,27 +4,27 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Chapter 4 데이터 변환 | 경영데이터분석 참고자료 - R 기초</title>
-  <meta name="description" content="이 책은 경영데이터분석의 참고자료로 활용하기 위해 제작되었습니다." />
-  <meta name="generator" content="bookdown 0.20 and GitBook 2.6.7" />
+  <title>Chapter 4 데이터 변환 | 경영빅데이터분석 참고자료 - R 기초</title>
+  <meta name="description" content="이 책은 경영빅데이터분석의 참고자료로 활용하기 위해 제작되었습니다." />
+  <meta name="generator" content="bookdown 0.22 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Chapter 4 데이터 변환 | 경영데이터분석 참고자료 - R 기초" />
+  <meta property="og:title" content="Chapter 4 데이터 변환 | 경영빅데이터분석 참고자료 - R 기초" />
   <meta property="og:type" content="book" />
   
   
-  <meta property="og:description" content="이 책은 경영데이터분석의 참고자료로 활용하기 위해 제작되었습니다." />
+  <meta property="og:description" content="이 책은 경영빅데이터분석의 참고자료로 활용하기 위해 제작되었습니다." />
   
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Chapter 4 데이터 변환 | 경영데이터분석 참고자료 - R 기초" />
+  <meta name="twitter:title" content="Chapter 4 데이터 변환 | 경영빅데이터분석 참고자료 - R 기초" />
   
-  <meta name="twitter:description" content="이 책은 경영데이터분석의 참고자료로 활용하기 위해 제작되었습니다." />
+  <meta name="twitter:description" content="이 책은 경영빅데이터분석의 참고자료로 활용하기 위해 제작되었습니다." />
   
 
 <meta name="author" content="김길환" />
 
 
-<meta name="date" content="2021-03-19" />
+<meta name="date" content="2022-03-14" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -33,7 +33,7 @@
   
 <link rel="prev" href="ch-R-Data-Structure.html"/>
 <link rel="next" href="ch-visualization.html"/>
-<script src="libs/header-attrs-2.3/header-attrs.js"></script>
+<script src="libs/header-attrs-2.8/header-attrs.js"></script>
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
@@ -51,12 +51,15 @@
 
 
 
+<link href="libs/anchor-sections-1.0.1/anchor-sections.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.0.1/anchor-sections.js"></script>
 
 
 <style type="text/css">
 pre > code.sourceCode { white-space: pre; position: relative; }
 pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
 pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
 code.sourceCode > span { color: inherit; text-decoration: inherit; }
 pre.sourceCode { margin: 0; }
 @media screen {
@@ -117,6 +120,7 @@ code span.vs { color: #4070a0; } /* VerbatimString */
 code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
 </style>
 
+
 <link rel="stylesheet" href="style.css" type="text/css" />
 </head>
 
@@ -130,7 +134,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
       <nav role="navigation">
 
 <ul class="summary">
-<li><a href="./">경영데이터분석-R기초</a></li>
+<li><a href="./">경영빅데이터분석-R기초</a></li>
 
 <li class="divider"></li>
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>일러두기</a></li>
@@ -331,7 +335,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
       <div class="body-inner">
         <div class="book-header" role="navigation">
           <h1>
-            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">경영데이터분석 참고자료 - R 기초</a>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">경영빅데이터분석 참고자료 - R 기초</a>
           </h1>
         </div>
 
@@ -383,13 +387,13 @@ Figure 4.2: 비정돈 데이터
 <div id="tidyverse-패키지-설치" class="section level3" number="4.2.1">
 <h3><span class="header-section-number">4.2.1</span> <code>tidyverse</code> 패키지 설치</h3>
 <p><code>tidyverse</code> 패키지를 설치하려면 다음 명령을 실행하면 된다. 패키지의 이름은 문자열이므로 따옴표 안에 기술해야 한다.</p>
-<div class="sourceCode" id="cb268"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb268-1"><a href="ch-dataTransformation.html#cb268-1" aria-hidden="true"></a><span class="op">&gt;</span><span class="st"> </span><span class="kw">install.packages</span>(<span class="st">&quot;tidyverse&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb292"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb292-1"><a href="ch-dataTransformation.html#cb292-1" aria-hidden="true" tabindex="-1"></a><span class="sc">&gt;</span> <span class="fu">install.packages</span>(<span class="st">&quot;tidyverse&quot;</span>)</span></code></pre></div>
 <p>또는 RStudio의 Packages 탭에서 [Install]을 클릭한 후 tidyverse라고 입력을 하면 된다. 패키지 설치는 한 번만 수행하면 된다.</p>
 </div>
 <div id="tidyverse-패키지-적재" class="section level3" number="4.2.2">
 <h3><span class="header-section-number">4.2.2</span> <code>tidyverse</code> 패키지 적재</h3>
 <p><code>tidyverse</code> 패키지가 설치되었으면 패키지를 사용할 때마다 네임스페이스를 적재하고 검색 리스트에 패키지를 포함하는 작업이 필요하다.<a href="#fn3" class="footnote-ref" id="fnref3"><sup>3</sup></a> 다음은 <code>tidyverse</code> 패키지를 적재하는 명령어이다. 이번에는 패키지 이름에 따옴표가 없음에 주의한다.</p>
-<div class="sourceCode" id="cb269"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb269-1"><a href="ch-dataTransformation.html#cb269-1" aria-hidden="true"></a><span class="op">&gt;</span><span class="st"> </span><span class="kw">library</span>(tidyverse)</span></code></pre></div>
+<div class="sourceCode" id="cb293"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb293-1"><a href="ch-dataTransformation.html#cb293-1" aria-hidden="true" tabindex="-1"></a><span class="sc">&gt;</span> <span class="fu">library</span>(tidyverse)</span></code></pre></div>
 <p>앞의 명령을 실행하면 정돈 데이터 패러다임을 따르는 여러 개의 패키지가 동시에 적재된다. 그리고 R 기본 패키지와 정돈 데이터 패키지 중에서 이름이 충돌이 나는 것에 대해 보고를 한다. 만약 R 기본 패키지에서 이 함수를 사용하는 경우에는 <code>패키지이름::함수()</code> 형식으로만 사용할 수 있다. 자세한 내용은 R 관련 책을 참조하기 바란다.</p>
 </div>
 </div>
@@ -422,7 +426,7 @@ Figure 4.3: 정돈데이터의 변환
 <h3><span class="header-section-number">4.3.3</span> <code>mpg</code> 데이터</h3>
 <p>이 장에서는 <code>ggplot2</code> 패키지에서 제공하는 <code>mpg</code> 데이터를 이용하여 정돈 데이터를 변환하는 함수를 설명한다.</p>
 <p>다음 명령을 이용하여 <code>mpg</code> 데이터를 출력해 보자. 화면의 크기에 따라 출력되는 내용이 책과는 조금 다를 수 있다.</p>
-<div class="sourceCode" id="cb270"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb270-1"><a href="ch-dataTransformation.html#cb270-1" aria-hidden="true"></a><span class="op">&gt;</span><span class="st"> </span>mpg</span></code></pre></div>
+<div class="sourceCode" id="cb294"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb294-1"><a href="ch-dataTransformation.html#cb294-1" aria-hidden="true" tabindex="-1"></a><span class="sc">&gt;</span> mpg</span></code></pre></div>
 <pre><code># A tibble: 234 x 11
    manufacturer model    displ  year   cyl trans   drv     cty   hwy fl    class
    &lt;chr&gt;        &lt;chr&gt;    &lt;dbl&gt; &lt;int&gt; &lt;int&gt; &lt;chr&gt;   &lt;chr&gt; &lt;int&gt; &lt;int&gt; &lt;chr&gt; &lt;chr&gt;
@@ -460,7 +464,7 @@ Figure 4.3: 정돈데이터의 변환
 <p>선택 조건이 하나인 경우 다음 형식으로 <code>filter()</code>를 사용한다.</p>
 <pre><code>filter(데이터프레임, 조건)</code></pre>
 <p>’데이터프레임’에는 <code>filter()</code>를 적용할 데이터 프레임을 ’조건’에는 행 선택 조건을 기술한다. ’조건’은 논리값 벡터이어야 한다. 많은 경우 ’조건’은 다음처럼 열과 어떤 값을 비교연산자로 비교한다.</p>
-<div class="sourceCode" id="cb273"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb273-1"><a href="ch-dataTransformation.html#cb273-1" aria-hidden="true"></a><span class="op">&gt;</span><span class="st"> </span><span class="kw">filter</span>(mpg, manufacturer<span class="op">==</span><span class="st">&quot;hyundai&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb297"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb297-1"><a href="ch-dataTransformation.html#cb297-1" aria-hidden="true" tabindex="-1"></a><span class="sc">&gt;</span> <span class="fu">filter</span>(mpg, manufacturer<span class="sc">==</span><span class="st">&quot;hyundai&quot;</span>)</span></code></pre></div>
 <pre><code># A tibble: 14 x 11
    manufacturer model  displ  year   cyl trans   drv     cty   hwy fl    class  
    &lt;chr&gt;        &lt;chr&gt;  &lt;dbl&gt; &lt;int&gt; &lt;int&gt; &lt;chr&gt;   &lt;chr&gt; &lt;int&gt; &lt;int&gt; &lt;chr&gt; &lt;chr&gt;  
@@ -478,14 +482,14 @@ Figure 4.3: 정돈데이터의 변환
 12 hyundai      tibur…   2.7  2008     6 auto(l… f        17    24 r     subcom…
 13 hyundai      tibur…   2.7  2008     6 manual… f        16    24 r     subcom…
 14 hyundai      tibur…   2.7  2008     6 manual… f        17    24 r     subcom…</code></pre>
-<div class="sourceCode" id="cb275"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb275-1"><a href="ch-dataTransformation.html#cb275-1" aria-hidden="true"></a><span class="op">&gt;</span><span class="st"> </span><span class="kw">filter</span>(mpg, cty <span class="op">&gt;</span><span class="st"> </span><span class="dv">28</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb299"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb299-1"><a href="ch-dataTransformation.html#cb299-1" aria-hidden="true" tabindex="-1"></a><span class="sc">&gt;</span> <span class="fu">filter</span>(mpg, cty <span class="sc">&gt;</span> <span class="dv">28</span>)</span></code></pre></div>
 <pre><code># A tibble: 3 x 11
   manufacturer model   displ  year   cyl trans   drv     cty   hwy fl    class  
   &lt;chr&gt;        &lt;chr&gt;   &lt;dbl&gt; &lt;int&gt; &lt;int&gt; &lt;chr&gt;   &lt;chr&gt; &lt;int&gt; &lt;int&gt; &lt;chr&gt; &lt;chr&gt;  
 1 volkswagen   jetta     1.9  1999     4 manual… f        33    44 d     compact
 2 volkswagen   new be…   1.9  1999     4 manual… f        35    44 d     subcom…
 3 volkswagen   new be…   1.9  1999     4 auto(l… f        29    41 d     subcom…</code></pre>
-<div class="sourceCode" id="cb277"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb277-1"><a href="ch-dataTransformation.html#cb277-1" aria-hidden="true"></a><span class="op">&gt;</span><span class="st"> </span><span class="kw">filter</span>(mpg, cty <span class="op">&gt;=</span><span class="st"> </span><span class="dv">28</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb301"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb301-1"><a href="ch-dataTransformation.html#cb301-1" aria-hidden="true" tabindex="-1"></a><span class="sc">&gt;</span> <span class="fu">filter</span>(mpg, cty <span class="sc">&gt;=</span> <span class="dv">28</span>)</span></code></pre></div>
 <pre><code># A tibble: 5 x 11
   manufacturer model   displ  year   cyl trans   drv     cty   hwy fl    class  
   &lt;chr&gt;        &lt;chr&gt;   &lt;dbl&gt; &lt;int&gt; &lt;int&gt; &lt;chr&gt;   &lt;chr&gt; &lt;int&gt; &lt;int&gt; &lt;chr&gt; &lt;chr&gt;  
@@ -496,13 +500,13 @@ Figure 4.3: 정돈데이터의 변환
 5 volkswagen   new be…   1.9  1999     4 auto(l… f        29    41 d     subcom…</code></pre>
 <p>조건을 서술할 때 자주 틀리는 부분이 등호 기호로 <code>=</code>를 사용하는 것이다. R에서 두 값이 같은지를 비교할 때는 <code>==</code>를 사용한다.</p>
 <p>다음처럼 열에 연산을 수행한 후에 그 결과와 비교할 수도 있다.</p>
-<div class="sourceCode" id="cb279"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb279-1"><a href="ch-dataTransformation.html#cb279-1" aria-hidden="true"></a><span class="op">&gt;</span><span class="st"> </span><span class="kw">filter</span>(mpg, cty <span class="op">*</span><span class="st"> </span><span class="dv">2</span> <span class="op">&gt;</span><span class="st"> </span><span class="dv">60</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb303"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb303-1"><a href="ch-dataTransformation.html#cb303-1" aria-hidden="true" tabindex="-1"></a><span class="sc">&gt;</span> <span class="fu">filter</span>(mpg, cty <span class="sc">*</span> <span class="dv">2</span> <span class="sc">&gt;</span> <span class="dv">60</span>)</span></code></pre></div>
 <pre><code># A tibble: 2 x 11
   manufacturer model   displ  year   cyl trans   drv     cty   hwy fl    class  
   &lt;chr&gt;        &lt;chr&gt;   &lt;dbl&gt; &lt;int&gt; &lt;int&gt; &lt;chr&gt;   &lt;chr&gt; &lt;int&gt; &lt;int&gt; &lt;chr&gt; &lt;chr&gt;  
 1 volkswagen   jetta     1.9  1999     4 manual… f        33    44 d     compact
 2 volkswagen   new be…   1.9  1999     4 manual… f        35    44 d     subcom…</code></pre>
-<div class="sourceCode" id="cb281"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb281-1"><a href="ch-dataTransformation.html#cb281-1" aria-hidden="true"></a><span class="op">&gt;</span><span class="st"> </span><span class="kw">filter</span>(mpg, <span class="kw">sqrt</span>(cty) <span class="op">&lt;</span><span class="st"> </span><span class="fl">3.2</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb305"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb305-1"><a href="ch-dataTransformation.html#cb305-1" aria-hidden="true" tabindex="-1"></a><span class="sc">&gt;</span> <span class="fu">filter</span>(mpg, <span class="fu">sqrt</span>(cty) <span class="sc">&lt;</span> <span class="fl">3.2</span>)</span></code></pre></div>
 <pre><code># A tibble: 5 x 11
   manufacturer model      displ  year   cyl trans  drv     cty   hwy fl    class
   &lt;chr&gt;        &lt;chr&gt;      &lt;dbl&gt; &lt;int&gt; &lt;int&gt; &lt;chr&gt;  &lt;chr&gt; &lt;int&gt; &lt;int&gt; &lt;chr&gt; &lt;chr&gt;
@@ -517,7 +521,7 @@ Figure 4.3: 정돈데이터의 변환
 <p>두 개 이상의 조건을 모두 만족하는 행만 뽑아내려면 다음의 문법을 사용한다.</p>
 <pre><code>filter(데이터프레임, 조건1, 조건2, ..., 조건n)</code></pre>
 <p>다음은 현대에서 생산한 차 중 도심 연비가 20 마일 이상인 차만 추출한 결과이다.</p>
-<div class="sourceCode" id="cb284"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb284-1"><a href="ch-dataTransformation.html#cb284-1" aria-hidden="true"></a><span class="op">&gt;</span><span class="st"> </span><span class="kw">filter</span>(mpg, manufacturer<span class="op">==</span><span class="st">&quot;hyundai&quot;</span>, cty <span class="op">&gt;=</span><span class="st"> </span><span class="dv">20</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb308"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb308-1"><a href="ch-dataTransformation.html#cb308-1" aria-hidden="true" tabindex="-1"></a><span class="sc">&gt;</span> <span class="fu">filter</span>(mpg, manufacturer<span class="sc">==</span><span class="st">&quot;hyundai&quot;</span>, cty <span class="sc">&gt;=</span> <span class="dv">20</span>)</span></code></pre></div>
 <pre><code># A tibble: 4 x 11
   manufacturer model  displ  year   cyl trans    drv     cty   hwy fl    class  
   &lt;chr&gt;        &lt;chr&gt;  &lt;dbl&gt; &lt;int&gt; &lt;int&gt; &lt;chr&gt;    &lt;chr&gt; &lt;int&gt; &lt;int&gt; &lt;chr&gt; &lt;chr&gt;  
@@ -526,7 +530,7 @@ Figure 4.3: 정돈데이터의 변환
 3 hyundai      tibur…   2    2008     4 manual(… f        20    28 r     subcom…
 4 hyundai      tibur…   2    2008     4 auto(l4) f        20    27 r     subcom…</code></pre>
 <p>앞의 조건에서 배기량이 2.4 이상인 차만 추출해 보자.</p>
-<div class="sourceCode" id="cb286"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb286-1"><a href="ch-dataTransformation.html#cb286-1" aria-hidden="true"></a><span class="op">&gt;</span><span class="st"> </span><span class="kw">filter</span>(mpg, manufacturer<span class="op">==</span><span class="st">&quot;hyundai&quot;</span>, cty <span class="op">&gt;=</span><span class="st"> </span><span class="dv">20</span>, displ <span class="op">&gt;=</span><span class="st"> </span><span class="fl">2.4</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb310"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb310-1"><a href="ch-dataTransformation.html#cb310-1" aria-hidden="true" tabindex="-1"></a><span class="sc">&gt;</span> <span class="fu">filter</span>(mpg, manufacturer<span class="sc">==</span><span class="st">&quot;hyundai&quot;</span>, cty <span class="sc">&gt;=</span> <span class="dv">20</span>, displ <span class="sc">&gt;=</span> <span class="fl">2.4</span>)</span></code></pre></div>
 <pre><code># A tibble: 2 x 11
   manufacturer model  displ  year   cyl trans     drv     cty   hwy fl    class 
   &lt;chr&gt;        &lt;chr&gt;  &lt;dbl&gt; &lt;int&gt; &lt;int&gt; &lt;chr&gt;     &lt;chr&gt; &lt;int&gt; &lt;int&gt; &lt;chr&gt; &lt;chr&gt; 
@@ -537,7 +541,7 @@ Figure 4.3: 정돈데이터의 변환
 <h3><span class="header-section-number">4.4.3</span> 논리 연산자로 복합 조건 만들기</h3>
 <p>지금까지는 하나의 조건이나 여러 조건을 동시에 만족하는 행을 추출하는 방법을 보았다. 어떤 경우에는 여러 조건 중 하나라도 만족하면 그 행을 추출해야 할 경우가 있다. 이러한 경우에는 <a href="ch-RDataBasic.html#ch:RDataBasic">2</a> 장에서 배운 논리 연산자를 이용하여 복합 조건을 만들어야 한다.</p>
 <p>다음은 OR 연자자인 <code>|</code>를 이용하여 두 조건 중 하나만 만족하여도 행이 추출되도록 하였다.</p>
-<div class="sourceCode" id="cb288"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb288-1"><a href="ch-dataTransformation.html#cb288-1" aria-hidden="true"></a><span class="op">&gt;</span><span class="st"> </span><span class="kw">filter</span>(mpg, model<span class="op">==</span><span class="st">&quot;sonata&quot;</span> <span class="op">|</span><span class="st"> </span>cty <span class="op">&gt;=</span><span class="st"> </span><span class="dv">28</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb312"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb312-1"><a href="ch-dataTransformation.html#cb312-1" aria-hidden="true" tabindex="-1"></a><span class="sc">&gt;</span> <span class="fu">filter</span>(mpg, model<span class="sc">==</span><span class="st">&quot;sonata&quot;</span> <span class="sc">|</span> cty <span class="sc">&gt;=</span> <span class="dv">28</span>)</span></code></pre></div>
 <pre><code># A tibble: 12 x 11
    manufacturer model   displ  year   cyl trans   drv     cty   hwy fl    class 
    &lt;chr&gt;        &lt;chr&gt;   &lt;dbl&gt; &lt;int&gt; &lt;int&gt; &lt;chr&gt;   &lt;chr&gt; &lt;int&gt; &lt;int&gt; &lt;chr&gt; &lt;chr&gt; 
@@ -554,7 +558,7 @@ Figure 4.3: 정돈데이터의 변환
 11 volkswagen   new be…   1.9  1999     4 manual… f        35    44 d     subco…
 12 volkswagen   new be…   1.9  1999     4 auto(l… f        29    41 d     subco…</code></pre>
 <p>만약 위의 결과에서 2008년도 데이터만 추출하고 싶다면 어떻게 해야 할까? 다음처럼 두 조건식을 사용하여 첫 번째 조건과 두 번째 조건을 모두 만족하는 결과만 추출할 수도 있고, 하나의 조건식에 AND 연산자인 <code>&amp;</code>를 사용하여 복합 조건식을 사용하여 추출할 수도 있다.</p>
-<div class="sourceCode" id="cb290"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb290-1"><a href="ch-dataTransformation.html#cb290-1" aria-hidden="true"></a><span class="op">&gt;</span><span class="st"> </span><span class="kw">filter</span>(mpg, model<span class="op">==</span><span class="st">&quot;sonata&quot;</span> <span class="op">|</span><span class="st"> </span>cty <span class="op">&gt;=</span><span class="st"> </span><span class="dv">28</span>, year<span class="op">==</span><span class="dv">2008</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb314"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb314-1"><a href="ch-dataTransformation.html#cb314-1" aria-hidden="true" tabindex="-1"></a><span class="sc">&gt;</span> <span class="fu">filter</span>(mpg, model<span class="sc">==</span><span class="st">&quot;sonata&quot;</span> <span class="sc">|</span> cty <span class="sc">&gt;=</span> <span class="dv">28</span>, year<span class="sc">==</span><span class="dv">2008</span>)</span></code></pre></div>
 <pre><code># A tibble: 4 x 11
   manufacturer model   displ  year   cyl trans    drv     cty   hwy fl    class 
   &lt;chr&gt;        &lt;chr&gt;   &lt;dbl&gt; &lt;int&gt; &lt;int&gt; &lt;chr&gt;    &lt;chr&gt; &lt;int&gt; &lt;int&gt; &lt;chr&gt; &lt;chr&gt; 
@@ -562,7 +566,7 @@ Figure 4.3: 정돈데이터의 변환
 2 hyundai      sonata    2.4  2008     4 manual(… f        21    31 r     midsi…
 3 hyundai      sonata    3.3  2008     6 auto(l5) f        19    28 r     midsi…
 4 toyota       corolla   1.8  2008     4 manual(… f        28    37 r     compa…</code></pre>
-<div class="sourceCode" id="cb292"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb292-1"><a href="ch-dataTransformation.html#cb292-1" aria-hidden="true"></a><span class="op">&gt;</span><span class="st"> </span><span class="kw">filter</span>(mpg, (model<span class="op">==</span><span class="st">&quot;sonata&quot;</span> <span class="op">|</span><span class="st"> </span>cty <span class="op">&gt;=</span><span class="st"> </span><span class="dv">28</span>) <span class="op">&amp;</span><span class="st"> </span>year<span class="op">==</span><span class="dv">2008</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb316"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb316-1"><a href="ch-dataTransformation.html#cb316-1" aria-hidden="true" tabindex="-1"></a><span class="sc">&gt;</span> <span class="fu">filter</span>(mpg, (model<span class="sc">==</span><span class="st">&quot;sonata&quot;</span> <span class="sc">|</span> cty <span class="sc">&gt;=</span> <span class="dv">28</span>) <span class="sc">&amp;</span> year<span class="sc">==</span><span class="dv">2008</span>)</span></code></pre></div>
 <pre><code># A tibble: 4 x 11
   manufacturer model   displ  year   cyl trans    drv     cty   hwy fl    class 
   &lt;chr&gt;        &lt;chr&gt;   &lt;dbl&gt; &lt;int&gt; &lt;int&gt; &lt;chr&gt;    &lt;chr&gt; &lt;int&gt; &lt;int&gt; &lt;chr&gt; &lt;chr&gt; 
@@ -571,7 +575,7 @@ Figure 4.3: 정돈데이터의 변환
 3 hyundai      sonata    3.3  2008     6 auto(l5) f        19    28 r     midsi…
 4 toyota       corolla   1.8  2008     4 manual(… f        28    37 r     compa…</code></pre>
 <p>단, 복합 조건식에서 AND 연산이 OR 연산보다 우선순위가 있으므로 괄호를 사용하여 연산의 순서가 제대로 되도록 하여야 한다. 괄호가 없으면 AND가 수행된 후 OR가 수행되어 모든 소타나 자동차의 결과가 추출되었음을 볼 수 있다.</p>
-<div class="sourceCode" id="cb294"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb294-1"><a href="ch-dataTransformation.html#cb294-1" aria-hidden="true"></a><span class="op">&gt;</span><span class="st"> </span><span class="kw">filter</span>(mpg, model<span class="op">==</span><span class="st">&quot;sonata&quot;</span> <span class="op">|</span><span class="st"> </span>cty <span class="op">&gt;=</span><span class="st"> </span><span class="dv">28</span> <span class="op">&amp;</span><span class="st"> </span>year<span class="op">==</span><span class="dv">2008</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb318"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb318-1"><a href="ch-dataTransformation.html#cb318-1" aria-hidden="true" tabindex="-1"></a><span class="sc">&gt;</span> <span class="fu">filter</span>(mpg, model<span class="sc">==</span><span class="st">&quot;sonata&quot;</span> <span class="sc">|</span> cty <span class="sc">&gt;=</span> <span class="dv">28</span> <span class="sc">&amp;</span> year<span class="sc">==</span><span class="dv">2008</span>)</span></code></pre></div>
 <pre><code># A tibble: 8 x 11
   manufacturer model   displ  year   cyl trans    drv     cty   hwy fl    class 
   &lt;chr&gt;        &lt;chr&gt;   &lt;dbl&gt; &lt;int&gt; &lt;int&gt; &lt;chr&gt;    &lt;chr&gt; &lt;int&gt; &lt;int&gt; &lt;chr&gt; &lt;chr&gt; 
@@ -588,21 +592,21 @@ Figure 4.3: 정돈데이터의 변환
 <h3><span class="header-section-number">4.4.4</span> 결측치가 있는 경우</h3>
 <p>R에서는 데이터에 결측치가 있을 때 이를 <code>NA</code> 값으로 표시한다. 예를 들어 5 명의 학생의 키 데이터가 있는 데 마지막 학생의 데이터를 얻지 못하였다면, 그 학생의 데이터는 <code>NA</code>로 값을 입력한다.</p>
 <p><code>is.na()</code> 함수를 이용하면 결측치의 포함 여부를 확인할 수 있다. na.omit() 함수를 이용하면 결측치를 제외한 벡터를 만들 수 있다.</p>
-<div class="sourceCode" id="cb296"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb296-1"><a href="ch-dataTransformation.html#cb296-1" aria-hidden="true"></a><span class="op">&gt;</span><span class="st"> </span>z &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dv">1</span><span class="op">:</span><span class="dv">3</span>, <span class="ot">NA</span>)</span>
-<span id="cb296-2"><a href="ch-dataTransformation.html#cb296-2" aria-hidden="true"></a><span class="op">&gt;</span><span class="st"> </span>z</span></code></pre></div>
+<div class="sourceCode" id="cb320"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb320-1"><a href="ch-dataTransformation.html#cb320-1" aria-hidden="true" tabindex="-1"></a><span class="sc">&gt;</span> z <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">3</span>, <span class="cn">NA</span>)</span>
+<span id="cb320-2"><a href="ch-dataTransformation.html#cb320-2" aria-hidden="true" tabindex="-1"></a><span class="sc">&gt;</span> z</span></code></pre></div>
 <pre><code>[1]  1  2  3 NA</code></pre>
-<div class="sourceCode" id="cb298"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb298-1"><a href="ch-dataTransformation.html#cb298-1" aria-hidden="true"></a><span class="op">&gt;</span><span class="st"> </span><span class="kw">is.na</span>(z)</span></code></pre></div>
+<div class="sourceCode" id="cb322"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb322-1"><a href="ch-dataTransformation.html#cb322-1" aria-hidden="true" tabindex="-1"></a><span class="sc">&gt;</span> <span class="fu">is.na</span>(z)</span></code></pre></div>
 <pre><code>[1] FALSE FALSE FALSE  TRUE</code></pre>
-<div class="sourceCode" id="cb300"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb300-1"><a href="ch-dataTransformation.html#cb300-1" aria-hidden="true"></a><span class="op">&gt;</span><span class="st"> </span><span class="kw">na.omit</span>(z)</span></code></pre></div>
+<div class="sourceCode" id="cb324"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb324-1"><a href="ch-dataTransformation.html#cb324-1" aria-hidden="true" tabindex="-1"></a><span class="sc">&gt;</span> <span class="fu">na.omit</span>(z)</span></code></pre></div>
 <pre><code>[1] 1 2 3
 attr(,&quot;na.action&quot;)
 [1] 4
 attr(,&quot;class&quot;)
 [1] &quot;omit&quot;</code></pre>
 <p>결측치가 있으면 sum()이나 mean() 같은 함수들의 결과는 NA가 출력된다. 결측치를 제외하고 이들 함수를 사용하려면 함수 인수에 na.rm=TRUE를 덧붙여야 한다. 그러면 결측치를 제외하고 결과를 계산하게 된다.</p>
-<div class="sourceCode" id="cb302"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb302-1"><a href="ch-dataTransformation.html#cb302-1" aria-hidden="true"></a><span class="op">&gt;</span><span class="st"> </span><span class="kw">sum</span>(z)</span></code></pre></div>
+<div class="sourceCode" id="cb326"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb326-1"><a href="ch-dataTransformation.html#cb326-1" aria-hidden="true" tabindex="-1"></a><span class="sc">&gt;</span> <span class="fu">sum</span>(z)</span></code></pre></div>
 <pre><code>[1] NA</code></pre>
-<div class="sourceCode" id="cb304"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb304-1"><a href="ch-dataTransformation.html#cb304-1" aria-hidden="true"></a><span class="op">&gt;</span><span class="st"> </span><span class="kw">sum</span>(z, <span class="dt">na.rm=</span><span class="ot">TRUE</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb328"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb328-1"><a href="ch-dataTransformation.html#cb328-1" aria-hidden="true" tabindex="-1"></a><span class="sc">&gt;</span> <span class="fu">sum</span>(z, <span class="at">na.rm=</span><span class="cn">TRUE</span>)</span></code></pre></div>
 <pre><code>[1] 6</code></pre>
 <p>조건에 사용되는 열에 결측치가 있는 경우에 결측치가 있는 행을 추출하려면 <code>is.na()</code> 함수를 이용하여야 한다.</p>
 </div>
@@ -613,8 +617,8 @@ attr(,&quot;class&quot;)
 <pre><code>arrange(데이터프레임, 첫번째_정렬_기준_열, 두번째_정렬_기준_열, ....)</code></pre>
 <p><code>filter()</code>와 마찬가지로 첫 번재 인수로 정렬할 데이터 프레임을 전달 받는다. 그리고 두번재 인수부터 정렬의 기준이 되는 열을 차례로 기술한다. 첫 번째 기준 열의 값이 같으면, 두 번째 기준 열을, 두 번째 기준 열의 값까지 같으면 그 다음 열을 기준으로 차례로 순서를 결정하여 정렬을 수행한다.</p>
 <p>다음은 2008년도 현대의 자동차 모델만 <code>filter()</code>론 선택하여 <code>a</code>라는 변수에 저장한 후, 이 데이터에 대하여 여러 조건으로 정렬을 수행해본 예이다.</p>
-<div class="sourceCode" id="cb307"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb307-1"><a href="ch-dataTransformation.html#cb307-1" aria-hidden="true"></a><span class="op">&gt;</span><span class="st"> </span>a &lt;-<span class="st"> </span><span class="kw">filter</span>(mpg, manufacturer <span class="op">==</span><span class="st"> &quot;hyundai&quot;</span>, year <span class="op">==</span><span class="st"> </span><span class="dv">2008</span>)</span>
-<span id="cb307-2"><a href="ch-dataTransformation.html#cb307-2" aria-hidden="true"></a><span class="op">&gt;</span><span class="st"> </span>a</span></code></pre></div>
+<div class="sourceCode" id="cb331"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb331-1"><a href="ch-dataTransformation.html#cb331-1" aria-hidden="true" tabindex="-1"></a><span class="sc">&gt;</span> a <span class="ot">&lt;-</span> <span class="fu">filter</span>(mpg, manufacturer <span class="sc">==</span> <span class="st">&quot;hyundai&quot;</span>, year <span class="sc">==</span> <span class="dv">2008</span>)</span>
+<span id="cb331-2"><a href="ch-dataTransformation.html#cb331-2" aria-hidden="true" tabindex="-1"></a><span class="sc">&gt;</span> a</span></code></pre></div>
 <pre><code># A tibble: 8 x 11
   manufacturer model  displ  year   cyl trans    drv     cty   hwy fl    class  
   &lt;chr&gt;        &lt;chr&gt;  &lt;dbl&gt; &lt;int&gt; &lt;int&gt; &lt;chr&gt;    &lt;chr&gt; &lt;int&gt; &lt;int&gt; &lt;chr&gt; &lt;chr&gt;  
@@ -626,7 +630,7 @@ attr(,&quot;class&quot;)
 6 hyundai      tibur…   2.7  2008     6 auto(l4) f        17    24 r     subcom…
 7 hyundai      tibur…   2.7  2008     6 manual(… f        16    24 r     subcom…
 8 hyundai      tibur…   2.7  2008     6 manual(… f        17    24 r     subcom…</code></pre>
-<div class="sourceCode" id="cb309"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb309-1"><a href="ch-dataTransformation.html#cb309-1" aria-hidden="true"></a><span class="op">&gt;</span><span class="st"> </span><span class="kw">arrange</span>(a, cyl)</span></code></pre></div>
+<div class="sourceCode" id="cb333"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb333-1"><a href="ch-dataTransformation.html#cb333-1" aria-hidden="true" tabindex="-1"></a><span class="sc">&gt;</span> <span class="fu">arrange</span>(a, cyl)</span></code></pre></div>
 <pre><code># A tibble: 8 x 11
   manufacturer model  displ  year   cyl trans    drv     cty   hwy fl    class  
   &lt;chr&gt;        &lt;chr&gt;  &lt;dbl&gt; &lt;int&gt; &lt;int&gt; &lt;chr&gt;    &lt;chr&gt; &lt;int&gt; &lt;int&gt; &lt;chr&gt; &lt;chr&gt;  
@@ -638,7 +642,7 @@ attr(,&quot;class&quot;)
 6 hyundai      tibur…   2.7  2008     6 auto(l4) f        17    24 r     subcom…
 7 hyundai      tibur…   2.7  2008     6 manual(… f        16    24 r     subcom…
 8 hyundai      tibur…   2.7  2008     6 manual(… f        17    24 r     subcom…</code></pre>
-<div class="sourceCode" id="cb311"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb311-1"><a href="ch-dataTransformation.html#cb311-1" aria-hidden="true"></a><span class="op">&gt;</span><span class="st"> </span><span class="kw">arrange</span>(a, cyl, cty)</span></code></pre></div>
+<div class="sourceCode" id="cb335"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb335-1"><a href="ch-dataTransformation.html#cb335-1" aria-hidden="true" tabindex="-1"></a><span class="sc">&gt;</span> <span class="fu">arrange</span>(a, cyl, cty)</span></code></pre></div>
 <pre><code># A tibble: 8 x 11
   manufacturer model  displ  year   cyl trans    drv     cty   hwy fl    class  
   &lt;chr&gt;        &lt;chr&gt;  &lt;dbl&gt; &lt;int&gt; &lt;int&gt; &lt;chr&gt;    &lt;chr&gt; &lt;int&gt; &lt;int&gt; &lt;chr&gt; &lt;chr&gt;  
@@ -650,7 +654,7 @@ attr(,&quot;class&quot;)
 6 hyundai      tibur…   2.7  2008     6 auto(l4) f        17    24 r     subcom…
 7 hyundai      tibur…   2.7  2008     6 manual(… f        17    24 r     subcom…
 8 hyundai      sonata   3.3  2008     6 auto(l5) f        19    28 r     midsize</code></pre>
-<div class="sourceCode" id="cb313"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb313-1"><a href="ch-dataTransformation.html#cb313-1" aria-hidden="true"></a><span class="op">&gt;</span><span class="st"> </span><span class="kw">arrange</span>(a, model, trans)</span></code></pre></div>
+<div class="sourceCode" id="cb337"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb337-1"><a href="ch-dataTransformation.html#cb337-1" aria-hidden="true" tabindex="-1"></a><span class="sc">&gt;</span> <span class="fu">arrange</span>(a, model, trans)</span></code></pre></div>
 <pre><code># A tibble: 8 x 11
   manufacturer model  displ  year   cyl trans    drv     cty   hwy fl    class  
   &lt;chr&gt;        &lt;chr&gt;  &lt;dbl&gt; &lt;int&gt; &lt;int&gt; &lt;chr&gt;    &lt;chr&gt; &lt;int&gt; &lt;int&gt; &lt;chr&gt; &lt;chr&gt;  
@@ -665,7 +669,7 @@ attr(,&quot;class&quot;)
 <div id="desc를-이용하여-내림차순으로-정렬하기" class="section level3" number="4.5.1">
 <h3><span class="header-section-number">4.5.1</span> <code>desc()</code>를 이용하여 내림차순으로 정렬하기</h3>
 <p>앞의 예에서 <code>arrange()</code>는 수치 열은 올림차순으로 문자 열은 알파벳 순으로 정렬하는 것을 볼 수 있다. 만약 위의 예에서 내림차순으로, 또는 알파벳 역순으로 정렬을 하고 싶으면 어떻게 하여야 할까? <code>dplyr</code> 패키지는 <code>desc()</code>를 이용하면 된다.</p>
-<div class="sourceCode" id="cb315"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb315-1"><a href="ch-dataTransformation.html#cb315-1" aria-hidden="true"></a><span class="op">&gt;</span><span class="st"> </span><span class="kw">arrange</span>(a, <span class="kw">desc</span>(cyl))</span></code></pre></div>
+<div class="sourceCode" id="cb339"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb339-1"><a href="ch-dataTransformation.html#cb339-1" aria-hidden="true" tabindex="-1"></a><span class="sc">&gt;</span> <span class="fu">arrange</span>(a, <span class="fu">desc</span>(cyl))</span></code></pre></div>
 <pre><code># A tibble: 8 x 11
   manufacturer model  displ  year   cyl trans    drv     cty   hwy fl    class  
   &lt;chr&gt;        &lt;chr&gt;  &lt;dbl&gt; &lt;int&gt; &lt;int&gt; &lt;chr&gt;    &lt;chr&gt; &lt;int&gt; &lt;int&gt; &lt;chr&gt; &lt;chr&gt;  
@@ -677,7 +681,7 @@ attr(,&quot;class&quot;)
 6 hyundai      sonata   2.4  2008     4 manual(… f        21    31 r     midsize
 7 hyundai      tibur…   2    2008     4 manual(… f        20    28 r     subcom…
 8 hyundai      tibur…   2    2008     4 auto(l4) f        20    27 r     subcom…</code></pre>
-<div class="sourceCode" id="cb317"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb317-1"><a href="ch-dataTransformation.html#cb317-1" aria-hidden="true"></a><span class="op">&gt;</span><span class="st"> </span><span class="kw">arrange</span>(a, <span class="kw">desc</span>(cyl), cty)</span></code></pre></div>
+<div class="sourceCode" id="cb341"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb341-1"><a href="ch-dataTransformation.html#cb341-1" aria-hidden="true" tabindex="-1"></a><span class="sc">&gt;</span> <span class="fu">arrange</span>(a, <span class="fu">desc</span>(cyl), cty)</span></code></pre></div>
 <pre><code># A tibble: 8 x 11
   manufacturer model  displ  year   cyl trans    drv     cty   hwy fl    class  
   &lt;chr&gt;        &lt;chr&gt;  &lt;dbl&gt; &lt;int&gt; &lt;int&gt; &lt;chr&gt;    &lt;chr&gt; &lt;int&gt; &lt;int&gt; &lt;chr&gt; &lt;chr&gt;  
@@ -689,7 +693,7 @@ attr(,&quot;class&quot;)
 6 hyundai      tibur…   2    2008     4 auto(l4) f        20    27 r     subcom…
 7 hyundai      sonata   2.4  2008     4 auto(l4) f        21    30 r     midsize
 8 hyundai      sonata   2.4  2008     4 manual(… f        21    31 r     midsize</code></pre>
-<div class="sourceCode" id="cb319"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb319-1"><a href="ch-dataTransformation.html#cb319-1" aria-hidden="true"></a><span class="op">&gt;</span><span class="st"> </span><span class="kw">arrange</span>(a, model, <span class="kw">desc</span>(trans))</span></code></pre></div>
+<div class="sourceCode" id="cb343"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb343-1"><a href="ch-dataTransformation.html#cb343-1" aria-hidden="true" tabindex="-1"></a><span class="sc">&gt;</span> <span class="fu">arrange</span>(a, model, <span class="fu">desc</span>(trans))</span></code></pre></div>
 <pre><code># A tibble: 8 x 11
   manufacturer model  displ  year   cyl trans    drv     cty   hwy fl    class  
   &lt;chr&gt;        &lt;chr&gt;  &lt;dbl&gt; &lt;int&gt; &lt;int&gt; &lt;chr&gt;    &lt;chr&gt; &lt;int&gt; &lt;int&gt; &lt;chr&gt; &lt;chr&gt;  
@@ -710,7 +714,7 @@ attr(,&quot;class&quot;)
 <h3><span class="header-section-number">4.6.1</span> 열 이름을 나열하여 선택하기</h3>
 <p><code>select()</code> 함수는 다음처럼 열 이름을 일일이 나열하여 원하는 열을 선택할 수 있다. R의 기본 문법을 알고 있는 사람들은 데이터 프레임의 인덱싱에서처럼 문자열로 이름을 나열하는 것이 아니라 변수를 사용하듯 따옴표 없이 이름을 나열하는 것에 주의한다.</p>
 <pre><code>select(데이터프레임, 열이름1, 열이름2, ....)</code></pre>
-<div class="sourceCode" id="cb322"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb322-1"><a href="ch-dataTransformation.html#cb322-1" aria-hidden="true"></a><span class="op">&gt;</span><span class="st"> </span><span class="kw">select</span>(a, model, year, cty, hwy)</span></code></pre></div>
+<div class="sourceCode" id="cb346"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb346-1"><a href="ch-dataTransformation.html#cb346-1" aria-hidden="true" tabindex="-1"></a><span class="sc">&gt;</span> <span class="fu">select</span>(a, model, year, cty, hwy)</span></code></pre></div>
 <pre><code># A tibble: 8 x 4
   model    year   cty   hwy
   &lt;chr&gt;   &lt;int&gt; &lt;int&gt; &lt;int&gt;
@@ -727,7 +731,7 @@ attr(,&quot;class&quot;)
 <h3><span class="header-section-number">4.6.2</span> 열 범위를 선택하기</h3>
 <p><code>select()</code> 함수는 다음처럼 열 이름으로 선택할 열의 범위를 지정할 수 있다.</p>
 <pre><code>select(데이터프레임, 범위시작_열이름:범위종료_열이름, ...)</code></pre>
-<div class="sourceCode" id="cb325"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb325-1"><a href="ch-dataTransformation.html#cb325-1" aria-hidden="true"></a><span class="op">&gt;</span><span class="st"> </span><span class="kw">select</span>(a, model<span class="op">:</span>trans)</span></code></pre></div>
+<div class="sourceCode" id="cb349"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb349-1"><a href="ch-dataTransformation.html#cb349-1" aria-hidden="true" tabindex="-1"></a><span class="sc">&gt;</span> <span class="fu">select</span>(a, model<span class="sc">:</span>trans)</span></code></pre></div>
 <pre><code># A tibble: 8 x 5
   model   displ  year   cyl trans     
   &lt;chr&gt;   &lt;dbl&gt; &lt;int&gt; &lt;int&gt; &lt;chr&gt;     
@@ -739,7 +743,7 @@ attr(,&quot;class&quot;)
 6 tiburon   2.7  2008     6 auto(l4)  
 7 tiburon   2.7  2008     6 manual(m6)
 8 tiburon   2.7  2008     6 manual(m5)</code></pre>
-<div class="sourceCode" id="cb327"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb327-1"><a href="ch-dataTransformation.html#cb327-1" aria-hidden="true"></a><span class="op">&gt;</span><span class="st"> </span><span class="kw">select</span>(a, model<span class="op">:</span>trans, cty<span class="op">:</span>hwy)</span></code></pre></div>
+<div class="sourceCode" id="cb351"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb351-1"><a href="ch-dataTransformation.html#cb351-1" aria-hidden="true" tabindex="-1"></a><span class="sc">&gt;</span> <span class="fu">select</span>(a, model<span class="sc">:</span>trans, cty<span class="sc">:</span>hwy)</span></code></pre></div>
 <pre><code># A tibble: 8 x 7
   model   displ  year   cyl trans        cty   hwy
   &lt;chr&gt;   &lt;dbl&gt; &lt;int&gt; &lt;int&gt; &lt;chr&gt;      &lt;int&gt; &lt;int&gt;
@@ -753,7 +757,7 @@ attr(,&quot;class&quot;)
 8 tiburon   2.7  2008     6 manual(m5)    17    24</code></pre>
 <p>반대로 다음처럼 열 이름으로 선택하지 않을 열의 범위를 지정할 수 있다.</p>
 <pre><code>select(데이터프레임, -(범위시작_열이름:범위종료_열이름), ...)</code></pre>
-<div class="sourceCode" id="cb330"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb330-1"><a href="ch-dataTransformation.html#cb330-1" aria-hidden="true"></a><span class="op">&gt;</span><span class="st"> </span><span class="kw">select</span>(a, <span class="op">-</span>(model<span class="op">:</span>trans))</span></code></pre></div>
+<div class="sourceCode" id="cb354"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb354-1"><a href="ch-dataTransformation.html#cb354-1" aria-hidden="true" tabindex="-1"></a><span class="sc">&gt;</span> <span class="fu">select</span>(a, <span class="sc">-</span>(model<span class="sc">:</span>trans))</span></code></pre></div>
 <pre><code># A tibble: 8 x 6
   manufacturer drv     cty   hwy fl    class     
   &lt;chr&gt;        &lt;chr&gt; &lt;int&gt; &lt;int&gt; &lt;chr&gt; &lt;chr&gt;     
@@ -765,7 +769,7 @@ attr(,&quot;class&quot;)
 6 hyundai      f        17    24 r     subcompact
 7 hyundai      f        16    24 r     subcompact
 8 hyundai      f        17    24 r     subcompact</code></pre>
-<div class="sourceCode" id="cb332"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb332-1"><a href="ch-dataTransformation.html#cb332-1" aria-hidden="true"></a><span class="op">&gt;</span><span class="st"> </span><span class="kw">select</span>(a, <span class="op">-</span>(model<span class="op">:</span>trans), <span class="op">-</span>manufacturer)</span></code></pre></div>
+<div class="sourceCode" id="cb356"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb356-1"><a href="ch-dataTransformation.html#cb356-1" aria-hidden="true" tabindex="-1"></a><span class="sc">&gt;</span> <span class="fu">select</span>(a, <span class="sc">-</span>(model<span class="sc">:</span>trans), <span class="sc">-</span>manufacturer)</span></code></pre></div>
 <pre><code># A tibble: 8 x 5
   drv     cty   hwy fl    class     
   &lt;chr&gt; &lt;int&gt; &lt;int&gt; &lt;chr&gt; &lt;chr&gt;     
@@ -786,9 +790,9 @@ attr(,&quot;class&quot;)
 <li><code>ends_with("abs")</code>: abc로 이름이 끝나는 모든 열</li>
 <li><code>contains("abs")</code>: abc를 이름에 포함하고 있는 모든 열</li>
 <li><code>matches("(.)\\1")</code>: 정규 표현식을 만족하는 이름을 가진 모든 열</li>
-<li><code>num_range("x", 1:3)</code>: “x1”, “x2”, “x3”이라는 이름의 열</li>
+<li><code>num_range("x", 1:3)</code>: “x1,” “x2,” “x3”이라는 이름의 열</li>
 </ul>
-<div class="sourceCode" id="cb334"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb334-1"><a href="ch-dataTransformation.html#cb334-1" aria-hidden="true"></a><span class="op">&gt;</span><span class="st"> </span><span class="kw">select</span>(a, <span class="kw">starts_with</span>(<span class="st">&quot;c&quot;</span>))</span></code></pre></div>
+<div class="sourceCode" id="cb358"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb358-1"><a href="ch-dataTransformation.html#cb358-1" aria-hidden="true" tabindex="-1"></a><span class="sc">&gt;</span> <span class="fu">select</span>(a, <span class="fu">starts_with</span>(<span class="st">&quot;c&quot;</span>))</span></code></pre></div>
 <pre><code># A tibble: 8 x 3
     cyl   cty class     
   &lt;int&gt; &lt;int&gt; &lt;chr&gt;     
@@ -804,7 +808,7 @@ attr(,&quot;class&quot;)
 <div id="열-이름-바꾸기" class="section level3" number="4.6.4">
 <h3><span class="header-section-number">4.6.4</span> 열 이름 바꾸기</h3>
 <p><code>select()</code> 함수에서 열 이름을 지정할 때, <code>새로운_열_이름=기존_열_이름</code> 형식으로 지정하면 열의 이름을 바꿀 수 있다.</p>
-<div class="sourceCode" id="cb336"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb336-1"><a href="ch-dataTransformation.html#cb336-1" aria-hidden="true"></a><span class="op">&gt;</span><span class="st"> </span><span class="kw">select</span>(a, model, <span class="dt">city=</span>cty, <span class="dt">highway=</span>hwy)</span></code></pre></div>
+<div class="sourceCode" id="cb360"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb360-1"><a href="ch-dataTransformation.html#cb360-1" aria-hidden="true" tabindex="-1"></a><span class="sc">&gt;</span> <span class="fu">select</span>(a, model, <span class="at">city=</span>cty, <span class="at">highway=</span>hwy)</span></code></pre></div>
 <pre><code># A tibble: 8 x 3
   model    city highway
   &lt;chr&gt;   &lt;int&gt;   &lt;int&gt;
@@ -817,7 +821,7 @@ attr(,&quot;class&quot;)
 7 tiburon    16      24
 8 tiburon    17      24</code></pre>
 <p>만약 전체 데이터를 유지한 상태에서 열 이름만 변경하려면, <code>rename()</code> 함수를 이용한다. 문법은 <code>select()</code>와 같다.</p>
-<div class="sourceCode" id="cb338"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb338-1"><a href="ch-dataTransformation.html#cb338-1" aria-hidden="true"></a><span class="op">&gt;</span><span class="st"> </span><span class="kw">rename</span>(a, <span class="dt">city=</span>cty, <span class="dt">highway=</span>hwy)</span></code></pre></div>
+<div class="sourceCode" id="cb362"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb362-1"><a href="ch-dataTransformation.html#cb362-1" aria-hidden="true" tabindex="-1"></a><span class="sc">&gt;</span> <span class="fu">rename</span>(a, <span class="at">city=</span>cty, <span class="at">highway=</span>hwy)</span></code></pre></div>
 <pre><code># A tibble: 8 x 11
   manufacturer model  displ  year   cyl trans   drv    city highway fl    class 
   &lt;chr&gt;        &lt;chr&gt;  &lt;dbl&gt; &lt;int&gt; &lt;int&gt; &lt;chr&gt;   &lt;chr&gt; &lt;int&gt;   &lt;int&gt; &lt;chr&gt; &lt;chr&gt; 
@@ -833,7 +837,7 @@ attr(,&quot;class&quot;)
 <div id="열-순서-바꾸기" class="section level3" number="4.6.5">
 <h3><span class="header-section-number">4.6.5</span> 열 순서 바꾸기</h3>
 <p><code>select()</code> 함수는 나열된 열의 순서에 따라 새롭게 만들어진 데이터 프레임의 열의 순서를 조정한다.</p>
-<div class="sourceCode" id="cb340"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb340-1"><a href="ch-dataTransformation.html#cb340-1" aria-hidden="true"></a><span class="op">&gt;</span><span class="st"> </span><span class="kw">select</span>(a, cty, hwy)</span></code></pre></div>
+<div class="sourceCode" id="cb364"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb364-1"><a href="ch-dataTransformation.html#cb364-1" aria-hidden="true" tabindex="-1"></a><span class="sc">&gt;</span> <span class="fu">select</span>(a, cty, hwy)</span></code></pre></div>
 <pre><code># A tibble: 8 x 2
     cty   hwy
   &lt;int&gt; &lt;int&gt;
@@ -845,7 +849,7 @@ attr(,&quot;class&quot;)
 6    17    24
 7    16    24
 8    17    24</code></pre>
-<div class="sourceCode" id="cb342"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb342-1"><a href="ch-dataTransformation.html#cb342-1" aria-hidden="true"></a><span class="op">&gt;</span><span class="st"> </span><span class="kw">select</span>(a, hwy, cty)</span></code></pre></div>
+<div class="sourceCode" id="cb366"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb366-1"><a href="ch-dataTransformation.html#cb366-1" aria-hidden="true" tabindex="-1"></a><span class="sc">&gt;</span> <span class="fu">select</span>(a, hwy, cty)</span></code></pre></div>
 <pre><code># A tibble: 8 x 2
     hwy   cty
   &lt;int&gt; &lt;int&gt;
@@ -858,7 +862,7 @@ attr(,&quot;class&quot;)
 7    24    16
 8    24    17</code></pre>
 <p>이러한 성질과 <code>everything()</code> 함수를 이용하면 열의 순서를 쉽게 바꿀 수 있다. <code>everything()</code>은 이미 선택된 열을 제외한 나머지 열을 의미한다.</p>
-<div class="sourceCode" id="cb344"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb344-1"><a href="ch-dataTransformation.html#cb344-1" aria-hidden="true"></a><span class="op">&gt;</span><span class="st"> </span><span class="kw">select</span>(a, cty, hwy, <span class="kw">everything</span>())</span></code></pre></div>
+<div class="sourceCode" id="cb368"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb368-1"><a href="ch-dataTransformation.html#cb368-1" aria-hidden="true" tabindex="-1"></a><span class="sc">&gt;</span> <span class="fu">select</span>(a, cty, hwy, <span class="fu">everything</span>())</span></code></pre></div>
 <pre><code># A tibble: 8 x 11
     cty   hwy manufacturer model  displ  year   cyl trans    drv   fl    class  
   &lt;int&gt; &lt;int&gt; &lt;chr&gt;        &lt;chr&gt;  &lt;dbl&gt; &lt;int&gt; &lt;int&gt; &lt;chr&gt;    &lt;chr&gt; &lt;chr&gt; &lt;chr&gt;  
@@ -877,8 +881,8 @@ attr(,&quot;class&quot;)
 <p><code>mutate()</code>는 기존 열을 이용하여 새로운 열을 만들어 데이터 프레임의 가장 마지막 열로 추가한다.</p>
 <pre><code>mutate(데이터프레임, 새로운_열=기존_열_연산식, ....)</code></pre>
 <p>다음은 도심 연비와 고속도로 연비의 합과, 평균, 그리고 고속도로 대비 도심 연비의 비율(%)을 계산하여 새로운 열을 만든 예이다.</p>
-<div class="sourceCode" id="cb347"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb347-1"><a href="ch-dataTransformation.html#cb347-1" aria-hidden="true"></a><span class="op">&gt;</span><span class="st"> </span>b &lt;-<span class="st"> </span><span class="kw">select</span>(a, <span class="op">-</span>(cyl<span class="op">:</span>drv), <span class="op">-</span>(fl<span class="op">:</span>class))</span>
-<span id="cb347-2"><a href="ch-dataTransformation.html#cb347-2" aria-hidden="true"></a><span class="op">&gt;</span><span class="st"> </span>b</span></code></pre></div>
+<div class="sourceCode" id="cb371"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb371-1"><a href="ch-dataTransformation.html#cb371-1" aria-hidden="true" tabindex="-1"></a><span class="sc">&gt;</span> b <span class="ot">&lt;-</span> <span class="fu">select</span>(a, <span class="sc">-</span>(cyl<span class="sc">:</span>drv), <span class="sc">-</span>(fl<span class="sc">:</span>class))</span>
+<span id="cb371-2"><a href="ch-dataTransformation.html#cb371-2" aria-hidden="true" tabindex="-1"></a><span class="sc">&gt;</span> b</span></code></pre></div>
 <pre><code># A tibble: 8 x 6
   manufacturer model   displ  year   cty   hwy
   &lt;chr&gt;        &lt;chr&gt;   &lt;dbl&gt; &lt;int&gt; &lt;int&gt; &lt;int&gt;
@@ -890,7 +894,7 @@ attr(,&quot;class&quot;)
 6 hyundai      tiburon   2.7  2008    17    24
 7 hyundai      tiburon   2.7  2008    16    24
 8 hyundai      tiburon   2.7  2008    17    24</code></pre>
-<div class="sourceCode" id="cb349"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb349-1"><a href="ch-dataTransformation.html#cb349-1" aria-hidden="true"></a><span class="op">&gt;</span><span class="st"> </span><span class="kw">mutate</span>(b, <span class="dt">sum=</span>cty <span class="op">+</span><span class="st"> </span>hwy)</span></code></pre></div>
+<div class="sourceCode" id="cb373"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb373-1"><a href="ch-dataTransformation.html#cb373-1" aria-hidden="true" tabindex="-1"></a><span class="sc">&gt;</span> <span class="fu">mutate</span>(b, <span class="at">sum=</span>cty <span class="sc">+</span> hwy)</span></code></pre></div>
 <pre><code># A tibble: 8 x 7
   manufacturer model   displ  year   cty   hwy   sum
   &lt;chr&gt;        &lt;chr&gt;   &lt;dbl&gt; &lt;int&gt; &lt;int&gt; &lt;int&gt; &lt;int&gt;
@@ -902,10 +906,10 @@ attr(,&quot;class&quot;)
 6 hyundai      tiburon   2.7  2008    17    24    41
 7 hyundai      tiburon   2.7  2008    16    24    40
 8 hyundai      tiburon   2.7  2008    17    24    41</code></pre>
-<div class="sourceCode" id="cb351"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb351-1"><a href="ch-dataTransformation.html#cb351-1" aria-hidden="true"></a><span class="op">&gt;</span><span class="st"> </span><span class="kw">mutate</span>(b, </span>
-<span id="cb351-2"><a href="ch-dataTransformation.html#cb351-2" aria-hidden="true"></a><span class="op">+</span><span class="st">        </span><span class="dt">sum=</span>cty <span class="op">+</span><span class="st"> </span>hwy, </span>
-<span id="cb351-3"><a href="ch-dataTransformation.html#cb351-3" aria-hidden="true"></a><span class="op">+</span><span class="st">        </span><span class="dt">mean=</span>(cty <span class="op">+</span><span class="st"> </span>hwy) <span class="op">/</span><span class="st"> </span><span class="dv">2</span>,</span>
-<span id="cb351-4"><a href="ch-dataTransformation.html#cb351-4" aria-hidden="true"></a><span class="op">+</span><span class="st">        </span><span class="dt">ratio=</span> cty <span class="op">/</span><span class="st"> </span>hwy <span class="op">*</span><span class="st"> </span><span class="dv">100</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb375"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb375-1"><a href="ch-dataTransformation.html#cb375-1" aria-hidden="true" tabindex="-1"></a><span class="sc">&gt;</span> <span class="fu">mutate</span>(b, </span>
+<span id="cb375-2"><a href="ch-dataTransformation.html#cb375-2" aria-hidden="true" tabindex="-1"></a><span class="sc">+</span>        <span class="at">sum=</span>cty <span class="sc">+</span> hwy, </span>
+<span id="cb375-3"><a href="ch-dataTransformation.html#cb375-3" aria-hidden="true" tabindex="-1"></a><span class="sc">+</span>        <span class="at">mean=</span>(cty <span class="sc">+</span> hwy) <span class="sc">/</span> <span class="dv">2</span>,</span>
+<span id="cb375-4"><a href="ch-dataTransformation.html#cb375-4" aria-hidden="true" tabindex="-1"></a><span class="sc">+</span>        <span class="at">ratio=</span> cty <span class="sc">/</span> hwy <span class="sc">*</span> <span class="dv">100</span>)</span></code></pre></div>
 <pre><code># A tibble: 8 x 9
   manufacturer model   displ  year   cty   hwy   sum  mean ratio
   &lt;chr&gt;        &lt;chr&gt;   &lt;dbl&gt; &lt;int&gt; &lt;int&gt; &lt;int&gt; &lt;int&gt; &lt;dbl&gt; &lt;dbl&gt;
@@ -920,10 +924,10 @@ attr(,&quot;class&quot;)
 <div id="transmute로-새로운-열만-남기기" class="section level3" number="4.7.1">
 <h3><span class="header-section-number">4.7.1</span> <code>transmute()</code>로 새로운 열만 남기기</h3>
 <p>만약 새롭게 만들어진 열만 데이터에 남기려면 <code>mutate()</code> 대신 <code>transmute()</code>를 사용한다. 문법은 두 함수가 동일하다.</p>
-<div class="sourceCode" id="cb353"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb353-1"><a href="ch-dataTransformation.html#cb353-1" aria-hidden="true"></a><span class="op">&gt;</span><span class="st"> </span><span class="kw">transmute</span>(b, </span>
-<span id="cb353-2"><a href="ch-dataTransformation.html#cb353-2" aria-hidden="true"></a><span class="op">+</span><span class="st">        </span><span class="dt">sum=</span>cty <span class="op">+</span><span class="st"> </span>hwy, </span>
-<span id="cb353-3"><a href="ch-dataTransformation.html#cb353-3" aria-hidden="true"></a><span class="op">+</span><span class="st">        </span><span class="dt">mean=</span>(cty <span class="op">+</span><span class="st"> </span>hwy) <span class="op">/</span><span class="st"> </span><span class="dv">2</span>,</span>
-<span id="cb353-4"><a href="ch-dataTransformation.html#cb353-4" aria-hidden="true"></a><span class="op">+</span><span class="st">        </span><span class="dt">ratio=</span> cty <span class="op">/</span><span class="st"> </span>hwy <span class="op">*</span><span class="st"> </span><span class="dv">100</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb377"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb377-1"><a href="ch-dataTransformation.html#cb377-1" aria-hidden="true" tabindex="-1"></a><span class="sc">&gt;</span> <span class="fu">transmute</span>(b, </span>
+<span id="cb377-2"><a href="ch-dataTransformation.html#cb377-2" aria-hidden="true" tabindex="-1"></a><span class="sc">+</span>        <span class="at">sum=</span>cty <span class="sc">+</span> hwy, </span>
+<span id="cb377-3"><a href="ch-dataTransformation.html#cb377-3" aria-hidden="true" tabindex="-1"></a><span class="sc">+</span>        <span class="at">mean=</span>(cty <span class="sc">+</span> hwy) <span class="sc">/</span> <span class="dv">2</span>,</span>
+<span id="cb377-4"><a href="ch-dataTransformation.html#cb377-4" aria-hidden="true" tabindex="-1"></a><span class="sc">+</span>        <span class="at">ratio=</span> cty <span class="sc">/</span> hwy <span class="sc">*</span> <span class="dv">100</span>)</span></code></pre></div>
 <pre><code># A tibble: 8 x 3
     sum  mean ratio
   &lt;int&gt; &lt;dbl&gt; &lt;dbl&gt;
@@ -939,7 +943,7 @@ attr(,&quot;class&quot;)
 <div id="새로운-열을-만들-때-사용할-수-있는-함수들" class="section level3" number="4.7.2">
 <h3><span class="header-section-number">4.7.2</span> 새로운 열을 만들 때 사용할 수 있는 함수들</h3>
 <p>새로운 열을 생성할 때, 기존 열과 관련된 수치, 논리, 문자열 연산을 수행할 수 있다. 다음처럼 제조사와 모델을 하나로 합쳐서 새로운 열을 만들수도 있고, 배기량이 3 이상인지 여부를 나타내는 열도 만들 수 있다.</p>
-<div class="sourceCode" id="cb355"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb355-1"><a href="ch-dataTransformation.html#cb355-1" aria-hidden="true"></a><span class="op">&gt;</span><span class="st"> </span><span class="kw">mutate</span>(b, <span class="dt">newName=</span><span class="kw">paste</span>(manufacturer, model, <span class="dt">sep=</span><span class="st">&quot;-&quot;</span>), <span class="dt">dis3=</span>displ <span class="op">&gt;=</span><span class="st"> </span><span class="dv">3</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb379"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb379-1"><a href="ch-dataTransformation.html#cb379-1" aria-hidden="true" tabindex="-1"></a><span class="sc">&gt;</span> <span class="fu">mutate</span>(b, <span class="at">newName=</span><span class="fu">paste</span>(manufacturer, model, <span class="at">sep=</span><span class="st">&quot;-&quot;</span>), <span class="at">dis3=</span>displ <span class="sc">&gt;=</span> <span class="dv">3</span>)</span></code></pre></div>
 <pre><code># A tibble: 8 x 8
   manufacturer model   displ  year   cty   hwy newName         dis3 
   &lt;chr&gt;        &lt;chr&gt;   &lt;dbl&gt; &lt;int&gt; &lt;int&gt; &lt;int&gt; &lt;chr&gt;           &lt;lgl&gt;
@@ -959,7 +963,7 @@ attr(,&quot;class&quot;)
 <li><code>min_rank()</code>: 가장 작은 것부터 차례대로 크기 순서로 등수를 매기는 함수. <code>desc()</code> 함수를 열에 적용한 후 등수를 매기면 가장 큰 것부터 순서를 매길 수 있다.</li>
 <li><code>dense_rank()</code>, <code>percent_rank()</code>, <code>cume_dist()</code>, <code>ntile()</code> 등도 사용될 수 있다. 자세한 내용은 도움말을 참조하기 바란다.</li>
 </ul>
-<div class="sourceCode" id="cb357"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb357-1"><a href="ch-dataTransformation.html#cb357-1" aria-hidden="true"></a><span class="op">&gt;</span><span class="st"> </span><span class="kw">mutate</span>(b, <span class="dt">cty_rank=</span><span class="kw">min_rank</span>(cty), <span class="dt">hwy_rank=</span><span class="kw">min_rank</span>(<span class="kw">desc</span>(hwy)), <span class="dt">desc_hwy=</span><span class="kw">desc</span>(hwy))</span></code></pre></div>
+<div class="sourceCode" id="cb381"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb381-1"><a href="ch-dataTransformation.html#cb381-1" aria-hidden="true" tabindex="-1"></a><span class="sc">&gt;</span> <span class="fu">mutate</span>(b, <span class="at">cty_rank=</span><span class="fu">min_rank</span>(cty), <span class="at">hwy_rank=</span><span class="fu">min_rank</span>(<span class="fu">desc</span>(hwy)), <span class="at">desc_hwy=</span><span class="fu">desc</span>(hwy))</span></code></pre></div>
 <pre><code># A tibble: 8 x 9
   manufacturer model   displ  year   cty   hwy cty_rank hwy_rank desc_hwy
   &lt;chr&gt;        &lt;chr&gt;   &lt;dbl&gt; &lt;int&gt; &lt;int&gt; &lt;int&gt;    &lt;int&gt;    &lt;int&gt;    &lt;int&gt;
@@ -989,7 +993,7 @@ attr(,&quot;class&quot;)
 <li><code>quantile(열이름, probs):  수치 열의</code>probs` 분위수를 구한다.</li>
 </ul>
 <p>다음은 도심 연비의 데이터 수, 평균, 중위수, 최소값, 최대값을 구한 결과이다.</p>
-<div class="sourceCode" id="cb360"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb360-1"><a href="ch-dataTransformation.html#cb360-1" aria-hidden="true"></a><span class="op">&gt;</span><span class="st"> </span><span class="kw">summarize</span>(b, <span class="dt">count=</span><span class="kw">n</span>(), <span class="dt">mean=</span><span class="kw">mean</span>(cty), <span class="dt">med=</span><span class="kw">median</span>(cty), <span class="dt">min=</span><span class="kw">min</span>(cty), <span class="dt">max=</span><span class="kw">max</span>(cty))</span></code></pre></div>
+<div class="sourceCode" id="cb384"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb384-1"><a href="ch-dataTransformation.html#cb384-1" aria-hidden="true" tabindex="-1"></a><span class="sc">&gt;</span> <span class="fu">summarize</span>(b, <span class="at">count=</span><span class="fu">n</span>(), <span class="at">mean=</span><span class="fu">mean</span>(cty), <span class="at">med=</span><span class="fu">median</span>(cty), <span class="at">min=</span><span class="fu">min</span>(cty), <span class="at">max=</span><span class="fu">max</span>(cty))</span></code></pre></div>
 <pre><code># A tibble: 1 x 5
   count  mean   med   min   max
   &lt;int&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;int&gt; &lt;int&gt;
@@ -999,18 +1003,17 @@ attr(,&quot;class&quot;)
 <h2><span class="header-section-number">4.9</span> <code>group_by()</code>로 그룹 별로 요약하기</h2>
 <pre><code>group_by(데이터프레임, 그룹기준_열1, 그룹기준_열2, ...)</code></pre>
 <p><code>group_by()</code> 함수는 기준이 되는 열의 구분되는 값에 따라 데이터를 그룹화한다. 그룹화된 결과를 <code>summarize()</code> 함수에 전달하면 그룹별로 요약된 결과를 출력한다.</p>
-<div class="sourceCode" id="cb363"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb363-1"><a href="ch-dataTransformation.html#cb363-1" aria-hidden="true"></a><span class="op">&gt;</span><span class="st"> </span>byModel &lt;-<span class="st"> </span><span class="kw">group_by</span>(b, model)</span>
-<span id="cb363-2"><a href="ch-dataTransformation.html#cb363-2" aria-hidden="true"></a><span class="op">&gt;</span><span class="st"> </span><span class="kw">summarize</span>(byModel, <span class="dt">count=</span><span class="kw">n</span>(), <span class="dt">mean=</span><span class="kw">mean</span>(cty), <span class="dt">sd=</span><span class="kw">sd</span>(cty))</span></code></pre></div>
-<pre><code>`summarise()` ungrouping output (override with `.groups` argument)</code></pre>
+<div class="sourceCode" id="cb387"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb387-1"><a href="ch-dataTransformation.html#cb387-1" aria-hidden="true" tabindex="-1"></a><span class="sc">&gt;</span> byModel <span class="ot">&lt;-</span> <span class="fu">group_by</span>(b, model)</span>
+<span id="cb387-2"><a href="ch-dataTransformation.html#cb387-2" aria-hidden="true" tabindex="-1"></a><span class="sc">&gt;</span> <span class="fu">summarize</span>(byModel, <span class="at">count=</span><span class="fu">n</span>(), <span class="at">mean=</span><span class="fu">mean</span>(cty), <span class="at">sd=</span><span class="fu">sd</span>(cty))</span></code></pre></div>
 <pre><code># A tibble: 2 x 4
   model   count  mean    sd
   &lt;chr&gt;   &lt;int&gt; &lt;dbl&gt; &lt;dbl&gt;
 1 sonata      3  20.3  1.15
 2 tiburon     5  18    1.87</code></pre>
 <p>열을 여러 개를 조합하여 그룹화를 할 수도 있다.</p>
-<div class="sourceCode" id="cb366"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb366-1"><a href="ch-dataTransformation.html#cb366-1" aria-hidden="true"></a><span class="op">&gt;</span><span class="st"> </span>byModel &lt;-<span class="st"> </span><span class="kw">group_by</span>(a, model, cyl)</span>
-<span id="cb366-2"><a href="ch-dataTransformation.html#cb366-2" aria-hidden="true"></a><span class="op">&gt;</span><span class="st"> </span><span class="kw">summarize</span>(byModel, <span class="dt">count=</span><span class="kw">n</span>(), <span class="dt">mean=</span><span class="kw">mean</span>(cty))</span></code></pre></div>
-<pre><code>`summarise()` regrouping output by &#39;model&#39; (override with `.groups` argument)</code></pre>
+<div class="sourceCode" id="cb389"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb389-1"><a href="ch-dataTransformation.html#cb389-1" aria-hidden="true" tabindex="-1"></a><span class="sc">&gt;</span> byModel <span class="ot">&lt;-</span> <span class="fu">group_by</span>(a, model, cyl)</span>
+<span id="cb389-2"><a href="ch-dataTransformation.html#cb389-2" aria-hidden="true" tabindex="-1"></a><span class="sc">&gt;</span> <span class="fu">summarize</span>(byModel, <span class="at">count=</span><span class="fu">n</span>(), <span class="at">mean=</span><span class="fu">mean</span>(cty))</span></code></pre></div>
+<pre><code>`summarise()` has grouped output by &#39;model&#39;. You can override using the `.groups` argument.</code></pre>
 <pre><code># A tibble: 4 x 4
 # Groups:   model [2]
   model     cyl count  mean
@@ -1025,10 +1028,10 @@ attr(,&quot;class&quot;)
 <div id="여러-단계를-거쳐-데이터를-변환할-때" class="section level3" number="4.10.1">
 <h3><span class="header-section-number">4.10.1</span> 여러 단계를 거쳐 데이터를 변환할 때</h3>
 <p><code>mpg</code> 데이터에서 조사 연도와 모델 별로 데이터 수와 도심 연비의 평균을 구한 후, 평균이 22 이상인 모델로 이루어진 행을 추출하려고 한다. 이를 수행하려면 다음처럼 변수를 이용하여 결과를 차례로 전달하거나, 함수를 결합하여 한 문장에 사용하여야 한다.</p>
-<div class="sourceCode" id="cb369"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb369-1"><a href="ch-dataTransformation.html#cb369-1" aria-hidden="true"></a><span class="op">&gt;</span><span class="st"> </span>byModel &lt;-<span class="st"> </span><span class="kw">group_by</span>(mpg, model, year)</span>
-<span id="cb369-2"><a href="ch-dataTransformation.html#cb369-2" aria-hidden="true"></a><span class="op">&gt;</span><span class="st"> </span>meanCty &lt;-<span class="st"> </span><span class="kw">summarize</span>(byModel, <span class="dt">count=</span><span class="kw">n</span>(), <span class="dt">mean=</span><span class="kw">mean</span>(cty))</span></code></pre></div>
-<pre><code>`summarise()` regrouping output by &#39;model&#39; (override with `.groups` argument)</code></pre>
-<div class="sourceCode" id="cb371"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb371-1"><a href="ch-dataTransformation.html#cb371-1" aria-hidden="true"></a><span class="op">&gt;</span><span class="st"> </span><span class="kw">filter</span>(meanCty, mean <span class="op">&gt;=</span><span class="st"> </span><span class="dv">22</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb392"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb392-1"><a href="ch-dataTransformation.html#cb392-1" aria-hidden="true" tabindex="-1"></a><span class="sc">&gt;</span> byModel <span class="ot">&lt;-</span> <span class="fu">group_by</span>(mpg, model, year)</span>
+<span id="cb392-2"><a href="ch-dataTransformation.html#cb392-2" aria-hidden="true" tabindex="-1"></a><span class="sc">&gt;</span> meanCty <span class="ot">&lt;-</span> <span class="fu">summarize</span>(byModel, <span class="at">count=</span><span class="fu">n</span>(), <span class="at">mean=</span><span class="fu">mean</span>(cty))</span></code></pre></div>
+<pre><code>`summarise()` has grouped output by &#39;model&#39;. You can override using the `.groups` argument.</code></pre>
+<div class="sourceCode" id="cb394"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb394-1"><a href="ch-dataTransformation.html#cb394-1" aria-hidden="true" tabindex="-1"></a><span class="sc">&gt;</span> <span class="fu">filter</span>(meanCty, mean <span class="sc">&gt;=</span> <span class="dv">22</span>)</span></code></pre></div>
 <pre><code># A tibble: 5 x 4
 # Groups:   model [3]
   model       year count  mean
@@ -1038,8 +1041,8 @@ attr(,&quot;class&quot;)
 3 corolla     1999     3  24.7
 4 corolla     2008     2  27  
 5 new beetle  1999     4  26  </code></pre>
-<div class="sourceCode" id="cb373"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb373-1"><a href="ch-dataTransformation.html#cb373-1" aria-hidden="true"></a><span class="op">&gt;</span><span class="st"> </span><span class="kw">filter</span>(<span class="kw">summarize</span>(<span class="kw">group_by</span>(mpg, model, year), <span class="dt">count=</span><span class="kw">n</span>(), <span class="dt">mean=</span><span class="kw">mean</span>(cty)), mean <span class="op">&gt;=</span><span class="st"> </span><span class="dv">22</span>)</span></code></pre></div>
-<pre><code>`summarise()` regrouping output by &#39;model&#39; (override with `.groups` argument)</code></pre>
+<div class="sourceCode" id="cb396"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb396-1"><a href="ch-dataTransformation.html#cb396-1" aria-hidden="true" tabindex="-1"></a><span class="sc">&gt;</span> <span class="fu">filter</span>(<span class="fu">summarize</span>(<span class="fu">group_by</span>(mpg, model, year), <span class="at">count=</span><span class="fu">n</span>(), <span class="at">mean=</span><span class="fu">mean</span>(cty)), mean <span class="sc">&gt;=</span> <span class="dv">22</span>)</span></code></pre></div>
+<pre><code>`summarise()` has grouped output by &#39;model&#39;. You can override using the `.groups` argument.</code></pre>
 <pre><code># A tibble: 5 x 4
 # Groups:   model [3]
   model       year count  mean
@@ -1055,10 +1058,10 @@ attr(,&quot;class&quot;)
 <h3><span class="header-section-number">4.10.2</span> 파이프 연산자</h3>
 <p>파이프 연산자는 데이터 변환이 여러 단계를 거칠 때 불필요한 변수의 생성 없이도 함수 간에 중간 데이터를 전달할 수 있게 해 준다.</p>
 <p>파이프 연산자는 앞의 함수의 결과를 뒤 함수의 첫 번째 인수로 전달해 준다. 파이프 연산자를 사용할 때는 그러므로 첫 번째 인수는 생략하여 기술한다. 다음은 앞의 예와 동일한 예를 파이프 연산자를 사용하여 수행한 결과이다.</p>
-<div class="sourceCode" id="cb376"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb376-1"><a href="ch-dataTransformation.html#cb376-1" aria-hidden="true"></a><span class="op">&gt;</span><span class="st"> </span>mpg <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">group_by</span>(model, year) <span class="op">%&gt;%</span><span class="st"> </span></span>
-<span id="cb376-2"><a href="ch-dataTransformation.html#cb376-2" aria-hidden="true"></a><span class="op">+</span><span class="st">   </span><span class="kw">summarize</span>(<span class="dt">count=</span><span class="kw">n</span>(), <span class="dt">mean=</span><span class="kw">mean</span>(cty)) <span class="op">%&gt;%</span></span>
-<span id="cb376-3"><a href="ch-dataTransformation.html#cb376-3" aria-hidden="true"></a><span class="op">+</span><span class="st">   </span><span class="kw">filter</span>(mean <span class="op">&gt;=</span><span class="st"> </span><span class="dv">22</span>)</span></code></pre></div>
-<pre><code>`summarise()` regrouping output by &#39;model&#39; (override with `.groups` argument)</code></pre>
+<div class="sourceCode" id="cb399"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb399-1"><a href="ch-dataTransformation.html#cb399-1" aria-hidden="true" tabindex="-1"></a><span class="sc">&gt;</span> mpg <span class="sc">%&gt;%</span> <span class="fu">group_by</span>(model, year) <span class="sc">%&gt;%</span> </span>
+<span id="cb399-2"><a href="ch-dataTransformation.html#cb399-2" aria-hidden="true" tabindex="-1"></a><span class="sc">+</span>   <span class="fu">summarize</span>(<span class="at">count=</span><span class="fu">n</span>(), <span class="at">mean=</span><span class="fu">mean</span>(cty)) <span class="sc">%&gt;%</span></span>
+<span id="cb399-3"><a href="ch-dataTransformation.html#cb399-3" aria-hidden="true" tabindex="-1"></a><span class="sc">+</span>   <span class="fu">filter</span>(mean <span class="sc">&gt;=</span> <span class="dv">22</span>)</span></code></pre></div>
+<pre><code>`summarise()` has grouped output by &#39;model&#39;. You can override using the `.groups` argument.</code></pre>
 <pre><code># A tibble: 5 x 4
 # Groups:   model [3]
   model       year count  mean
@@ -1071,9 +1074,9 @@ attr(,&quot;class&quot;)
 <p>불필요하게 데이터를 기술하는 부분이 사라져서 각 단계에서 수행하는 작업이 무엇인지 명확하게 들어나고 불필요한 중간 변수를 만들지 않아도 되므로 파이프 연산자는 매우 편리하다.</p>
 <p>그런데 파이프 연산자를 사용하려면 앞의 함수의 결과가 뒤의 함수의 첫 인수로 사용하기 적절한 형태이어야 한다. <code>dplyr</code> 패키지의 주요 함수들은 정돈 데이터 형식으로 데이터의 결과를 반환하고, 첫 인수가 정돈 데이터 형식의 데이터로 간주한다.</p>
 <p>파이프 연산자를 사용할 때 주의할 점은 여러 줄로 명령을 기술할 때, 파이프 연산자로 중간 문장이 종료되어야 한다는 것이다. 그래야 아직 문장이 완료되지 않았다는 것을 이해하여 다음 단계의 명령이 입력되기를 기다린다. 다음처럼 기술하면 R은 명령 입력이 중간에 완료된 것으로 보고 잘못된 결과를 출력한다.</p>
-<div class="sourceCode" id="cb379"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb379-1"><a href="ch-dataTransformation.html#cb379-1" aria-hidden="true"></a><span class="op">&gt;</span><span class="st"> </span>b <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">group_by</span>(model) <span class="op">%&gt;%</span><span class="st"> </span></span>
-<span id="cb379-2"><a href="ch-dataTransformation.html#cb379-2" aria-hidden="true"></a><span class="op">+</span><span class="st">   </span><span class="kw">summarize</span>(<span class="dt">count=</span><span class="kw">n</span>(), <span class="dt">mean=</span><span class="kw">mean</span>(cty)) </span>
-<span id="cb379-3"><a href="ch-dataTransformation.html#cb379-3" aria-hidden="true"></a><span class="op">+</span><span class="st">   </span><span class="op">%&gt;%</span><span class="st"> </span><span class="kw">filter</span>(mean <span class="op">&gt;=</span><span class="st"> </span><span class="dv">20</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb402"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb402-1"><a href="ch-dataTransformation.html#cb402-1" aria-hidden="true" tabindex="-1"></a><span class="sc">&gt;</span> b <span class="sc">%&gt;%</span> <span class="fu">group_by</span>(model) <span class="sc">%&gt;%</span> </span>
+<span id="cb402-2"><a href="ch-dataTransformation.html#cb402-2" aria-hidden="true" tabindex="-1"></a><span class="sc">+</span>   <span class="fu">summarize</span>(<span class="at">count=</span><span class="fu">n</span>(), <span class="at">mean=</span><span class="fu">mean</span>(cty)) </span>
+<span id="cb402-3"><a href="ch-dataTransformation.html#cb402-3" aria-hidden="true" tabindex="-1"></a><span class="sc">+</span>   <span class="sc">%&gt;%</span> <span class="fu">filter</span>(mean <span class="sc">&gt;=</span> <span class="dv">20</span>)</span></code></pre></div>
 <pre><code>Error: &lt;text&gt;:3:3: 예기치 않은 SPECIAL입니다
 2:   summarize(count=n(), mean=mean(cty)) 
 3:   %&gt;%
@@ -1082,15 +1085,14 @@ attr(,&quot;class&quot;)
 <div id="ungroup" class="section level3" number="4.10.3">
 <h3><span class="header-section-number">4.10.3</span> <code>ungroup()</code></h3>
 <p>파이프 연산자를 사용하여 데이터를 전달하다 보면 데이터가 그룹화 된 것을 중간 단계에서 해제하고 싶을 때가 있다. 이 경우에는 <code>ungroup()</code> 명령을 사용한다.</p>
-<div class="sourceCode" id="cb381"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb381-1"><a href="ch-dataTransformation.html#cb381-1" aria-hidden="true"></a><span class="op">&gt;</span><span class="st"> </span>byModel &lt;-<span class="st"> </span>b <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">group_by</span>(model) </span>
-<span id="cb381-2"><a href="ch-dataTransformation.html#cb381-2" aria-hidden="true"></a><span class="op">&gt;</span><span class="st"> </span>byModel <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">summarize</span>(<span class="dt">count=</span><span class="kw">n</span>())</span></code></pre></div>
-<pre><code>`summarise()` ungrouping output (override with `.groups` argument)</code></pre>
+<div class="sourceCode" id="cb404"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb404-1"><a href="ch-dataTransformation.html#cb404-1" aria-hidden="true" tabindex="-1"></a><span class="sc">&gt;</span> byModel <span class="ot">&lt;-</span> b <span class="sc">%&gt;%</span> <span class="fu">group_by</span>(model) </span>
+<span id="cb404-2"><a href="ch-dataTransformation.html#cb404-2" aria-hidden="true" tabindex="-1"></a><span class="sc">&gt;</span> byModel <span class="sc">%&gt;%</span> <span class="fu">summarize</span>(<span class="at">count=</span><span class="fu">n</span>())</span></code></pre></div>
 <pre><code># A tibble: 2 x 2
   model   count
   &lt;chr&gt;   &lt;int&gt;
 1 sonata      3
 2 tiburon     5</code></pre>
-<div class="sourceCode" id="cb384"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb384-1"><a href="ch-dataTransformation.html#cb384-1" aria-hidden="true"></a><span class="op">&gt;</span><span class="st"> </span>byModel <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">ungroup</span>() <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">summarize</span>(<span class="dt">count=</span><span class="kw">n</span>())</span></code></pre></div>
+<div class="sourceCode" id="cb406"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb406-1"><a href="ch-dataTransformation.html#cb406-1" aria-hidden="true" tabindex="-1"></a><span class="sc">&gt;</span> byModel <span class="sc">%&gt;%</span> <span class="fu">ungroup</span>() <span class="sc">%&gt;%</span> <span class="fu">summarize</span>(<span class="at">count=</span><span class="fu">n</span>())</span></code></pre></div>
 <pre><code># A tibble: 1 x 1
   count
   &lt;int&gt;
@@ -1134,6 +1136,7 @@ gitbook.start({
 "weibo": false,
 "instapaper": false,
 "vk": false,
+"whatsapp": false,
 "all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
 },
 "fontsettings": {

@@ -4,27 +4,27 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Chapter 3 R 데이터 구조 | 경영데이터분석 참고자료 - R 기초</title>
-  <meta name="description" content="이 책은 경영데이터분석의 참고자료로 활용하기 위해 제작되었습니다." />
-  <meta name="generator" content="bookdown 0.20 and GitBook 2.6.7" />
+  <title>Chapter 3 R 데이터 구조 | 경영빅데이터분석 참고자료 - R 기초</title>
+  <meta name="description" content="이 책은 경영빅데이터분석의 참고자료로 활용하기 위해 제작되었습니다." />
+  <meta name="generator" content="bookdown 0.22 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Chapter 3 R 데이터 구조 | 경영데이터분석 참고자료 - R 기초" />
+  <meta property="og:title" content="Chapter 3 R 데이터 구조 | 경영빅데이터분석 참고자료 - R 기초" />
   <meta property="og:type" content="book" />
   
   
-  <meta property="og:description" content="이 책은 경영데이터분석의 참고자료로 활용하기 위해 제작되었습니다." />
+  <meta property="og:description" content="이 책은 경영빅데이터분석의 참고자료로 활용하기 위해 제작되었습니다." />
   
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Chapter 3 R 데이터 구조 | 경영데이터분석 참고자료 - R 기초" />
+  <meta name="twitter:title" content="Chapter 3 R 데이터 구조 | 경영빅데이터분석 참고자료 - R 기초" />
   
-  <meta name="twitter:description" content="이 책은 경영데이터분석의 참고자료로 활용하기 위해 제작되었습니다." />
+  <meta name="twitter:description" content="이 책은 경영빅데이터분석의 참고자료로 활용하기 위해 제작되었습니다." />
   
 
 <meta name="author" content="김길환" />
 
 
-<meta name="date" content="2021-03-19" />
+<meta name="date" content="2022-03-14" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -33,7 +33,7 @@
   
 <link rel="prev" href="ch-RDataBasic.html"/>
 <link rel="next" href="ch-dataTransformation.html"/>
-<script src="libs/header-attrs-2.3/header-attrs.js"></script>
+<script src="libs/header-attrs-2.8/header-attrs.js"></script>
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
@@ -51,12 +51,15 @@
 
 
 
+<link href="libs/anchor-sections-1.0.1/anchor-sections.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.0.1/anchor-sections.js"></script>
 
 
 <style type="text/css">
 pre > code.sourceCode { white-space: pre; position: relative; }
 pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
 pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
 code.sourceCode > span { color: inherit; text-decoration: inherit; }
 pre.sourceCode { margin: 0; }
 @media screen {
@@ -117,6 +120,7 @@ code span.vs { color: #4070a0; } /* VerbatimString */
 code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
 </style>
 
+
 <link rel="stylesheet" href="style.css" type="text/css" />
 </head>
 
@@ -130,7 +134,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
       <nav role="navigation">
 
 <ul class="summary">
-<li><a href="./">경영데이터분석-R기초</a></li>
+<li><a href="./">경영빅데이터분석-R기초</a></li>
 
 <li class="divider"></li>
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>일러두기</a></li>
@@ -331,7 +335,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
       <div class="body-inner">
         <div class="book-header" role="navigation">
           <h1>
-            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">경영데이터분석 참고자료 - R 기초</a>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">경영빅데이터분석 참고자료 - R 기초</a>
           </h1>
         </div>
 
@@ -355,7 +359,7 @@ Figure 3.1: R 데이터의 기본 구조
 <p>벡터는 R의 통계 분석에서 가장 중요한 데이터 형식이다. 다른 범용의 프로그래밍 언어와는 다르게 R은 벡터 단위의 연산 및 조작을 지원함으로써 통계 데이터 분석에 매우 편리한 이점을 제공한다.</p>
 <div id="벡터는-동일-형식-데이터의-나열" class="section level3" number="3.1.1">
 <h3><span class="header-section-number">3.1.1</span> 벡터는 동일 형식 데이터의 나열</h3>
-<p>벡터는 50명 학생들의 키 데이터 (162.1, 175.8, 183.2, …), 50명 학생들의 성별 데이터 (“여”, “남”, “남”, …)처럼 한가지 형식의 데이터를 나열한 것이다. 여기서 형식이란 1과 2 등의 숫자 형식, “여”와 “남” 등의 문자열 형식, TRUE와 FALSE의 논리값 형식을 의미한다. 숫자 벡터에는 숫자 데이터만 나열되고, 문자열 벡터나 논리값 벡터에는 각각 문자열과 논리값만이 나열된다.</p>
+<p>벡터는 50명 학생들의 키 데이터 (162.1, 175.8, 183.2, …), 50명 학생들의 성별 데이터 (“여,” “남,” “남,” …)처럼 한가지 형식의 데이터를 나열한 것이다. 여기서 형식이란 1과 2 등의 숫자 형식, “여”와 “남” 등의 문자열 형식, TRUE와 FALSE의 논리값 형식을 의미한다. 숫자 벡터에는 숫자 데이터만 나열되고, 문자열 벡터나 논리값 벡터에는 각각 문자열과 논리값만이 나열된다.</p>
 <p>벡터가 포함하고 있는 데이터의 개수를 벡터의 길이 또는 크기라고 한다. 따라서 50 명 학생의 키 데이터는 길이가 50인 벡터가 된다. 사실 R은 벡터가 아닌 숫자, 문자, 논리값은 없다. 10이라는 숫자 하나도 사실은 길이가 1인 숫자 벡터이고, 문자열도 논리값도 길이가 1인 문자 벡터와 논리 벡터일 뿐이다.</p>
 <p>벡터를 사용하기 위해서는 벡터를 생성하는 법, 벡터를 연산하는 법, 벡터의 일부분을 필터링/인덱싱하는 법을 배워야 한다.</p>
 </div>
@@ -365,22 +369,22 @@ Figure 3.1: R 데이터의 기본 구조
 <h4><span class="header-section-number">3.1.2.1</span> <code>c()</code> 함수를 이용한 벡터의 생성</h4>
 <p>벡터는 기본적으로 벡터의 요소를 <code>c()</code> 함수로 연결하여 만든다.
 다음 예처럼 1, 3, 5라는 숫자를 차례로 연결하여 벡터를 만들고 싶으면, 다음처럼 <code>c()</code> 함수에 각 요소를 차례로 인수로 기술한다.</p>
-<div class="sourceCode" id="cb159"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb159-1"><a href="ch-R-Data-Structure.html#cb159-1" aria-hidden="true"></a><span class="op">&gt;</span><span class="st"> </span>x &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dv">1</span>, <span class="dv">3</span>, <span class="dv">5</span>)</span>
-<span id="cb159-2"><a href="ch-R-Data-Structure.html#cb159-2" aria-hidden="true"></a><span class="op">&gt;</span><span class="st"> </span>x</span></code></pre></div>
+<div class="sourceCode" id="cb159"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb159-1"><a href="ch-R-Data-Structure.html#cb159-1" aria-hidden="true" tabindex="-1"></a><span class="sc">&gt;</span> x <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">3</span>, <span class="dv">5</span>)</span>
+<span id="cb159-2"><a href="ch-R-Data-Structure.html#cb159-2" aria-hidden="true" tabindex="-1"></a><span class="sc">&gt;</span> x</span></code></pre></div>
 <pre><code>[1] 1 3 5</code></pre>
 <p>다음 예처럼 문자열이나 논리값을 연결하여 문자열 벡터와 논리값 벡터를 만들 수 있다. 아울러 연결하고자 하는 요소의 개수는 원하는 만큼 나열할 수 있다.</p>
-<div class="sourceCode" id="cb161"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb161-1"><a href="ch-R-Data-Structure.html#cb161-1" aria-hidden="true"></a><span class="op">&gt;</span><span class="st"> </span>y &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;빨강&quot;</span>, <span class="st">&quot;파랑&quot;</span>, <span class="st">&quot;노랑&quot;</span>)</span>
-<span id="cb161-2"><a href="ch-R-Data-Structure.html#cb161-2" aria-hidden="true"></a><span class="op">&gt;</span><span class="st"> </span>y</span></code></pre></div>
+<div class="sourceCode" id="cb161"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb161-1"><a href="ch-R-Data-Structure.html#cb161-1" aria-hidden="true" tabindex="-1"></a><span class="sc">&gt;</span> y <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;빨강&quot;</span>, <span class="st">&quot;파랑&quot;</span>, <span class="st">&quot;노랑&quot;</span>)</span>
+<span id="cb161-2"><a href="ch-R-Data-Structure.html#cb161-2" aria-hidden="true" tabindex="-1"></a><span class="sc">&gt;</span> y</span></code></pre></div>
 <pre><code>[1] &quot;빨강&quot; &quot;파랑&quot; &quot;노랑&quot;</code></pre>
-<div class="sourceCode" id="cb163"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb163-1"><a href="ch-R-Data-Structure.html#cb163-1" aria-hidden="true"></a><span class="op">&gt;</span><span class="st"> </span>z &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="ot">TRUE</span>, <span class="ot">FALSE</span>, <span class="ot">FALSE</span>, <span class="ot">TRUE</span>)</span>
-<span id="cb163-2"><a href="ch-R-Data-Structure.html#cb163-2" aria-hidden="true"></a><span class="op">&gt;</span><span class="st"> </span>z</span></code></pre></div>
+<div class="sourceCode" id="cb163"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb163-1"><a href="ch-R-Data-Structure.html#cb163-1" aria-hidden="true" tabindex="-1"></a><span class="sc">&gt;</span> z <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="cn">TRUE</span>, <span class="cn">FALSE</span>, <span class="cn">FALSE</span>, <span class="cn">TRUE</span>)</span>
+<span id="cb163-2"><a href="ch-R-Data-Structure.html#cb163-2" aria-hidden="true" tabindex="-1"></a><span class="sc">&gt;</span> z</span></code></pre></div>
 <pre><code>[1]  TRUE FALSE FALSE  TRUE</code></pre>
 <p><code>c()</code> 함수는 요소를 하나씩 연결하는 것뿐만 아니라 여러 개의 요소를 가진 벡터들을 연결하여 더 큰 벡터를 만들 수도 있다.</p>
-<div class="sourceCode" id="cb165"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb165-1"><a href="ch-R-Data-Structure.html#cb165-1" aria-hidden="true"></a><span class="op">&gt;</span><span class="st"> </span>w &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dv">7</span>, <span class="dv">9</span>); w</span></code></pre></div>
+<div class="sourceCode" id="cb165"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb165-1"><a href="ch-R-Data-Structure.html#cb165-1" aria-hidden="true" tabindex="-1"></a><span class="sc">&gt;</span> w <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">7</span>, <span class="dv">9</span>); w</span></code></pre></div>
 <pre><code>[1] 7 9</code></pre>
-<div class="sourceCode" id="cb167"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb167-1"><a href="ch-R-Data-Structure.html#cb167-1" aria-hidden="true"></a><span class="op">&gt;</span><span class="st"> </span><span class="kw">c</span>(x, w)</span></code></pre></div>
+<div class="sourceCode" id="cb167"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb167-1"><a href="ch-R-Data-Structure.html#cb167-1" aria-hidden="true" tabindex="-1"></a><span class="sc">&gt;</span> <span class="fu">c</span>(x, w)</span></code></pre></div>
 <pre><code>[1] 1 3 5 7 9</code></pre>
-<div class="sourceCode" id="cb169"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb169-1"><a href="ch-R-Data-Structure.html#cb169-1" aria-hidden="true"></a><span class="op">&gt;</span><span class="st"> </span><span class="kw">c</span>(w, x)</span></code></pre></div>
+<div class="sourceCode" id="cb169"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb169-1"><a href="ch-R-Data-Structure.html#cb169-1" aria-hidden="true" tabindex="-1"></a><span class="sc">&gt;</span> <span class="fu">c</span>(w, x)</span></code></pre></div>
 <pre><code>[1] 7 9 1 3 5</code></pre>
 <p>앞의 예는 세 요소를 가진 벡터 <code>x</code>와 두 요소를 가진 벡터 <code>w</code>를 연결하여 새로운 벡터를 만든 예이다. 나열 순서에 따라 새롭게 만들어지는 벡터의 요소들의 위치가 어떻게 되는지 확인해 보라. 이론적으로 말하자면 사실 앞서 본 숫자 1, 3, 5도 요소가 하나인 벡터이고, 요소가 하나짜리 벡터를 연결하여 <code>x</code>와 <code>w</code>라는 벡터를 만든 것이다.</p>
 </div>
@@ -388,91 +392,105 @@ Figure 3.1: R 데이터의 기본 구조
 <h4><span class="header-section-number">3.1.2.2</span> 수열 패턴을 이용한 숫자 벡터의 생성</h4>
 <p>1에서부터 10까지의 자연수로 이루어진 벡터를 만든다고 해 보자. 앞에서 배운 <code>c()</code> 함수를 이용하여 이 벡터를 만드려면 10개의 요소를 일일이 나열하여야 하므로 매우 번거로운 작업이 된다. 이럴 때 사용할 수 있는 것이 수열 패턴을 이용하여 숫자 벡터를 만드는 것이다.</p>
 <p><code>:</code> 연산자를 이용하면 다음처럼 하나씩 증가하거나 감소하는 수열 패턴으로 벡터를 만들 수 있다. <code>:</code> 연산자 앞에 기술된 숫자를 시작으로 하여 뒤에 기술된 숫자가 앞에 기술된 숫자보다 크면 하나씩 증가하는, 작으면 감소하는 패턴을 만든다.</p>
-<div class="sourceCode" id="cb171"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb171-1"><a href="ch-R-Data-Structure.html#cb171-1" aria-hidden="true"></a><span class="op">&gt;</span><span class="st"> </span><span class="dv">1</span><span class="op">:</span><span class="dv">10</span></span></code></pre></div>
+<div class="sourceCode" id="cb171"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb171-1"><a href="ch-R-Data-Structure.html#cb171-1" aria-hidden="true" tabindex="-1"></a><span class="sc">&gt;</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">10</span></span></code></pre></div>
 <pre><code> [1]  1  2  3  4  5  6  7  8  9 10</code></pre>
-<div class="sourceCode" id="cb173"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb173-1"><a href="ch-R-Data-Structure.html#cb173-1" aria-hidden="true"></a><span class="op">&gt;</span><span class="st"> </span><span class="dv">20</span><span class="op">:</span><span class="dv">11</span></span></code></pre></div>
+<div class="sourceCode" id="cb173"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb173-1"><a href="ch-R-Data-Structure.html#cb173-1" aria-hidden="true" tabindex="-1"></a><span class="sc">&gt;</span> <span class="dv">20</span><span class="sc">:</span><span class="dv">11</span></span></code></pre></div>
 <pre><code> [1] 20 19 18 17 16 15 14 13 12 11</code></pre>
 <p><code>seq()</code> 함수를 사용하면 수열의 시작점(<code>from</code>)과 종료점(<code>to</code>), 그리고 수열이 얼만큼 증가 또는 감소될 지(<code>by</code>)를 지정할 수 있다.</p>
-<div class="sourceCode" id="cb175"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb175-1"><a href="ch-R-Data-Structure.html#cb175-1" aria-hidden="true"></a><span class="op">&gt;</span><span class="st"> </span><span class="kw">seq</span>(<span class="dt">from=</span><span class="dv">1</span>, <span class="dt">to=</span><span class="dv">10</span>, <span class="dt">by=</span><span class="dv">2</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb175"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb175-1"><a href="ch-R-Data-Structure.html#cb175-1" aria-hidden="true" tabindex="-1"></a><span class="sc">&gt;</span> <span class="fu">seq</span>(<span class="at">from=</span><span class="dv">1</span>, <span class="at">to=</span><span class="dv">10</span>, <span class="at">by=</span><span class="dv">2</span>)</span></code></pre></div>
 <pre><code>[1] 1 3 5 7 9</code></pre>
-<div class="sourceCode" id="cb177"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb177-1"><a href="ch-R-Data-Structure.html#cb177-1" aria-hidden="true"></a><span class="op">&gt;</span><span class="st"> </span><span class="kw">seq</span>(<span class="dt">from=</span><span class="dv">11</span>, <span class="dt">to=</span><span class="dv">100</span>, <span class="dt">by=</span><span class="dv">11</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb177"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb177-1"><a href="ch-R-Data-Structure.html#cb177-1" aria-hidden="true" tabindex="-1"></a><span class="sc">&gt;</span> <span class="fu">seq</span>(<span class="at">from=</span><span class="dv">11</span>, <span class="at">to=</span><span class="dv">100</span>, <span class="at">by=</span><span class="dv">11</span>)</span></code></pre></div>
 <pre><code>[1] 11 22 33 44 55 66 77 88 99</code></pre>
-<div class="sourceCode" id="cb179"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb179-1"><a href="ch-R-Data-Structure.html#cb179-1" aria-hidden="true"></a><span class="op">&gt;</span><span class="st"> </span><span class="kw">seq</span>(<span class="dt">from=</span><span class="dv">100</span>, <span class="dt">to=</span><span class="dv">0</span>, <span class="dt">by=</span><span class="op">-</span><span class="dv">15</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb179"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb179-1"><a href="ch-R-Data-Structure.html#cb179-1" aria-hidden="true" tabindex="-1"></a><span class="sc">&gt;</span> <span class="fu">seq</span>(<span class="at">from=</span><span class="dv">100</span>, <span class="at">to=</span><span class="dv">0</span>, <span class="at">by=</span><span class="sc">-</span><span class="dv">15</span>)</span></code></pre></div>
 <pre><code>[1] 100  85  70  55  40  25  10</code></pre>
 </div>
 <div id="sec:logicalVectorFromComparisons" class="section level4" number="3.1.2.3">
 <h4><span class="header-section-number">3.1.2.3</span> 비교 연산을 이용한 논리값 벡터 만들기</h4>
 <p>논리값 벡터는 자주 비교 연산을 이용하여 만들어진다. 예를 들어 중간고사 점수가 80점 이상인 학생은 TRUE, 나머지 학생은 FALSE로 하는 논리값 벡터를 만든다고 해 보자. 다음처럼 학생의 점수가 <code>scores</code>라는 변수에 들어가 있다고 해 보자. 그러면 다음처럼 비교 연산을 이용하여 간단히 논리값 벡터를 만들 수 있다.</p>
-<div class="sourceCode" id="cb181"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb181-1"><a href="ch-R-Data-Structure.html#cb181-1" aria-hidden="true"></a><span class="op">&gt;</span><span class="st"> </span>scores &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dv">75</span>, <span class="dv">92</span>, <span class="dv">88</span>, <span class="dv">60</span>, <span class="dv">80</span>)</span>
-<span id="cb181-2"><a href="ch-R-Data-Structure.html#cb181-2" aria-hidden="true"></a><span class="op">&gt;</span><span class="st"> </span>scores</span></code></pre></div>
+<div class="sourceCode" id="cb181"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb181-1"><a href="ch-R-Data-Structure.html#cb181-1" aria-hidden="true" tabindex="-1"></a><span class="sc">&gt;</span> scores <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">75</span>, <span class="dv">92</span>, <span class="dv">88</span>, <span class="dv">60</span>, <span class="dv">80</span>)</span>
+<span id="cb181-2"><a href="ch-R-Data-Structure.html#cb181-2" aria-hidden="true" tabindex="-1"></a><span class="sc">&gt;</span> scores</span></code></pre></div>
 <pre><code>[1] 75 92 88 60 80</code></pre>
-<div class="sourceCode" id="cb183"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb183-1"><a href="ch-R-Data-Structure.html#cb183-1" aria-hidden="true"></a><span class="op">&gt;</span><span class="st"> </span>scores <span class="op">&gt;=</span><span class="st"> </span><span class="dv">80</span></span></code></pre></div>
+<div class="sourceCode" id="cb183"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb183-1"><a href="ch-R-Data-Structure.html#cb183-1" aria-hidden="true" tabindex="-1"></a><span class="sc">&gt;</span> scores <span class="sc">&gt;=</span> <span class="dv">80</span></span></code></pre></div>
 <pre><code>[1] FALSE  TRUE  TRUE FALSE  TRUE</code></pre>
-<div class="sourceCode" id="cb185"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb185-1"><a href="ch-R-Data-Structure.html#cb185-1" aria-hidden="true"></a><span class="op">&gt;</span><span class="st"> </span>scores <span class="op">&gt;</span><span class="st"> </span><span class="dv">80</span></span></code></pre></div>
+<div class="sourceCode" id="cb185"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb185-1"><a href="ch-R-Data-Structure.html#cb185-1" aria-hidden="true" tabindex="-1"></a><span class="sc">&gt;</span> scores <span class="sc">&gt;</span> <span class="dv">80</span></span></code></pre></div>
 <pre><code>[1] FALSE  TRUE  TRUE FALSE FALSE</code></pre>
 <p>논리값 연산을 이용하면 더 복잡한 조건의 요소만 TRUE가 되도록 논리값 벡터를 만들 수 있다. 다음은 80점 이상이지만 90점 미만인 학생만 TRUE로 만든 예이다.</p>
-<div class="sourceCode" id="cb187"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb187-1"><a href="ch-R-Data-Structure.html#cb187-1" aria-hidden="true"></a><span class="op">&gt;</span><span class="st"> </span>scores <span class="op">&gt;=</span><span class="st"> </span><span class="dv">80</span> <span class="op">&amp;</span><span class="st">  </span>scores <span class="op">&lt;</span><span class="st"> </span><span class="dv">90</span></span></code></pre></div>
+<div class="sourceCode" id="cb187"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb187-1"><a href="ch-R-Data-Structure.html#cb187-1" aria-hidden="true" tabindex="-1"></a><span class="sc">&gt;</span> scores <span class="sc">&gt;=</span> <span class="dv">80</span> <span class="sc">&amp;</span>  scores <span class="sc">&lt;</span> <span class="dv">90</span></span></code></pre></div>
 <pre><code>[1] FALSE FALSE  TRUE FALSE  TRUE</code></pre>
 <p>그런데 앞의 비교 연산의 왼편에 있는 <code>scores</code>는 다섯 개의 요소를 가지고 있지만, 오른편에는 오직 하나의 숫자로만 이루어진 벡터가 있다. <strong>R</strong>은 연산을 해야 하는 벡터의 길이가 다르면 <em>요소의 재활용</em>이라는 원리를 사용하여 연산을 수행한다. 이에 대해서는 벡터의 연산에 대해서 논의할 때 살펴볼 것이다.</p>
 <p>숫자 벡터뿐만 아니라 문자열 벡터를 비교하여 논리값 벡터를 만들 수도 있다.
 문자열 벡터는 사전의 나열 순으로 크기를 비교한다. 사전에서 뒤에 나오는 문자일수록 더 큰 문자로 간준하다.</p>
-<div class="sourceCode" id="cb189"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb189-1"><a href="ch-R-Data-Structure.html#cb189-1" aria-hidden="true"></a><span class="op">&gt;</span><span class="st"> </span>fruits &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;apple&quot;</span>, <span class="st">&quot;banana&quot;</span>, <span class="st">&quot;pear&quot;</span>)</span>
-<span id="cb189-2"><a href="ch-R-Data-Structure.html#cb189-2" aria-hidden="true"></a><span class="op">&gt;</span><span class="st"> </span>fruits <span class="op">&gt;</span><span class="st"> &quot;b&quot;</span></span></code></pre></div>
+<div class="sourceCode" id="cb189"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb189-1"><a href="ch-R-Data-Structure.html#cb189-1" aria-hidden="true" tabindex="-1"></a><span class="sc">&gt;</span> fruits <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;apple&quot;</span>, <span class="st">&quot;banana&quot;</span>, <span class="st">&quot;pear&quot;</span>)</span>
+<span id="cb189-2"><a href="ch-R-Data-Structure.html#cb189-2" aria-hidden="true" tabindex="-1"></a><span class="sc">&gt;</span> fruits <span class="sc">&gt;</span> <span class="st">&quot;b&quot;</span></span></code></pre></div>
 <pre><code>[1] FALSE  TRUE  TRUE</code></pre>
-<div class="sourceCode" id="cb191"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb191-1"><a href="ch-R-Data-Structure.html#cb191-1" aria-hidden="true"></a><span class="op">&gt;</span><span class="st"> </span>fruits <span class="op">&gt;</span><span class="st"> &quot;banana&quot;</span></span></code></pre></div>
+<div class="sourceCode" id="cb191"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb191-1"><a href="ch-R-Data-Structure.html#cb191-1" aria-hidden="true" tabindex="-1"></a><span class="sc">&gt;</span> fruits <span class="sc">&gt;</span> <span class="st">&quot;banana&quot;</span></span></code></pre></div>
 <pre><code>[1] FALSE FALSE  TRUE</code></pre>
-<div class="sourceCode" id="cb193"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb193-1"><a href="ch-R-Data-Structure.html#cb193-1" aria-hidden="true"></a><span class="op">&gt;</span><span class="st"> </span>fruits <span class="op">&gt;=</span><span class="st"> &quot;banana&quot;</span></span></code></pre></div>
+<div class="sourceCode" id="cb193"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb193-1"><a href="ch-R-Data-Structure.html#cb193-1" aria-hidden="true" tabindex="-1"></a><span class="sc">&gt;</span> fruits <span class="sc">&gt;=</span> <span class="st">&quot;banana&quot;</span></span></code></pre></div>
 <pre><code>[1] FALSE  TRUE  TRUE</code></pre>
-<div class="sourceCode" id="cb195"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb195-1"><a href="ch-R-Data-Structure.html#cb195-1" aria-hidden="true"></a><span class="op">&gt;</span><span class="st"> </span>fruits <span class="op">==</span><span class="st"> &quot;banana&quot;</span></span></code></pre></div>
+<div class="sourceCode" id="cb195"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb195-1"><a href="ch-R-Data-Structure.html#cb195-1" aria-hidden="true" tabindex="-1"></a><span class="sc">&gt;</span> fruits <span class="sc">==</span> <span class="st">&quot;banana&quot;</span></span></code></pre></div>
 <pre><code>[1] FALSE  TRUE FALSE</code></pre>
 <p>문자열의 크기와 대소 비교뿐 아니라 문자열에 특정 문자열을 패턴을 포함하고 있는지를 검사하여 논리값 벡터를 만들 수도 있다. 이를 위해 <strong>R</strong>의 기본 함수인 <code>grepl()</code> 함수를 사용할 수도 있고 <code>stringr</code> 패키지의 <code>str_detect()</code> 함수를 사용할 수 있다. 여기서는 이해가 더 쉬운 <code>stringr</code> 패키지의 <code>str_detect()</code> 함수를 이용해 문자열에서 패턴을 검출해 보자. <code>str_detect()</code> 함수를 사용하려면 <code>stringr</code> 패키지가 설치되어 있어야 한다. 다음 명령을 실행하거나 <strong>RStudio</strong>의 패키지 패널에서 <code>stringr</code>을 설치한다.</p>
-<div class="sourceCode" id="cb197"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb197-1"><a href="ch-R-Data-Structure.html#cb197-1" aria-hidden="true"></a><span class="op">&gt;</span><span class="st"> </span><span class="kw">install.packages</span>(<span class="st">&quot;stringr&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb197"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb197-1"><a href="ch-R-Data-Structure.html#cb197-1" aria-hidden="true" tabindex="-1"></a><span class="sc">&gt;</span> <span class="fu">install.packages</span>(<span class="st">&quot;stringr&quot;</span>)</span></code></pre></div>
 <p>다음은 앞의 과일 이름을 가진 문자열 벡터에서 특정 문자가 있는 요소는 TRUE, 그렇지 않은 요소는 FALSE가 되는 논리값 벡터를 만든 예이다. <code>str_detect()</code> 함수를 사용하려면 <code>stringr</code> 패키지를 먼저 <strong>R</strong> 세션에 적재하여야 한다.</p>
-<div class="sourceCode" id="cb198"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb198-1"><a href="ch-R-Data-Structure.html#cb198-1" aria-hidden="true"></a><span class="op">&gt;</span><span class="st"> </span><span class="kw">library</span>(stringr)</span>
-<span id="cb198-2"><a href="ch-R-Data-Structure.html#cb198-2" aria-hidden="true"></a><span class="op">&gt;</span><span class="st"> </span><span class="kw">str_detect</span>(fruits, <span class="st">&quot;a&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb198"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb198-1"><a href="ch-R-Data-Structure.html#cb198-1" aria-hidden="true" tabindex="-1"></a><span class="sc">&gt;</span> <span class="fu">library</span>(stringr)</span>
+<span id="cb198-2"><a href="ch-R-Data-Structure.html#cb198-2" aria-hidden="true" tabindex="-1"></a><span class="sc">&gt;</span> <span class="fu">str_detect</span>(fruits, <span class="st">&quot;a&quot;</span>)</span></code></pre></div>
 <pre><code>[1] TRUE TRUE TRUE</code></pre>
-<div class="sourceCode" id="cb200"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb200-1"><a href="ch-R-Data-Structure.html#cb200-1" aria-hidden="true"></a><span class="op">&gt;</span><span class="st"> </span><span class="kw">str_detect</span>(fruits, <span class="st">&quot;b&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb200"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb200-1"><a href="ch-R-Data-Structure.html#cb200-1" aria-hidden="true" tabindex="-1"></a><span class="sc">&gt;</span> <span class="fu">str_detect</span>(fruits, <span class="st">&quot;b&quot;</span>)</span></code></pre></div>
 <pre><code>[1] FALSE  TRUE FALSE</code></pre>
-<div class="sourceCode" id="cb202"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb202-1"><a href="ch-R-Data-Structure.html#cb202-1" aria-hidden="true"></a><span class="op">&gt;</span><span class="st"> </span><span class="kw">str_detect</span>(fruits, <span class="st">&quot;p&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb202"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb202-1"><a href="ch-R-Data-Structure.html#cb202-1" aria-hidden="true" tabindex="-1"></a><span class="sc">&gt;</span> <span class="fu">str_detect</span>(fruits, <span class="st">&quot;p&quot;</span>)</span></code></pre></div>
 <pre><code>[1]  TRUE FALSE  TRUE</code></pre>
-<div class="sourceCode" id="cb204"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb204-1"><a href="ch-R-Data-Structure.html#cb204-1" aria-hidden="true"></a><span class="op">&gt;</span><span class="st"> </span><span class="kw">str_detect</span>(fruits, <span class="st">&quot;pp&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb204"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb204-1"><a href="ch-R-Data-Structure.html#cb204-1" aria-hidden="true" tabindex="-1"></a><span class="sc">&gt;</span> <span class="fu">str_detect</span>(fruits, <span class="st">&quot;pp&quot;</span>)</span></code></pre></div>
 <pre><code>[1]  TRUE FALSE FALSE</code></pre>
-<div class="sourceCode" id="cb206"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb206-1"><a href="ch-R-Data-Structure.html#cb206-1" aria-hidden="true"></a><span class="op">&gt;</span><span class="st"> </span><span class="kw">str_detect</span>(fruits, <span class="st">&quot;pe&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb206"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb206-1"><a href="ch-R-Data-Structure.html#cb206-1" aria-hidden="true" tabindex="-1"></a><span class="sc">&gt;</span> <span class="fu">str_detect</span>(fruits, <span class="st">&quot;pe&quot;</span>)</span></code></pre></div>
 <pre><code>[1] FALSE FALSE  TRUE</code></pre>
-<div class="sourceCode" id="cb208"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb208-1"><a href="ch-R-Data-Structure.html#cb208-1" aria-hidden="true"></a><span class="op">&gt;</span><span class="st"> </span><span class="kw">str_detect</span>(fruits, <span class="st">&quot;[pe]&quot;</span>)  <span class="co"># 정규식 표현: p 또는 e를 포함한 문자열 찾기</span></span></code></pre></div>
+<div class="sourceCode" id="cb208"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb208-1"><a href="ch-R-Data-Structure.html#cb208-1" aria-hidden="true" tabindex="-1"></a><span class="sc">&gt;</span> <span class="fu">str_detect</span>(fruits, <span class="st">&quot;p[pe]&quot;</span>)  <span class="co"># 정규식 표현: p 다음에 p 또는 e를 포함한 문자열 찾기</span></span></code></pre></div>
 <pre><code>[1]  TRUE FALSE  TRUE</code></pre>
 </div>
 </div>
 <div id="sec:vectorOperation" class="section level3" number="3.1.3">
 <h3><span class="header-section-number">3.1.3</span> 벡터의 연산</h3>
 <p><strong>R</strong>에서 벡터에 대한 연산은 대부분 <em>동일 위치의 요소끼리</em> 그리고 <em>요소의 재활용</em>이라는 두 가지 원칙에 따라 수행된다. <em>동일 위치의 요소끼리</em>라는 원칙은 동일한 길이의 두 벡터가 연산이 이루어지면 같은 위치의 요소끼리 연산이 이루어 진다는 것이다.</p>
-<div class="sourceCode" id="cb210"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb210-1"><a href="ch-R-Data-Structure.html#cb210-1" aria-hidden="true"></a><span class="op">&gt;</span><span class="st"> </span>a &lt;-<span class="st"> </span><span class="dv">1</span><span class="op">:</span><span class="dv">6</span>; a</span></code></pre></div>
+<div class="sourceCode" id="cb210"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb210-1"><a href="ch-R-Data-Structure.html#cb210-1" aria-hidden="true" tabindex="-1"></a><span class="sc">&gt;</span> a <span class="ot">&lt;-</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">6</span>; a</span></code></pre></div>
 <pre><code>[1] 1 2 3 4 5 6</code></pre>
-<div class="sourceCode" id="cb212"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb212-1"><a href="ch-R-Data-Structure.html#cb212-1" aria-hidden="true"></a><span class="op">&gt;</span><span class="st"> </span>b &lt;-<span class="st"> </span><span class="kw">seq</span>(<span class="dt">from=</span><span class="dv">10</span>, <span class="dt">to=</span><span class="dv">60</span>, <span class="dt">by=</span><span class="dv">10</span>); b</span></code></pre></div>
+<div class="sourceCode" id="cb212"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb212-1"><a href="ch-R-Data-Structure.html#cb212-1" aria-hidden="true" tabindex="-1"></a><span class="sc">&gt;</span> b <span class="ot">&lt;-</span> <span class="fu">seq</span>(<span class="at">from=</span><span class="dv">10</span>, <span class="at">to=</span><span class="dv">60</span>, <span class="at">by=</span><span class="dv">10</span>); b</span></code></pre></div>
 <pre><code>[1] 10 20 30 40 50 60</code></pre>
-<div class="sourceCode" id="cb214"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb214-1"><a href="ch-R-Data-Structure.html#cb214-1" aria-hidden="true"></a><span class="op">&gt;</span><span class="st"> </span>a <span class="op">+</span><span class="st"> </span>b</span></code></pre></div>
+<div class="sourceCode" id="cb214"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb214-1"><a href="ch-R-Data-Structure.html#cb214-1" aria-hidden="true" tabindex="-1"></a><span class="sc">&gt;</span> a <span class="sc">+</span> b</span></code></pre></div>
 <pre><code>[1] 11 22 33 44 55 66</code></pre>
-<div class="sourceCode" id="cb216"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb216-1"><a href="ch-R-Data-Structure.html#cb216-1" aria-hidden="true"></a><span class="op">&gt;</span><span class="st"> </span>a <span class="op">*</span><span class="st"> </span>b</span></code></pre></div>
+<div class="sourceCode" id="cb216"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb216-1"><a href="ch-R-Data-Structure.html#cb216-1" aria-hidden="true" tabindex="-1"></a><span class="sc">&gt;</span> a <span class="sc">*</span> b</span></code></pre></div>
 <pre><code>[1]  10  40  90 160 250 360</code></pre>
 <p>숫자 벡터뿐 아니라 문자열, 논리값 벡터도 같은 원칙에 의해서 연산이 이루어진다.</p>
-<div class="sourceCode" id="cb218"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb218-1"><a href="ch-R-Data-Structure.html#cb218-1" aria-hidden="true"></a><span class="op">&gt;</span><span class="st"> </span>x</span></code></pre></div>
+<div class="sourceCode" id="cb218"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb218-1"><a href="ch-R-Data-Structure.html#cb218-1" aria-hidden="true" tabindex="-1"></a><span class="sc">&gt;</span> x</span></code></pre></div>
 <pre><code>[1] 1 3 5</code></pre>
-<div class="sourceCode" id="cb220"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb220-1"><a href="ch-R-Data-Structure.html#cb220-1" aria-hidden="true"></a><span class="op">&gt;</span><span class="st"> </span>y</span></code></pre></div>
+<div class="sourceCode" id="cb220"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb220-1"><a href="ch-R-Data-Structure.html#cb220-1" aria-hidden="true" tabindex="-1"></a><span class="sc">&gt;</span> y</span></code></pre></div>
 <pre><code>[1] &quot;빨강&quot; &quot;파랑&quot; &quot;노랑&quot;</code></pre>
-<div class="sourceCode" id="cb222"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb222-1"><a href="ch-R-Data-Structure.html#cb222-1" aria-hidden="true"></a><span class="op">&gt;</span><span class="st"> </span><span class="kw">paste</span>(y, x, <span class="dt">sep=</span><span class="st">&quot;-&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb222"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb222-1"><a href="ch-R-Data-Structure.html#cb222-1" aria-hidden="true" tabindex="-1"></a><span class="sc">&gt;</span> <span class="fu">paste</span>(y, x)</span></code></pre></div>
+<pre><code>[1] &quot;빨강 1&quot; &quot;파랑 3&quot; &quot;노랑 5&quot;</code></pre>
+<div class="sourceCode" id="cb224"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb224-1"><a href="ch-R-Data-Structure.html#cb224-1" aria-hidden="true" tabindex="-1"></a><span class="sc">&gt;</span> <span class="fu">paste</span>(y, x, <span class="at">sep=</span><span class="st">&quot;-&quot;</span>)</span></code></pre></div>
 <pre><code>[1] &quot;빨강-1&quot; &quot;파랑-3&quot; &quot;노랑-5&quot;</code></pre>
-<div class="sourceCode" id="cb224"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb224-1"><a href="ch-R-Data-Structure.html#cb224-1" aria-hidden="true"></a><span class="op">&gt;</span><span class="st"> </span><span class="kw">c</span>(<span class="ot">TRUE</span>, <span class="ot">FALSE</span>, <span class="ot">TRUE</span>) <span class="op">&amp;</span><span class="st"> </span><span class="kw">c</span>(<span class="ot">FALSE</span>, <span class="ot">FALSE</span>, <span class="ot">TRUE</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb226"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb226-1"><a href="ch-R-Data-Structure.html#cb226-1" aria-hidden="true" tabindex="-1"></a><span class="sc">&gt;</span> <span class="fu">paste</span>(y, x, <span class="at">sep=</span><span class="st">&quot;&quot;</span>)</span></code></pre></div>
+<pre><code>[1] &quot;빨강1&quot; &quot;파랑3&quot; &quot;노랑5&quot;</code></pre>
+<div class="sourceCode" id="cb228"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb228-1"><a href="ch-R-Data-Structure.html#cb228-1" aria-hidden="true" tabindex="-1"></a><span class="sc">&gt;</span> <span class="fu">paste</span>(y, x, <span class="at">sep=</span><span class="st">&quot;/&quot;</span>)</span></code></pre></div>
+<pre><code>[1] &quot;빨강/1&quot; &quot;파랑/3&quot; &quot;노랑/5&quot;</code></pre>
+<div class="sourceCode" id="cb230"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb230-1"><a href="ch-R-Data-Structure.html#cb230-1" aria-hidden="true" tabindex="-1"></a><span class="sc">&gt;</span> <span class="fu">c</span>(<span class="cn">TRUE</span>, <span class="cn">FALSE</span>, <span class="cn">TRUE</span>) <span class="sc">&amp;</span> <span class="fu">c</span>(<span class="cn">FALSE</span>, <span class="cn">FALSE</span>, <span class="cn">TRUE</span>)</span></code></pre></div>
 <pre><code>[1] FALSE FALSE  TRUE</code></pre>
-<div class="sourceCode" id="cb226"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb226-1"><a href="ch-R-Data-Structure.html#cb226-1" aria-hidden="true"></a><span class="op">&gt;</span><span class="st"> </span><span class="kw">c</span>(<span class="ot">TRUE</span>, <span class="ot">FALSE</span>, <span class="ot">TRUE</span>) <span class="op">|</span><span class="st"> </span><span class="kw">c</span>(<span class="ot">FALSE</span>, <span class="ot">FALSE</span>, <span class="ot">TRUE</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb232"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb232-1"><a href="ch-R-Data-Structure.html#cb232-1" aria-hidden="true" tabindex="-1"></a><span class="sc">&gt;</span> <span class="fu">c</span>(<span class="cn">TRUE</span>, <span class="cn">FALSE</span>, <span class="cn">TRUE</span>) <span class="sc">|</span> <span class="fu">c</span>(<span class="cn">FALSE</span>, <span class="cn">FALSE</span>, <span class="cn">TRUE</span>)</span></code></pre></div>
 <pre><code>[1]  TRUE FALSE  TRUE</code></pre>
 <p>길이가 같은 벡터는 <em>동일한 위치의 요소끼리</em> 연산이 된다면, 길이가 다른 벡터의 연산을 어떻게 이루어질까? 연산을 해야할 벡터의 길이가 서로 다르면 짧은 길이의 벡터의 요소가 반복적으로 <em>요소 재활용</em>이 되어 길이가 긴 벡터의 길이만큼 늘어난 후, <em>동일한 위치의 요소끼리</em> 연산이 수행된다.</p>
-<div class="sourceCode" id="cb228"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb228-1"><a href="ch-R-Data-Structure.html#cb228-1" aria-hidden="true"></a><span class="op">&gt;</span><span class="st"> </span>a <span class="op">+</span><span class="st"> </span><span class="kw">c</span>(<span class="dv">10</span>, <span class="dv">20</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb234"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb234-1"><a href="ch-R-Data-Structure.html#cb234-1" aria-hidden="true" tabindex="-1"></a><span class="sc">&gt;</span> a <span class="sc">+</span> <span class="fu">c</span>(<span class="dv">10</span>, <span class="dv">20</span>)</span></code></pre></div>
 <pre><code>[1] 11 22 13 24 15 26</code></pre>
-<div class="sourceCode" id="cb230"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb230-1"><a href="ch-R-Data-Structure.html#cb230-1" aria-hidden="true"></a><span class="op">&gt;</span><span class="st"> </span>a <span class="op">*</span><span class="st"> </span><span class="kw">c</span>(<span class="dv">1</span>, <span class="dv">10</span>, <span class="dv">100</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb236"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb236-1"><a href="ch-R-Data-Structure.html#cb236-1" aria-hidden="true" tabindex="-1"></a><span class="sc">&gt;</span> a <span class="sc">*</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">10</span>, <span class="dv">100</span>)</span></code></pre></div>
 <pre><code>[1]   1  20 300   4  50 600</code></pre>
-<div class="sourceCode" id="cb232"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb232-1"><a href="ch-R-Data-Structure.html#cb232-1" aria-hidden="true"></a><span class="op">&gt;</span><span class="st"> </span>a <span class="op">*</span><span class="st"> </span><span class="dv">1000</span></span></code></pre></div>
+<div class="sourceCode" id="cb238"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb238-1"><a href="ch-R-Data-Structure.html#cb238-1" aria-hidden="true" tabindex="-1"></a><span class="sc">&gt;</span> a <span class="sc">*</span> <span class="dv">1000</span></span></code></pre></div>
 <pre><code>[1] 1000 2000 3000 4000 5000 6000</code></pre>
 <p>마지막 연산은 길이가 1인 벡터가 <code>a</code>에 맞추어 6 개의 요소가 되도록 반복되어 재활용된 후 같은 위치의 요소끼리 연산이 이루어졌다. 마찬가지로 앞서 학생들의 점수를 비교 연산한 예에서도 오른편의 숫자가 학생들의 점수의 개수만큼 반복되어 비교가 이루어졌다.</p>
+<p>문자열의 연산도 마찬가지로 벡터의 재활용 원칙이 사용된다.
+요소가 하나인 <code>"["</code> 등이 <code>y</code> 벡터의 크기에 맞추어 어떻게 재활용되었는지 살펴보기 바란다.</p>
+<div class="sourceCode" id="cb240"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb240-1"><a href="ch-R-Data-Structure.html#cb240-1" aria-hidden="true" tabindex="-1"></a><span class="sc">&gt;</span> <span class="fu">paste</span>(<span class="st">&quot;[&quot;</span>, y, <span class="st">&quot;]&quot;</span>)</span></code></pre></div>
+<pre><code>[1] &quot;[ 빨강 ]&quot; &quot;[ 파랑 ]&quot; &quot;[ 노랑 ]&quot;</code></pre>
+<div class="sourceCode" id="cb242"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb242-1"><a href="ch-R-Data-Structure.html#cb242-1" aria-hidden="true" tabindex="-1"></a><span class="sc">&gt;</span> <span class="fu">paste</span>(<span class="st">&quot;[&quot;</span>, y, <span class="st">&quot;]&quot;</span>, <span class="at">sep=</span><span class="st">&quot;&quot;</span>)</span></code></pre></div>
+<pre><code>[1] &quot;[빨강]&quot; &quot;[파랑]&quot; &quot;[노랑]&quot;</code></pre>
+<div class="sourceCode" id="cb244"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb244-1"><a href="ch-R-Data-Structure.html#cb244-1" aria-hidden="true" tabindex="-1"></a><span class="sc">&gt;</span> <span class="fu">paste</span>(<span class="st">&quot;[&quot;</span>, y, x, <span class="st">&quot;]&quot;</span>, <span class="at">sep=</span><span class="st">&quot;&quot;</span>)</span></code></pre></div>
+<pre><code>[1] &quot;[빨강1]&quot; &quot;[파랑3]&quot; &quot;[노랑5]&quot;</code></pre>
 </div>
 <div id="벡터의-필터링인덱싱" class="section level3" number="3.1.4">
 <h3><span class="header-section-number">3.1.4</span> 벡터의 필터링/인덱싱</h3>
@@ -482,32 +500,56 @@ Figure 3.1: R 데이터의 기본 구조
 그런데 어떤 벡터에서 추출하고자 하는 요소가 여러 개일 수도 있다. 이 경우 추출해야할 위치를 여러 개 나열해야 하고, 이렇게 나열한 요소의 위치 정보를 인덱스 벡터라고 한다.
 물론 하나의 요소만 추출하고자 한다면 인덱스 벡터는 길이가 1이 될 것이다.</p>
 <p>벡터 필터링을 하려면 다음처럼 벡터의 이름 다음에 인덱스 벡터를 대괄호 안에 기술하면 된다.</p>
-<div class="sourceCode" id="cb234"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb234-1"><a href="ch-R-Data-Structure.html#cb234-1" aria-hidden="true"></a><span class="op">&gt;</span><span class="st"> </span>vector[index_vector]</span></code></pre></div>
+<div class="sourceCode" id="cb246"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb246-1"><a href="ch-R-Data-Structure.html#cb246-1" aria-hidden="true" tabindex="-1"></a><span class="sc">&gt;</span> vector[index_vector]</span></code></pre></div>
 <p>인덱스 벡터는 자연수 벡터, 음의 정수 벡터, 논리값 벡터, 이름 벡터의 네 가지 형태를 가질 수 있다. 이 중에서 자연수, 음의 정수, 논리값 인덱스 벡터를 각각 살펴보도록 하자.</p>
 <p><em>자연수 인덱스 벡터</em>는 벡터에서 뽑아내고자 하는 요소의 위치를 자연수로 기술하는 인덱스 벡터이다. 다음은 학생들의 성적 벡터인 <code>scores</code> 벡터에서 각 위치의 데이터를 뽑아내는 예이다.</p>
-<div class="sourceCode" id="cb235"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb235-1"><a href="ch-R-Data-Structure.html#cb235-1" aria-hidden="true"></a><span class="op">&gt;</span><span class="st"> </span>scores[<span class="dv">2</span>]</span></code></pre></div>
+<div class="sourceCode" id="cb247"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb247-1"><a href="ch-R-Data-Structure.html#cb247-1" aria-hidden="true" tabindex="-1"></a><span class="sc">&gt;</span> scores[<span class="dv">2</span>]</span></code></pre></div>
 <pre><code>[1] 92</code></pre>
-<div class="sourceCode" id="cb237"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb237-1"><a href="ch-R-Data-Structure.html#cb237-1" aria-hidden="true"></a><span class="op">&gt;</span><span class="st"> </span>scores[<span class="dv">2</span><span class="op">:</span><span class="dv">4</span>]</span></code></pre></div>
+<div class="sourceCode" id="cb249"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb249-1"><a href="ch-R-Data-Structure.html#cb249-1" aria-hidden="true" tabindex="-1"></a><span class="sc">&gt;</span> scores[<span class="dv">2</span><span class="sc">:</span><span class="dv">4</span>]</span></code></pre></div>
 <pre><code>[1] 92 88 60</code></pre>
-<div class="sourceCode" id="cb239"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb239-1"><a href="ch-R-Data-Structure.html#cb239-1" aria-hidden="true"></a><span class="op">&gt;</span><span class="st"> </span>scores[<span class="kw">c</span>(<span class="dv">1</span>, <span class="dv">4</span>)]</span></code></pre></div>
+<div class="sourceCode" id="cb251"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb251-1"><a href="ch-R-Data-Structure.html#cb251-1" aria-hidden="true" tabindex="-1"></a><span class="sc">&gt;</span> scores[<span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">4</span>)]</span></code></pre></div>
 <pre><code>[1] 75 60</code></pre>
 <p><em>음의 정수 인덱스 벡터</em>는 벡터에서 어떤 위치의 요소만 제외하고 뽑을 때 사용하는 인덱스 벡터이다.</p>
-<div class="sourceCode" id="cb241"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb241-1"><a href="ch-R-Data-Structure.html#cb241-1" aria-hidden="true"></a><span class="op">&gt;</span><span class="st"> </span>scores[<span class="op">-</span><span class="dv">2</span>]</span></code></pre></div>
+<div class="sourceCode" id="cb253"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb253-1"><a href="ch-R-Data-Structure.html#cb253-1" aria-hidden="true" tabindex="-1"></a><span class="sc">&gt;</span> scores[<span class="sc">-</span><span class="dv">2</span>]</span></code></pre></div>
 <pre><code>[1] 75 88 60 80</code></pre>
-<div class="sourceCode" id="cb243"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb243-1"><a href="ch-R-Data-Structure.html#cb243-1" aria-hidden="true"></a><span class="op">&gt;</span><span class="st"> </span>scores[<span class="op">-</span><span class="kw">c</span>(<span class="dv">1</span>, <span class="dv">4</span>)]</span></code></pre></div>
+<div class="sourceCode" id="cb255"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb255-1"><a href="ch-R-Data-Structure.html#cb255-1" aria-hidden="true" tabindex="-1"></a><span class="sc">&gt;</span> scores[<span class="sc">-</span><span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">4</span>)]</span></code></pre></div>
 <pre><code>[1] 92 88 80</code></pre>
 <p>인덱스 벡터에서 가장 자주 사용되고 유용한 인덱스 벡터가 <em>논리값 인덱스 벡터</em>이다. <em>논리값 인덱스 벡터</em>는 뽑아내고자 하는 위치의 요소에는 TRUE, 뽑지 않은 위치의 요소에는 FALSE를 기술한다.</p>
-<div class="sourceCode" id="cb245"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb245-1"><a href="ch-R-Data-Structure.html#cb245-1" aria-hidden="true"></a><span class="op">&gt;</span><span class="st"> </span>scores[<span class="kw">c</span>(<span class="ot">TRUE</span>, <span class="ot">FALSE</span>, <span class="ot">TRUE</span>, <span class="ot">TRUE</span>, <span class="ot">FALSE</span>)]</span></code></pre></div>
+<div class="sourceCode" id="cb257"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb257-1"><a href="ch-R-Data-Structure.html#cb257-1" aria-hidden="true" tabindex="-1"></a><span class="sc">&gt;</span> scores[<span class="fu">c</span>(<span class="cn">TRUE</span>, <span class="cn">FALSE</span>, <span class="cn">TRUE</span>, <span class="cn">TRUE</span>, <span class="cn">FALSE</span>)]</span></code></pre></div>
 <pre><code>[1] 75 88 60</code></pre>
 <p><em>자연수 인덱스 벡터</em>나 <em>음의 정수 인덱스 벡터</em>와는 달리 <em>논리값 인덱스 벡터</em>는 벡터의 모든 요소에 TRUE나 FALSE가 기술되어야 한다. 만약 논리 인덱스 벡터의 길이가 원래 벡터보다 짧으면 다음처럼 벡터의 <em>요소의 재활용</em>이 인덱스 벡터에 적용된다.</p>
-<div class="sourceCode" id="cb247"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb247-1"><a href="ch-R-Data-Structure.html#cb247-1" aria-hidden="true"></a><span class="op">&gt;</span><span class="st"> </span>scores[<span class="kw">c</span>(<span class="ot">TRUE</span>, <span class="ot">FALSE</span>)]</span></code></pre></div>
+<div class="sourceCode" id="cb259"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb259-1"><a href="ch-R-Data-Structure.html#cb259-1" aria-hidden="true" tabindex="-1"></a><span class="sc">&gt;</span> scores[<span class="fu">c</span>(<span class="cn">TRUE</span>, <span class="cn">FALSE</span>)]</span></code></pre></div>
 <pre><code>[1] 75 88 80</code></pre>
 <p><em>논리값 인덱스 벡터</em>가 자주 사용되는 이유는 특정 조건에 맞는 요소만 벡터에서 뽑아낼 수 있기 때문이다. 다음은 학생 점수가 80점 이상인 학생의 데이터와 80점 이상이고 90점 미만인 학생의 데이터를 뽑아낸 예이다.</p>
-<div class="sourceCode" id="cb249"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb249-1"><a href="ch-R-Data-Structure.html#cb249-1" aria-hidden="true"></a><span class="op">&gt;</span><span class="st"> </span>scores[scores <span class="op">&gt;=</span><span class="st"> </span><span class="dv">80</span>] </span></code></pre></div>
+<div class="sourceCode" id="cb261"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb261-1"><a href="ch-R-Data-Structure.html#cb261-1" aria-hidden="true" tabindex="-1"></a><span class="sc">&gt;</span> scores[scores <span class="sc">&gt;=</span> <span class="dv">80</span>] </span></code></pre></div>
 <pre><code>[1] 92 88 80</code></pre>
-<div class="sourceCode" id="cb251"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb251-1"><a href="ch-R-Data-Structure.html#cb251-1" aria-hidden="true"></a><span class="op">&gt;</span><span class="st"> </span>scores[scores <span class="op">&gt;=</span><span class="st"> </span><span class="dv">80</span> <span class="op">&amp;</span><span class="st"> </span>scores <span class="op">&lt;</span><span class="st"> </span><span class="dv">90</span>] </span></code></pre></div>
+<div class="sourceCode" id="cb263"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb263-1"><a href="ch-R-Data-Structure.html#cb263-1" aria-hidden="true" tabindex="-1"></a><span class="sc">&gt;</span> scores[scores <span class="sc">&gt;=</span> <span class="dv">80</span> <span class="sc">&amp;</span> scores <span class="sc">&lt;</span> <span class="dv">90</span>] </span></code></pre></div>
 <pre><code>[1] 88 80</code></pre>
 <p>위의 예에서는 데이터가 5 개밖에 없으므로 자연수 인덱스 벡터를 사용하여도 필터링이 가능하다. 그러나 데이터가 수백, 수천개가 된다고 상상해 보자. 그러면 논리값 인덱스 벡터가 얼마나 유용한 도구인지 쉽게 이해할 수 있을 것이다.</p>
+<p>문자열에 대해서도 논리값 인덱스 벡터를 사용하여 특정 문자를 포함한 문자열을 추출할 수 있다.</p>
+<div class="sourceCode" id="cb265"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb265-1"><a href="ch-R-Data-Structure.html#cb265-1" aria-hidden="true" tabindex="-1"></a><span class="sc">&gt;</span> <span class="fu">str_detect</span>(y, <span class="st">&quot;랑&quot;</span>)</span></code></pre></div>
+<pre><code>[1] FALSE  TRUE  TRUE</code></pre>
+<div class="sourceCode" id="cb267"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb267-1"><a href="ch-R-Data-Structure.html#cb267-1" aria-hidden="true" tabindex="-1"></a><span class="sc">&gt;</span> y[<span class="fu">str_detect</span>(y, <span class="st">&quot;랑&quot;</span>)]</span></code></pre></div>
+<pre><code>[1] &quot;파랑&quot; &quot;노랑&quot;</code></pre>
+<div class="sourceCode" id="cb269"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb269-1"><a href="ch-R-Data-Structure.html#cb269-1" aria-hidden="true" tabindex="-1"></a><span class="sc">&gt;</span> fruits[<span class="fu">str_detect</span>(fruits, <span class="st">&quot;e&quot;</span>)]</span></code></pre></div>
+<pre><code>[1] &quot;apple&quot; &quot;pear&quot; </code></pre>
+<p>마지막으로 <code>stringr</code> 패키지가 제공하는 <code>sentences</code>라는 문자열 벡터에서 단어 have를 가지고 있는 문장만 뽑아내 보자.</p>
+<div class="sourceCode" id="cb271"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb271-1"><a href="ch-R-Data-Structure.html#cb271-1" aria-hidden="true" tabindex="-1"></a><span class="sc">&gt;</span> <span class="fu">head</span>(sentences)  <span class="co"># 처음 6개 요소 출력</span></span></code></pre></div>
+<pre><code>[1] &quot;The birch canoe slid on the smooth planks.&quot; 
+[2] &quot;Glue the sheet to the dark blue background.&quot;
+[3] &quot;It&#39;s easy to tell the depth of a well.&quot;     
+[4] &quot;These days a chicken leg is a rare dish.&quot;   
+[5] &quot;Rice is often served in round bowls.&quot;       
+[6] &quot;The juice of lemons makes fine punch.&quot;      </code></pre>
+<div class="sourceCode" id="cb273"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb273-1"><a href="ch-R-Data-Structure.html#cb273-1" aria-hidden="true" tabindex="-1"></a><span class="sc">&gt;</span> <span class="fu">length</span>(sentences) <span class="co"># 벡터의 길이(벡터 요소 개수) 확인</span></span></code></pre></div>
+<pre><code>[1] 720</code></pre>
+<div class="sourceCode" id="cb275"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb275-1"><a href="ch-R-Data-Structure.html#cb275-1" aria-hidden="true" tabindex="-1"></a><span class="sc">&gt;</span> sentences[<span class="fu">str_detect</span>(sentences, <span class="st">&quot;have&quot;</span>)]</span></code></pre></div>
+<pre><code>[1] &quot;Pure bred poodles have curls.&quot;           
+[2] &quot;The pencils have all been used.&quot;         
+[3] &quot;Try to have the court decide the case.&quot;  
+[4] &quot;We now have a new base for shipping.&quot;    
+[5] &quot;To have is better than to wait and hope.&quot;
+[6] &quot;We don&#39;t get much money but we have fun.&quot;</code></pre>
 <p>이것으로 벡터에 대한 기본적인 사항을 다루었다. 그렇지만 이는 매우 기본적인 사항이므로 좀 더 복잡한 벡터의 조작이 필요한 독자는 R 프로그래밍의 <a href="https://kilhwan.github.io/rprogramming/ch-R-Vectors.html">R 벡터</a> 장을 참조하기 바란다.</p>
 <p>마찬가지로 행렬/배열, 리스트, 데이터 프레임 구조에 대해서도 생성, 인덱싱, 연산의 방법을 배워야 한다.</p>
 </div>
@@ -816,7 +858,7 @@ Figure 3.1: R 데이터의 기본 구조
 <p>데이터 프레임의 각 열을 선택하는 방법은 다음과 같다.</p>
 <pre><code>데이터프레임_이름$열_이름</code></pre>
 <p>다음은 <code>iris</code>라는 Fisher의 붓꽃 데이터이다. 이 데이터는 150개의 붓꽃에 대한 꽃받침(sepal)과 꽃입(petal)의 길이(length)와 두께(width)와 품종(Species)에 대한 열을 가지고 있다. 다음은 <code>head()</code> 함수로 <code>iris</code>의 앞의 6줄만 확인한 후, 꽃받침의 길이(<code>Sepal.Length</code>) 열을 뽑아낸 결과이다.</p>
-<div class="sourceCode" id="cb254"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb254-1"><a href="ch-R-Data-Structure.html#cb254-1" aria-hidden="true"></a><span class="op">&gt;</span><span class="st"> </span><span class="kw">head</span>(iris)</span></code></pre></div>
+<div class="sourceCode" id="cb278"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb278-1"><a href="ch-R-Data-Structure.html#cb278-1" aria-hidden="true" tabindex="-1"></a><span class="sc">&gt;</span> <span class="fu">head</span>(iris)</span></code></pre></div>
 <pre><code>  Sepal.Length Sepal.Width Petal.Length Petal.Width Species
 1          5.1         3.5          1.4         0.2  setosa
 2          4.9         3.0          1.4         0.2  setosa
@@ -824,7 +866,7 @@ Figure 3.1: R 데이터의 기본 구조
 4          4.6         3.1          1.5         0.2  setosa
 5          5.0         3.6          1.4         0.2  setosa
 6          5.4         3.9          1.7         0.4  setosa</code></pre>
-<div class="sourceCode" id="cb256"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb256-1"><a href="ch-R-Data-Structure.html#cb256-1" aria-hidden="true"></a><span class="op">&gt;</span><span class="st"> </span>iris<span class="op">$</span>Sepal.Length</span></code></pre></div>
+<div class="sourceCode" id="cb280"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb280-1"><a href="ch-R-Data-Structure.html#cb280-1" aria-hidden="true" tabindex="-1"></a><span class="sc">&gt;</span> iris<span class="sc">$</span>Sepal.Length</span></code></pre></div>
 <pre><code>  [1] 5.1 4.9 4.7 4.6 5.0 5.4 4.6 5.0 4.4 4.9 5.4 4.8 4.8 4.3 5.8 5.7 5.4 5.1
  [19] 5.7 5.1 5.4 5.1 4.6 5.1 4.8 5.0 5.0 5.2 5.2 4.7 4.8 5.4 5.2 5.5 4.9 5.0
  [37] 5.5 4.9 4.4 5.1 5.0 4.5 4.4 5.0 5.1 4.8 5.1 4.6 5.3 5.0 7.0 6.4 6.9 5.5
@@ -835,19 +877,19 @@ Figure 3.1: R 데이터의 기본 구조
 [127] 6.2 6.1 6.4 7.2 7.4 7.9 6.4 6.3 6.1 7.7 6.3 6.4 6.0 6.9 6.7 6.9 5.8 6.8
 [145] 6.7 6.7 6.3 6.5 6.2 5.9</code></pre>
 <p>데이터 프레임의 열은 벡터라고 했다. 그러므로 <code>$</code> 연산자로 데이터 프레임의 열을 지정하면, 데이터 프레임의 열을 벡터처럼 사용할 수 있다. 앞에서 본 꽃받침의 길이(<code>iris$Sepal.Length</code>)는 숫자 벡터이다. 그러므로 숫자 벡터에 사용되는 평균과 표준편차를 구하는 함수인 <code>mean()</code>과 <code>sd()</code> 함수를 사용할 수 있고, 숫자 벡터에서 배운 연산, 필터링을 사용할 수 있다.</p>
-<div class="sourceCode" id="cb258"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb258-1"><a href="ch-R-Data-Structure.html#cb258-1" aria-hidden="true"></a><span class="op">&gt;</span><span class="st"> </span><span class="kw">mean</span>(iris<span class="op">$</span>Sepal.Length)</span></code></pre></div>
+<div class="sourceCode" id="cb282"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb282-1"><a href="ch-R-Data-Structure.html#cb282-1" aria-hidden="true" tabindex="-1"></a><span class="sc">&gt;</span> <span class="fu">mean</span>(iris<span class="sc">$</span>Sepal.Length)</span></code></pre></div>
 <pre><code>[1] 5.843333</code></pre>
-<div class="sourceCode" id="cb260"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb260-1"><a href="ch-R-Data-Structure.html#cb260-1" aria-hidden="true"></a><span class="op">&gt;</span><span class="st"> </span><span class="kw">sd</span>(iris<span class="op">$</span>Sepal.Length)</span></code></pre></div>
+<div class="sourceCode" id="cb284"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb284-1"><a href="ch-R-Data-Structure.html#cb284-1" aria-hidden="true" tabindex="-1"></a><span class="sc">&gt;</span> <span class="fu">sd</span>(iris<span class="sc">$</span>Sepal.Length)</span></code></pre></div>
 <pre><code>[1] 0.8280661</code></pre>
-<div class="sourceCode" id="cb262"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb262-1"><a href="ch-R-Data-Structure.html#cb262-1" aria-hidden="true"></a><span class="op">&gt;</span><span class="st"> </span>iris<span class="op">$</span>Sepal.Length[iris<span class="op">$</span>Sepal.Length <span class="op">&gt;</span><span class="st"> </span><span class="dv">7</span>]</span></code></pre></div>
+<div class="sourceCode" id="cb286"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb286-1"><a href="ch-R-Data-Structure.html#cb286-1" aria-hidden="true" tabindex="-1"></a><span class="sc">&gt;</span> iris<span class="sc">$</span>Sepal.Length[iris<span class="sc">$</span>Sepal.Length <span class="sc">&gt;</span> <span class="dv">7</span>]</span></code></pre></div>
 <pre><code> [1] 7.1 7.6 7.3 7.2 7.7 7.7 7.7 7.2 7.2 7.4 7.9 7.7</code></pre>
 <p>한 가지 주의할 점은, 앞으로 볼 <strong>R</strong>의 통계분석을 위한 함수들이 사용자의 편의를 위해 분석에 사용할 데이터 프레임을 <code>data</code> 또는 <code>.data</code> 등의 인수로 지정한 후, 이 데이터 프레임의 열을 함수 안에서 지정할 때 <code>$</code> 연산자를 사용하지 않고 열의 이름만 지정하여 사용하는 경우가 있다. 예를 들어 <code>xtab()</code> 함수는 빈도표나 교차표를 구할 때 사용하는데, 다음처럼 <code>data</code> 인수에 데이터 프레임을 지정한 후 빈도를 구할 열을 <code>$</code> 연산자 없이 지정하고 있다.</p>
-<div class="sourceCode" id="cb264"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb264-1"><a href="ch-R-Data-Structure.html#cb264-1" aria-hidden="true"></a><span class="op">&gt;</span><span class="st"> </span><span class="kw">xtabs</span>(<span class="op">~</span><span class="st"> </span>Species, <span class="dt">data=</span>iris)</span></code></pre></div>
+<div class="sourceCode" id="cb288"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb288-1"><a href="ch-R-Data-Structure.html#cb288-1" aria-hidden="true" tabindex="-1"></a><span class="sc">&gt;</span> <span class="fu">xtabs</span>(<span class="sc">~</span> Species, <span class="at">data=</span>iris)</span></code></pre></div>
 <pre><code>Species
     setosa versicolor  virginica 
         50         50         50 </code></pre>
 <p>그러나 이처럼 <code>data</code> 등의 인수로 함수에서 사용할 데이터 프레임을 명확하게 지정한 경우가 아니면, 데이터 프레임의 열은 항상 <code>$</code> 연산자를 사용하여 지정해야 한다. 다음은 <code>table()</code> 함수를 사용하여 동일한 빈도표를 구한 경우이다.</p>
-<div class="sourceCode" id="cb266"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb266-1"><a href="ch-R-Data-Structure.html#cb266-1" aria-hidden="true"></a><span class="op">&gt;</span><span class="st"> </span><span class="kw">table</span>(iris<span class="op">$</span>Species)</span></code></pre></div>
+<div class="sourceCode" id="cb290"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb290-1"><a href="ch-R-Data-Structure.html#cb290-1" aria-hidden="true" tabindex="-1"></a><span class="sc">&gt;</span> <span class="fu">table</span>(iris<span class="sc">$</span>Species)</span></code></pre></div>
 <pre><code>
     setosa versicolor  virginica 
         50         50         50 </code></pre>
@@ -890,6 +932,7 @@ gitbook.start({
 "weibo": false,
 "instapaper": false,
 "vk": false,
+"whatsapp": false,
 "all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
 },
 "fontsettings": {
