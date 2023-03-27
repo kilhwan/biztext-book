@@ -6,11 +6,10 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>Chapter 5 R 데이터 시각화 기초 | 경영빅데이터분석 참고자료 - R 기초</title>
   <meta name="description" content="이 책은 경영빅데이터분석의 참고자료로 활용하기 위해 제작되었습니다." />
-  <meta name="generator" content="bookdown 0.22 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.31 and GitBook 2.6.7" />
 
   <meta property="og:title" content="Chapter 5 R 데이터 시각화 기초 | 경영빅데이터분석 참고자료 - R 기초" />
   <meta property="og:type" content="book" />
-  
   
   <meta property="og:description" content="이 책은 경영빅데이터분석의 참고자료로 활용하기 위해 제작되었습니다." />
   
@@ -24,7 +23,7 @@
 <meta name="author" content="김길환" />
 
 
-<meta name="date" content="2022-03-14" />
+<meta name="date" content="2023-03-27" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -33,8 +32,8 @@
   
 <link rel="prev" href="ch-dataTransformation.html"/>
 <link rel="next" href="ch-R-Advanced-Data-Mgmt.html"/>
-<script src="libs/header-attrs-2.8/header-attrs.js"></script>
-<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
@@ -50,9 +49,9 @@
 
 
 
-
-<link href="libs/anchor-sections-1.0.1/anchor-sections.css" rel="stylesheet" />
-<script src="libs/anchor-sections-1.0.1/anchor-sections.js"></script>
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
 
 
 <style type="text/css">
@@ -93,7 +92,7 @@ code span.al { color: #ff0000; font-weight: bold; } /* Alert */
 code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
 code span.at { color: #7d9029; } /* Attribute */
 code span.bn { color: #40a070; } /* BaseN */
-code span.bu { } /* BuiltIn */
+code span.bu { color: #008000; } /* BuiltIn */
 code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
 code span.ch { color: #4070a0; } /* Char */
 code span.cn { color: #880000; } /* Constant */
@@ -106,7 +105,7 @@ code span.er { color: #ff0000; font-weight: bold; } /* Error */
 code span.ex { } /* Extension */
 code span.fl { color: #40a070; } /* Float */
 code span.fu { color: #06287e; } /* Function */
-code span.im { } /* Import */
+code span.im { color: #008000; font-weight: bold; } /* Import */
 code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
 code span.kw { color: #007020; font-weight: bold; } /* Keyword */
 code span.op { color: #666666; } /* Operator */
@@ -140,18 +139,18 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>일러두기</a></li>
 <li class="chapter" data-level="1" data-path="ch-intro.html"><a href="ch-intro.html"><i class="fa fa-check"></i><b>1</b> R 설치 및 시작</a>
 <ul>
-<li class="chapter" data-level="1.1" data-path="ch-intro.html"><a href="ch-intro.html#sec:Rintro"><i class="fa fa-check"></i><b>1.1</b> R 소개</a></li>
-<li class="chapter" data-level="1.2" data-path="ch-intro.html"><a href="ch-intro.html#sec:installation"><i class="fa fa-check"></i><b>1.2</b> R 설치하기</a>
+<li class="chapter" data-level="1.1" data-path="ch-intro.html"><a href="ch-intro.html#sec-Rintro"><i class="fa fa-check"></i><b>1.1</b> R 소개</a></li>
+<li class="chapter" data-level="1.2" data-path="ch-intro.html"><a href="ch-intro.html#sec-installation"><i class="fa fa-check"></i><b>1.2</b> R 설치하기</a>
 <ul>
 <li class="chapter" data-level="1.2.1" data-path="ch-intro.html"><a href="ch-intro.html#r-배포판-내려받기"><i class="fa fa-check"></i><b>1.2.1</b> R 배포판 내려받기</a></li>
 <li class="chapter" data-level="1.2.2" data-path="ch-intro.html"><a href="ch-intro.html#설치에-앞서-주의할-사항"><i class="fa fa-check"></i><b>1.2.2</b> 설치에 앞서 주의할 사항</a></li>
 <li class="chapter" data-level="1.2.3" data-path="ch-intro.html"><a href="ch-intro.html#r-설치하기"><i class="fa fa-check"></i><b>1.2.3</b> R 설치하기</a></li>
 </ul></li>
-<li class="chapter" data-level="1.3" data-path="ch-intro.html"><a href="ch-intro.html#sec:RStudio"><i class="fa fa-check"></i><b>1.3</b> RStudio</a>
+<li class="chapter" data-level="1.3" data-path="ch-intro.html"><a href="ch-intro.html#sec-RStudio"><i class="fa fa-check"></i><b>1.3</b> RStudio</a>
 <ul>
 <li class="chapter" data-level="1.3.1" data-path="ch-intro.html"><a href="ch-intro.html#rstudio-설치"><i class="fa fa-check"></i><b>1.3.1</b> RStudio 설치</a></li>
 </ul></li>
-<li class="chapter" data-level="1.4" data-path="ch-intro.html"><a href="ch-intro.html#sec:R_start"><i class="fa fa-check"></i><b>1.4</b> RStudio로 R 시작하기</a>
+<li class="chapter" data-level="1.4" data-path="ch-intro.html"><a href="ch-intro.html#sec-R-start"><i class="fa fa-check"></i><b>1.4</b> RStudio로 R 시작하기</a>
 <ul>
 <li class="chapter" data-level="1.4.1" data-path="ch-intro.html"><a href="ch-intro.html#r-콘솔과-프롬프트"><i class="fa fa-check"></i><b>1.4.1</b> R 콘솔과 프롬프트</a></li>
 <li class="chapter" data-level="1.4.2" data-path="ch-intro.html"><a href="ch-intro.html#r-콘솔-사용과-관련된-몇-가지-팁"><i class="fa fa-check"></i><b>1.4.2</b> R 콘솔 사용과 관련된 몇 가지 팁</a></li>
@@ -160,12 +159,12 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul></li>
 <li class="chapter" data-level="2" data-path="ch-RDataBasic.html"><a href="ch-RDataBasic.html"><i class="fa fa-check"></i><b>2</b> R 데이터 형식과 변수</a>
 <ul>
-<li class="chapter" data-level="2.1" data-path="ch-RDataBasic.html"><a href="ch-RDataBasic.html#sec:simpleDataType"><i class="fa fa-check"></i><b>2.1</b> 단순한 데이터 형식</a>
+<li class="chapter" data-level="2.1" data-path="ch-RDataBasic.html"><a href="ch-RDataBasic.html#sec-simpleDataType"><i class="fa fa-check"></i><b>2.1</b> 단순한 데이터 형식</a>
 <ul>
 <li class="chapter" data-level="2.1.1" data-path="ch-RDataBasic.html"><a href="ch-RDataBasic.html#r의-기본적-데이터-형식-숫자-문자열-논리값"><i class="fa fa-check"></i><b>2.1.1</b> R의 기본적 데이터 형식: 숫자, 문자열, 논리값</a></li>
 <li class="chapter" data-level="2.1.2" data-path="ch-RDataBasic.html"><a href="ch-RDataBasic.html#vs-10"><i class="fa fa-check"></i><b>2.1.2</b> 10 vs “10”</a></li>
 </ul></li>
-<li class="chapter" data-level="2.2" data-path="ch-RDataBasic.html"><a href="ch-RDataBasic.html#sec:simpleOperation"><i class="fa fa-check"></i><b>2.2</b> 숫자 연산</a>
+<li class="chapter" data-level="2.2" data-path="ch-RDataBasic.html"><a href="ch-RDataBasic.html#sec-simpleOperation"><i class="fa fa-check"></i><b>2.2</b> 숫자 연산</a>
 <ul>
 <li class="chapter" data-level="2.2.1" data-path="ch-RDataBasic.html"><a href="ch-RDataBasic.html#사칙-연산"><i class="fa fa-check"></i><b>2.2.1</b> 사칙 연산</a></li>
 <li class="chapter" data-level="2.2.2" data-path="ch-RDataBasic.html"><a href="ch-RDataBasic.html#거듭-제곱-연산"><i class="fa fa-check"></i><b>2.2.2</b> 거듭 제곱 연산</a></li>
@@ -178,7 +177,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="2.4.1" data-path="ch-RDataBasic.html"><a href="ch-RDataBasic.html#문자열-결합-연산-paste"><i class="fa fa-check"></i><b>2.4.1</b> 문자열 결합 연산: <code>paste()</code></a></li>
 <li class="chapter" data-level="2.4.2" data-path="ch-RDataBasic.html"><a href="ch-RDataBasic.html#문자열-분리-연산-strsplit"><i class="fa fa-check"></i><b>2.4.2</b> 문자열 분리 연산: <code>strsplit()</code></a></li>
 </ul></li>
-<li class="chapter" data-level="2.5" data-path="ch-RDataBasic.html"><a href="ch-RDataBasic.html#sec:variable"><i class="fa fa-check"></i><b>2.5</b> 변수와 할당</a>
+<li class="chapter" data-level="2.5" data-path="ch-RDataBasic.html"><a href="ch-RDataBasic.html#sec-variable"><i class="fa fa-check"></i><b>2.5</b> 변수와 할당</a>
 <ul>
 <li class="chapter" data-level="2.5.1" data-path="ch-RDataBasic.html"><a href="ch-RDataBasic.html#변수는-메모리-공간에-붙이는-레이블"><i class="fa fa-check"></i><b>2.5.1</b> 변수는 메모리 공간에 붙이는 레이블</a></li>
 <li class="chapter" data-level="2.5.2" data-path="ch-RDataBasic.html"><a href="ch-RDataBasic.html#변수명에-대한-규칙"><i class="fa fa-check"></i><b>2.5.2</b> 변수명에 대한 규칙</a></li>
@@ -191,7 +190,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="2.5.9" data-path="ch-RDataBasic.html"><a href="ch-RDataBasic.html#변수-목록-확인하기-ls"><i class="fa fa-check"></i><b>2.5.9</b> 변수 목록 확인하기: <code>ls()</code></a></li>
 <li class="chapter" data-level="2.5.10" data-path="ch-RDataBasic.html"><a href="ch-RDataBasic.html#변수를-할당하는-또-다른-방법-assign"><i class="fa fa-check"></i><b>2.5.10</b> 변수를 할당하는 또 다른 방법: <code>assign()</code></a></li>
 </ul></li>
-<li class="chapter" data-level="2.6" data-path="ch-RDataBasic.html"><a href="ch-RDataBasic.html#sec:useFunctions"><i class="fa fa-check"></i><b>2.6</b> 함수를 이용한 연산</a>
+<li class="chapter" data-level="2.6" data-path="ch-RDataBasic.html"><a href="ch-RDataBasic.html#sec-useFunctions"><i class="fa fa-check"></i><b>2.6</b> 함수를 이용한 연산</a>
 <ul>
 <li class="chapter" data-level="2.6.1" data-path="ch-RDataBasic.html"><a href="ch-RDataBasic.html#함수-호출-하기"><i class="fa fa-check"></i><b>2.6.1</b> 함수 호출 하기</a></li>
 <li class="chapter" data-level="2.6.2" data-path="ch-RDataBasic.html"><a href="ch-RDataBasic.html#실수를-정수로-변환하는-함수"><i class="fa fa-check"></i><b>2.6.2</b> 실수를 정수로 변환하는 함수</a></li>
@@ -200,23 +199,23 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul></li>
 <li class="chapter" data-level="3" data-path="ch-R-Data-Structure.html"><a href="ch-R-Data-Structure.html"><i class="fa fa-check"></i><b>3</b> R 데이터 구조</a>
 <ul>
-<li class="chapter" data-level="3.1" data-path="ch-R-Data-Structure.html"><a href="ch-R-Data-Structure.html#sec:vectors"><i class="fa fa-check"></i><b>3.1</b> 벡터</a>
+<li class="chapter" data-level="3.1" data-path="ch-R-Data-Structure.html"><a href="ch-R-Data-Structure.html#sec-vectors"><i class="fa fa-check"></i><b>3.1</b> 벡터</a>
 <ul>
 <li class="chapter" data-level="3.1.1" data-path="ch-R-Data-Structure.html"><a href="ch-R-Data-Structure.html#벡터는-동일-형식-데이터의-나열"><i class="fa fa-check"></i><b>3.1.1</b> 벡터는 동일 형식 데이터의 나열</a></li>
 <li class="chapter" data-level="3.1.2" data-path="ch-R-Data-Structure.html"><a href="ch-R-Data-Structure.html#벡터를-생성하는-법"><i class="fa fa-check"></i><b>3.1.2</b> 벡터를 생성하는 법</a></li>
-<li class="chapter" data-level="3.1.3" data-path="ch-R-Data-Structure.html"><a href="ch-R-Data-Structure.html#sec:vectorOperation"><i class="fa fa-check"></i><b>3.1.3</b> 벡터의 연산</a></li>
+<li class="chapter" data-level="3.1.3" data-path="ch-R-Data-Structure.html"><a href="ch-R-Data-Structure.html#sec-vectorOperation"><i class="fa fa-check"></i><b>3.1.3</b> 벡터의 연산</a></li>
 <li class="chapter" data-level="3.1.4" data-path="ch-R-Data-Structure.html"><a href="ch-R-Data-Structure.html#벡터의-필터링인덱싱"><i class="fa fa-check"></i><b>3.1.4</b> 벡터의 필터링/인덱싱</a></li>
 </ul></li>
-<li class="chapter" data-level="3.2" data-path="ch-R-Data-Structure.html"><a href="ch-R-Data-Structure.html#sec:matrices"><i class="fa fa-check"></i><b>3.2</b> 행렬과 배열</a>
+<li class="chapter" data-level="3.2" data-path="ch-R-Data-Structure.html"><a href="ch-R-Data-Structure.html#sec-matrices"><i class="fa fa-check"></i><b>3.2</b> 행렬과 배열</a>
 <ul>
 <li class="chapter" data-level="3.2.1" data-path="ch-R-Data-Structure.html"><a href="ch-R-Data-Structure.html#행렬과-배열은-다차원적-데이터-구조"><i class="fa fa-check"></i><b>3.2.1</b> 행렬과 배열은 다차원적 데이터 구조</a></li>
 <li class="chapter" data-level="3.2.2" data-path="ch-R-Data-Structure.html"><a href="ch-R-Data-Structure.html#행렬과-배열의-필요성"><i class="fa fa-check"></i><b>3.2.2</b> 행렬과 배열의 필요성</a></li>
 </ul></li>
-<li class="chapter" data-level="3.3" data-path="ch-R-Data-Structure.html"><a href="ch-R-Data-Structure.html#sec:lists"><i class="fa fa-check"></i><b>3.3</b> 리스트</a>
+<li class="chapter" data-level="3.3" data-path="ch-R-Data-Structure.html"><a href="ch-R-Data-Structure.html#sec-lists"><i class="fa fa-check"></i><b>3.3</b> 리스트</a>
 <ul>
 <li class="chapter" data-level="3.3.1" data-path="ch-R-Data-Structure.html"><a href="ch-R-Data-Structure.html#리스트-이해의-중요성"><i class="fa fa-check"></i><b>3.3.1</b> 리스트 이해의 중요성</a></li>
 </ul></li>
-<li class="chapter" data-level="3.4" data-path="ch-R-Data-Structure.html"><a href="ch-R-Data-Structure.html#sec:dataFrames"><i class="fa fa-check"></i><b>3.4</b> 데이터 프레임</a>
+<li class="chapter" data-level="3.4" data-path="ch-R-Data-Structure.html"><a href="ch-R-Data-Structure.html#sec-dataFrames"><i class="fa fa-check"></i><b>3.4</b> 데이터 프레임</a>
 <ul>
 <li class="chapter" data-level="3.4.1" data-path="ch-R-Data-Structure.html"><a href="ch-R-Data-Structure.html#데이터-프레임의-열변수은-벡터이다."><i class="fa fa-check"></i><b>3.4.1</b> 데이터 프레임의 열(변수)은 벡터이다.</a></li>
 <li class="chapter" data-level="3.4.2" data-path="ch-R-Data-Structure.html"><a href="ch-R-Data-Structure.html#데이터-프레임의-문법과-조작"><i class="fa fa-check"></i><b>3.4.2</b> 데이터 프레임의 문법과 조작</a></li>
@@ -224,7 +223,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul></li>
 <li class="chapter" data-level="4" data-path="ch-dataTransformation.html"><a href="ch-dataTransformation.html"><i class="fa fa-check"></i><b>4</b> 데이터 변환</a>
 <ul>
-<li class="chapter" data-level="4.1" data-path="ch-dataTransformation.html"><a href="ch-dataTransformation.html#sec:tidyData"><i class="fa fa-check"></i><b>4.1</b> 정돈 데이터 (tidy data)</a>
+<li class="chapter" data-level="4.1" data-path="ch-dataTransformation.html"><a href="ch-dataTransformation.html#sec-tidyData"><i class="fa fa-check"></i><b>4.1</b> 정돈 데이터 (tidy data)</a>
 <ul>
 <li class="chapter" data-level="4.1.1" data-path="ch-dataTransformation.html"><a href="ch-dataTransformation.html#정돈-데이터-형식의-조건"><i class="fa fa-check"></i><b>4.1.1</b> 정돈 데이터 형식의 조건</a></li>
 <li class="chapter" data-level="4.1.2" data-path="ch-dataTransformation.html"><a href="ch-dataTransformation.html#비정돈-데이터-형식"><i class="fa fa-check"></i><b>4.1.2</b> 비정돈 데이터 형식</a></li>
@@ -235,64 +234,80 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="4.2.1" data-path="ch-dataTransformation.html"><a href="ch-dataTransformation.html#tidyverse-패키지-설치"><i class="fa fa-check"></i><b>4.2.1</b> <code>tidyverse</code> 패키지 설치</a></li>
 <li class="chapter" data-level="4.2.2" data-path="ch-dataTransformation.html"><a href="ch-dataTransformation.html#tidyverse-패키지-적재"><i class="fa fa-check"></i><b>4.2.2</b> <code>tidyverse</code> 패키지 적재</a></li>
 </ul></li>
-<li class="chapter" data-level="4.3" data-path="ch-dataTransformation.html"><a href="ch-dataTransformation.html#sec:dplyr"><i class="fa fa-check"></i><b>4.3</b> <code>dplyr</code> 패키지와 정돈 데이터의 변환</a>
+<li class="chapter" data-level="4.3" data-path="ch-dataTransformation.html"><a href="ch-dataTransformation.html#sec-dplyr"><i class="fa fa-check"></i><b>4.3</b> <code>dplyr</code> 패키지와 정돈 데이터의 변환</a>
 <ul>
 <li class="chapter" data-level="4.3.1" data-path="ch-dataTransformation.html"><a href="ch-dataTransformation.html#dplyr-패키지"><i class="fa fa-check"></i><b>4.3.1</b> <code>dplyr</code> 패키지</a></li>
 <li class="chapter" data-level="4.3.2" data-path="ch-dataTransformation.html"><a href="ch-dataTransformation.html#정돈-데이터-변환의-종류"><i class="fa fa-check"></i><b>4.3.2</b> 정돈 데이터 변환의 종류</a></li>
-<li class="chapter" data-level="4.3.3" data-path="ch-dataTransformation.html"><a href="ch-dataTransformation.html#mpg-데이터"><i class="fa fa-check"></i><b>4.3.3</b> <code>mpg</code> 데이터</a></li>
+<li class="chapter" data-level="4.3.3" data-path="ch-dataTransformation.html"><a href="ch-dataTransformation.html#dplyr-패키지-vs.-r의-기본-기능"><i class="fa fa-check"></i><b>4.3.3</b> <code>dplyr</code> 패키지 vs. R의 기본 기능</a></li>
+<li class="chapter" data-level="4.3.4" data-path="ch-dataTransformation.html"><a href="ch-dataTransformation.html#mpg-데이터"><i class="fa fa-check"></i><b>4.3.4</b> <code>mpg</code> 데이터</a></li>
 </ul></li>
-<li class="chapter" data-level="4.4" data-path="ch-dataTransformation.html"><a href="ch-dataTransformation.html#sec:filter"><i class="fa fa-check"></i><b>4.4</b> <code>filter()</code>로 행 선택하기</a>
+<li class="chapter" data-level="4.4" data-path="ch-dataTransformation.html"><a href="ch-dataTransformation.html#sec-filter"><i class="fa fa-check"></i><b>4.4</b> <code>filter()</code>로 행 선택하기</a>
 <ul>
 <li class="chapter" data-level="4.4.1" data-path="ch-dataTransformation.html"><a href="ch-dataTransformation.html#선택-조건이-하나인-경우"><i class="fa fa-check"></i><b>4.4.1</b> 선택 조건이 하나인 경우</a></li>
 <li class="chapter" data-level="4.4.2" data-path="ch-dataTransformation.html"><a href="ch-dataTransformation.html#여러-조건을-만족하는-행-추출하기"><i class="fa fa-check"></i><b>4.4.2</b> 여러 조건을 만족하는 행 추출하기</a></li>
 <li class="chapter" data-level="4.4.3" data-path="ch-dataTransformation.html"><a href="ch-dataTransformation.html#논리-연산자로-복합-조건-만들기"><i class="fa fa-check"></i><b>4.4.3</b> 논리 연산자로 복합 조건 만들기</a></li>
-<li class="chapter" data-level="4.4.4" data-path="ch-dataTransformation.html"><a href="ch-dataTransformation.html#결측치가-있는-경우"><i class="fa fa-check"></i><b>4.4.4</b> 결측치가 있는 경우</a></li>
+<li class="chapter" data-level="4.4.4" data-path="ch-dataTransformation.html"><a href="ch-dataTransformation.html#in-연산자"><i class="fa fa-check"></i><b>4.4.4</b> <code>%in%</code> 연산자</a></li>
 </ul></li>
-<li class="chapter" data-level="4.5" data-path="ch-dataTransformation.html"><a href="ch-dataTransformation.html#sec:arrange"><i class="fa fa-check"></i><b>4.5</b> <code>arrange()</code>로 행 정렬하기</a>
+<li class="chapter" data-level="4.5" data-path="ch-dataTransformation.html"><a href="ch-dataTransformation.html#sec-slice"><i class="fa fa-check"></i><b>4.5</b> <code>slice()</code>로 행 선택하기</a>
 <ul>
-<li class="chapter" data-level="4.5.1" data-path="ch-dataTransformation.html"><a href="ch-dataTransformation.html#desc를-이용하여-내림차순으로-정렬하기"><i class="fa fa-check"></i><b>4.5.1</b> <code>desc()</code>를 이용하여 내림차순으로 정렬하기</a></li>
+<li class="chapter" data-level="4.5.1" data-path="ch-dataTransformation.html"><a href="ch-dataTransformation.html#slice_sample로-표본-추출하기"><i class="fa fa-check"></i><b>4.5.1</b> <code>slice_sample()</code>로 표본 추출하기</a></li>
+<li class="chapter" data-level="4.5.2" data-path="ch-dataTransformation.html"><a href="ch-dataTransformation.html#slice_head와-slice_tail"><i class="fa fa-check"></i><b>4.5.2</b> <code>slice_head()</code>와 <code>slice_tail()</code></a></li>
+<li class="chapter" data-level="4.5.3" data-path="ch-dataTransformation.html"><a href="ch-dataTransformation.html#slice_min과-slice_max"><i class="fa fa-check"></i><b>4.5.3</b> <code>slice_min()</code>과 <code>slice_max()</code></a></li>
 </ul></li>
-<li class="chapter" data-level="4.6" data-path="ch-dataTransformation.html"><a href="ch-dataTransformation.html#sec:select"><i class="fa fa-check"></i><b>4.6</b> <code>select()</code>를 이용하여 열 선택하기</a>
+<li class="chapter" data-level="4.6" data-path="ch-dataTransformation.html"><a href="ch-dataTransformation.html#sec-arrange"><i class="fa fa-check"></i><b>4.6</b> <code>arrange()</code>로 행 정렬하기</a>
 <ul>
-<li class="chapter" data-level="4.6.1" data-path="ch-dataTransformation.html"><a href="ch-dataTransformation.html#열-이름을-나열하여-선택하기"><i class="fa fa-check"></i><b>4.6.1</b> 열 이름을 나열하여 선택하기</a></li>
-<li class="chapter" data-level="4.6.2" data-path="ch-dataTransformation.html"><a href="ch-dataTransformation.html#열-범위를-선택하기"><i class="fa fa-check"></i><b>4.6.2</b> 열 범위를 선택하기</a></li>
-<li class="chapter" data-level="4.6.3" data-path="ch-dataTransformation.html"><a href="ch-dataTransformation.html#열-이름을-매칭하여-선택하기"><i class="fa fa-check"></i><b>4.6.3</b> 열 이름을 매칭하여 선택하기</a></li>
-<li class="chapter" data-level="4.6.4" data-path="ch-dataTransformation.html"><a href="ch-dataTransformation.html#열-이름-바꾸기"><i class="fa fa-check"></i><b>4.6.4</b> 열 이름 바꾸기</a></li>
-<li class="chapter" data-level="4.6.5" data-path="ch-dataTransformation.html"><a href="ch-dataTransformation.html#열-순서-바꾸기"><i class="fa fa-check"></i><b>4.6.5</b> 열 순서 바꾸기</a></li>
+<li class="chapter" data-level="4.6.1" data-path="ch-dataTransformation.html"><a href="ch-dataTransformation.html#desc를-이용하여-내림차순으로-정렬하기"><i class="fa fa-check"></i><b>4.6.1</b> <code>desc()</code>를 이용하여 내림차순으로 정렬하기</a></li>
 </ul></li>
-<li class="chapter" data-level="4.7" data-path="ch-dataTransformation.html"><a href="ch-dataTransformation.html#sec:mutate"><i class="fa fa-check"></i><b>4.7</b> <code>mutate()</code>로 새로운 열 만들기</a>
+<li class="chapter" data-level="4.7" data-path="ch-dataTransformation.html"><a href="ch-dataTransformation.html#sec-select"><i class="fa fa-check"></i><b>4.7</b> <code>select()</code>를 이용하여 변수 이름으로 열 선택하기</a>
 <ul>
-<li class="chapter" data-level="4.7.1" data-path="ch-dataTransformation.html"><a href="ch-dataTransformation.html#transmute로-새로운-열만-남기기"><i class="fa fa-check"></i><b>4.7.1</b> <code>transmute()</code>로 새로운 열만 남기기</a></li>
-<li class="chapter" data-level="4.7.2" data-path="ch-dataTransformation.html"><a href="ch-dataTransformation.html#새로운-열을-만들-때-사용할-수-있는-함수들"><i class="fa fa-check"></i><b>4.7.2</b> 새로운 열을 만들 때 사용할 수 있는 함수들</a></li>
+<li class="chapter" data-level="4.7.1" data-path="ch-dataTransformation.html"><a href="ch-dataTransformation.html#변수-이름을-나열하여-선택하기"><i class="fa fa-check"></i><b>4.7.1</b> 변수 이름을 나열하여 선택하기</a></li>
+<li class="chapter" data-level="4.7.2" data-path="ch-dataTransformation.html"><a href="ch-dataTransformation.html#변수-이름으로-변수-범위를-선택하기"><i class="fa fa-check"></i><b>4.7.2</b> 변수 이름으로 변수 범위를 선택하기</a></li>
+<li class="chapter" data-level="4.7.3" data-path="ch-dataTransformation.html"><a href="ch-dataTransformation.html#변수-위치로-매칭하여-선택하기"><i class="fa fa-check"></i><b>4.7.3</b> 변수 위치로 매칭하여 선택하기</a></li>
+<li class="chapter" data-level="4.7.4" data-path="ch-dataTransformation.html"><a href="ch-dataTransformation.html#변수-이름을-매칭하여-선택하기"><i class="fa fa-check"></i><b>4.7.4</b> 변수 이름을 매칭하여 선택하기</a></li>
+<li class="chapter" data-level="4.7.5" data-path="ch-dataTransformation.html"><a href="ch-dataTransformation.html#변수의-형식이나-조건으로-매칭하여-선택하기"><i class="fa fa-check"></i><b>4.7.5</b> 변수의 형식이나 조건으로 매칭하여 선택하기*</a></li>
+<li class="chapter" data-level="4.7.6" data-path="ch-dataTransformation.html"><a href="ch-dataTransformation.html#변수-이름-바꾸기"><i class="fa fa-check"></i><b>4.7.6</b> 변수 이름 바꾸기</a></li>
+<li class="chapter" data-level="4.7.7" data-path="ch-dataTransformation.html"><a href="ch-dataTransformation.html#변수-순서-바꾸기"><i class="fa fa-check"></i><b>4.7.7</b> 변수 순서 바꾸기</a></li>
 </ul></li>
-<li class="chapter" data-level="4.8" data-path="ch-dataTransformation.html"><a href="ch-dataTransformation.html#sec:summarize"><i class="fa fa-check"></i><b>4.8</b> <code>summarize()</code>로 열 요약하기</a></li>
-<li class="chapter" data-level="4.9" data-path="ch-dataTransformation.html"><a href="ch-dataTransformation.html#sec:groupBy"><i class="fa fa-check"></i><b>4.9</b> <code>group_by()</code>로 그룹 별로 요약하기</a></li>
-<li class="chapter" data-level="4.10" data-path="ch-dataTransformation.html"><a href="ch-dataTransformation.html#sec:pipeOperator"><i class="fa fa-check"></i><b>4.10</b> <code>%&gt;%</code> 파이프 연산자</a>
+<li class="chapter" data-level="4.8" data-path="ch-dataTransformation.html"><a href="ch-dataTransformation.html#sec-mutate"><i class="fa fa-check"></i><b>4.8</b> <code>mutate()</code>로 새로운 변수 만들기</a>
 <ul>
-<li class="chapter" data-level="4.10.1" data-path="ch-dataTransformation.html"><a href="ch-dataTransformation.html#여러-단계를-거쳐-데이터를-변환할-때"><i class="fa fa-check"></i><b>4.10.1</b> 여러 단계를 거쳐 데이터를 변환할 때</a></li>
-<li class="chapter" data-level="4.10.2" data-path="ch-dataTransformation.html"><a href="ch-dataTransformation.html#파이프-연산자"><i class="fa fa-check"></i><b>4.10.2</b> 파이프 연산자</a></li>
-<li class="chapter" data-level="4.10.3" data-path="ch-dataTransformation.html"><a href="ch-dataTransformation.html#ungroup"><i class="fa fa-check"></i><b>4.10.3</b> <code>ungroup()</code></a></li>
+<li class="chapter" data-level="4.8.1" data-path="ch-dataTransformation.html"><a href="ch-dataTransformation.html#transmute로-새로운-변수만-남기기"><i class="fa fa-check"></i><b>4.8.1</b> <code>transmute()</code>로 새로운 변수만 남기기</a></li>
+<li class="chapter" data-level="4.8.2" data-path="ch-dataTransformation.html"><a href="ch-dataTransformation.html#새로운-변수를-만들-때-사용할-수-있는-함수들"><i class="fa fa-check"></i><b>4.8.2</b> 새로운 변수를 만들 때 사용할 수 있는 함수들</a></li>
+</ul></li>
+<li class="chapter" data-level="4.9" data-path="ch-dataTransformation.html"><a href="ch-dataTransformation.html#sec-summarize"><i class="fa fa-check"></i><b>4.9</b> <code>summarize()</code>로 변수 요약하기</a>
+<ul>
+<li class="chapter" data-level="4.9.1" data-path="ch-dataTransformation.html"><a href="ch-dataTransformation.html#across로-여려-변수를-요약하기"><i class="fa fa-check"></i><b>4.9.1</b> <code>across()</code>로 여려 변수를 요약하기*</a></li>
+</ul></li>
+<li class="chapter" data-level="4.10" data-path="ch-dataTransformation.html"><a href="ch-dataTransformation.html#sec-groupBy"><i class="fa fa-check"></i><b>4.10</b> <code>group_by()</code>로 그룹별로 요약하기</a>
+<ul>
+<li class="chapter" data-level="4.10.1" data-path="ch-dataTransformation.html"><a href="ch-dataTransformation.html#group_by로-그룹별로-새-변수-추가하기"><i class="fa fa-check"></i><b>4.10.1</b> <code>group_by()</code>로 그룹별로 새 변수 추가하기</a></li>
+<li class="chapter" data-level="4.10.2" data-path="ch-dataTransformation.html"><a href="ch-dataTransformation.html#count로-개수-세기"><i class="fa fa-check"></i><b>4.10.2</b> <code>count()</code>로 개수 세기</a></li>
+</ul></li>
+<li class="chapter" data-level="4.11" data-path="ch-dataTransformation.html"><a href="ch-dataTransformation.html#sec-pipeOperator"><i class="fa fa-check"></i><b>4.11</b> <code>%&gt;%</code> 파이프 연산자</a>
+<ul>
+<li class="chapter" data-level="4.11.1" data-path="ch-dataTransformation.html"><a href="ch-dataTransformation.html#여러-단계를-거쳐-데이터를-변환할-때"><i class="fa fa-check"></i><b>4.11.1</b> 여러 단계를 거쳐 데이터를 변환할 때</a></li>
+<li class="chapter" data-level="4.11.2" data-path="ch-dataTransformation.html"><a href="ch-dataTransformation.html#파이프-연산자"><i class="fa fa-check"></i><b>4.11.2</b> 파이프 연산자</a></li>
+<li class="chapter" data-level="4.11.3" data-path="ch-dataTransformation.html"><a href="ch-dataTransformation.html#ungroup"><i class="fa fa-check"></i><b>4.11.3</b> <code>ungroup()</code></a></li>
 </ul></li>
 </ul></li>
 <li class="chapter" data-level="5" data-path="ch-visualization.html"><a href="ch-visualization.html"><i class="fa fa-check"></i><b>5</b> R 데이터 시각화 기초</a>
 <ul>
 <li class="chapter" data-level="5.1" data-path="ch-visualization.html"><a href="ch-visualization.html#ggplot2-패키지-설치하기"><i class="fa fa-check"></i><b>5.1</b> ggplot2 패키지 설치하기</a></li>
-<li class="chapter" data-level="5.2" data-path="ch-visualization.html"><a href="ch-visualization.html#sec:getStarted-ggplot2"><i class="fa fa-check"></i><b>5.2</b> ggplot2 시작하기</a>
+<li class="chapter" data-level="5.2" data-path="ch-visualization.html"><a href="ch-visualization.html#sec-getStarted-ggplot2"><i class="fa fa-check"></i><b>5.2</b> ggplot2 시작하기</a>
 <ul>
-<li class="chapter" data-level="5.2.1" data-path="ch-visualization.html"><a href="ch-visualization.html#subsec:tryGgplot"><i class="fa fa-check"></i><b>5.2.1</b> ggplot2 그래프의 기본 문법</a></li>
+<li class="chapter" data-level="5.2.1" data-path="ch-visualization.html"><a href="ch-visualization.html#subsec-tryGgplot"><i class="fa fa-check"></i><b>5.2.1</b> ggplot2 그래프의 기본 문법</a></li>
 </ul></li>
-<li class="chapter" data-level="5.3" data-path="ch-visualization.html"><a href="ch-visualization.html#sec:aesMapping"><i class="fa fa-check"></i><b>5.3</b> 그래프 속성과 데이터 열 매핑하기 (aesthetic mapping)</a>
+<li class="chapter" data-level="5.3" data-path="ch-visualization.html"><a href="ch-visualization.html#sec-aesMapping"><i class="fa fa-check"></i><b>5.3</b> 그래프 속성과 데이터 열 매핑하기 (aesthetic mapping)</a>
 <ul>
 <li class="chapter" data-level="5.3.1" data-path="ch-visualization.html"><a href="ch-visualization.html#범주형-변수와-색상color-속성의-매핑"><i class="fa fa-check"></i><b>5.3.1</b> 범주형 변수와 색상(<code>color</code>) 속성의 매핑</a></li>
 <li class="chapter" data-level="5.3.2" data-path="ch-visualization.html"><a href="ch-visualization.html#범주형-변수와-모양shape-속성의-매핑"><i class="fa fa-check"></i><b>5.3.2</b> 범주형 변수와 모양(<code>shape</code>) 속성의 매핑</a></li>
 <li class="chapter" data-level="5.3.3" data-path="ch-visualization.html"><a href="ch-visualization.html#연속형-변수와-크기size-색상color-투명도alpha-속성의-매핑"><i class="fa fa-check"></i><b>5.3.3</b> 연속형 변수와 크기(<code>size</code>), 색상(<code>color</code>), 투명도(<code>alpha</code>) 속성의 매핑</a></li>
 </ul></li>
-<li class="chapter" data-level="5.4" data-path="ch-visualization.html"><a href="ch-visualization.html#sec:commonProblems"><i class="fa fa-check"></i><b>5.4</b> ggplot 명령문을 입력할 때 자주 발생하는 문제들</a></li>
-<li class="chapter" data-level="5.5" data-path="ch-visualization.html"><a href="ch-visualization.html#sec:layerAndGeom"><i class="fa fa-check"></i><b>5.5</b> geom 함수와 그래프 계층</a>
+<li class="chapter" data-level="5.4" data-path="ch-visualization.html"><a href="ch-visualization.html#sec-commonProblems"><i class="fa fa-check"></i><b>5.4</b> ggplot 명령문을 입력할 때 자주 발생하는 문제들</a></li>
+<li class="chapter" data-level="5.5" data-path="ch-visualization.html"><a href="ch-visualization.html#sec-layerAndGeom"><i class="fa fa-check"></i><b>5.5</b> geom 함수와 그래프 계층</a>
 <ul>
 <li class="chapter" data-level="5.5.1" data-path="ch-visualization.html"><a href="ch-visualization.html#geom-함수에서-속성-매핑하기"><i class="fa fa-check"></i><b>5.5.1</b> geom 함수에서 속성 매핑하기</a></li>
 </ul></li>
-<li class="chapter" data-level="5.6" data-path="ch-visualization.html"><a href="ch-visualization.html#sec:facets"><i class="fa fa-check"></i><b>5.6</b> 측면(facets)으로 나누어 그리기</a>
+<li class="chapter" data-level="5.6" data-path="ch-visualization.html"><a href="ch-visualization.html#sec-facets"><i class="fa fa-check"></i><b>5.6</b> 측면(facets)으로 나누어 그리기</a>
 <ul>
 <li class="chapter" data-level="5.6.1" data-path="ch-visualization.html"><a href="ch-visualization.html#facet_wrap로-일차원-측면-그래프-그리기"><i class="fa fa-check"></i><b>5.6.1</b> <code>facet_wrap()</code>로 일차원 측면 그래프 그리기</a></li>
 <li class="chapter" data-level="5.6.2" data-path="ch-visualization.html"><a href="ch-visualization.html#facet_grid로-이차원-측면-그래프-그리기"><i class="fa fa-check"></i><b>5.6.2</b> <code>facet_grid()</code>로 이차원 측면 그래프 그리기</a></li>
@@ -315,10 +330,10 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="6.2.2" data-path="ch-R-Advanced-Data-Mgmt.html"><a href="ch-R-Advanced-Data-Mgmt.html#filtering-join"><i class="fa fa-check"></i><b>6.2.2</b> Filtering join</a></li>
 <li class="chapter" data-level="6.2.3" data-path="ch-R-Advanced-Data-Mgmt.html"><a href="ch-R-Advanced-Data-Mgmt.html#join을-수행하는-다른-방법들"><i class="fa fa-check"></i><b>6.2.3</b> Join을 수행하는 다른 방법들</a></li>
 </ul></li>
-<li class="chapter" data-level="6.3" data-path="ch-R-Advanced-Data-Mgmt.html"><a href="ch-R-Advanced-Data-Mgmt.html#sec:tidyr"><i class="fa fa-check"></i><b>6.3</b> <code>tidyr</code> 패키지를 이용하여 정돈 데이터 형식으로 바꾸기</a>
+<li class="chapter" data-level="6.3" data-path="ch-R-Advanced-Data-Mgmt.html"><a href="ch-R-Advanced-Data-Mgmt.html#sec-tidyr"><i class="fa fa-check"></i><b>6.3</b> <code>tidyr</code> 패키지를 이용하여 정돈 데이터 형식으로 바꾸기</a>
 <ul>
 <li class="chapter" data-level="6.3.1" data-path="ch-R-Advanced-Data-Mgmt.html"><a href="ch-R-Advanced-Data-Mgmt.html#pivot_longer-여러-열에-걸친-한-변수의-데이터를-하나의-열로-길게-모으기"><i class="fa fa-check"></i><b>6.3.1</b> <code>pivot_longer</code>: 여러 열에 걸친 한 변수의 데이터를 하나의 열로 길게 모으기</a></li>
-<li class="chapter" data-level="6.3.2" data-path="ch-R-Advanced-Data-Mgmt.html"><a href="ch-R-Advanced-Data-Mgmt.html#subsec:pivot-wider"><i class="fa fa-check"></i><b>6.3.2</b> <code>pivot_wider</code>: 한 열에 기술된 여러 변수의 데이터를 여러 열로 넓게 펼치기</a></li>
+<li class="chapter" data-level="6.3.2" data-path="ch-R-Advanced-Data-Mgmt.html"><a href="ch-R-Advanced-Data-Mgmt.html#subsec-pivot-wider"><i class="fa fa-check"></i><b>6.3.2</b> <code>pivot_wider</code>: 한 열에 기술된 여러 변수의 데이터를 여러 열로 넓게 펼치기</a></li>
 <li class="chapter" data-level="6.3.3" data-path="ch-R-Advanced-Data-Mgmt.html"><a href="ch-R-Advanced-Data-Mgmt.html#seperate-한-셀을-여러-셀로-분리하기"><i class="fa fa-check"></i><b>6.3.3</b> <code>seperate</code>: 한 셀을 여러 셀로 분리하기</a></li>
 <li class="chapter" data-level="6.3.4" data-path="ch-R-Advanced-Data-Mgmt.html"><a href="ch-R-Advanced-Data-Mgmt.html#unite-여러-셀의-데이터를-하나의-셀로-병합하기"><i class="fa fa-check"></i><b>6.3.4</b> <code>unite</code>: 여러 셀의 데이터를 하나의 셀로 병합하기</a></li>
 </ul></li>
@@ -343,43 +358,43 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="ch:visualization" class="section level1" number="5">
-<h1><span class="header-section-number">Chapter 5</span> R 데이터 시각화 기초</h1>
+<div id="ch-visualization" class="section level1 hasAnchor" number="5">
+<h1><span class="header-section-number">Chapter 5</span> R 데이터 시각화 기초<a href="ch-visualization.html#ch-visualization" class="anchor-section" aria-label="Anchor link to header"></a></h1>
 <p>데이터 시각화란 데이터를 그래프 등의 시각적 요소로 요약하여 보여주는 것을 의미한다.
 <strong>R</strong>에서는 데이터 시각화를 <strong>R</strong>의 기본 기능에 포함된 <code>graphics</code> 패키지를 사용하여 시각화하는 방법과 <code>ggplot2</code>패키지를 이용하는 방법이 있다.
 이 장에서는 <code>ggplot2</code>를 이용하여 데이터를 시각화하는 기본적인 방법을 배운다. 여기서는 통계분석에 필요한 기본적인 그래프를 그리기 위한 기본적인 문법을 소개하는 것이지 <code>ggplot2</code>에 대한 체계적인 설명을 하지 않을 것이다. <code>ggplot2</code>는 자유로운 형식으로 그래프를 그릴 수 있는 그래프 문법을 가지고 있기 때문에, <code>ggplot2</code>에 대한 더 체계적인 이해를 원하는 독자는 졸저 ’R 프로그래밍’의 <a href="https://kilhwan.github.io/rprogramming/ch-visualization.html">ggplot2를 이용한 데이터 시각화</a>를 참조하기 바란다.</p>
-<div id="ggplot2-패키지-설치하기" class="section level2" number="5.1">
-<h2><span class="header-section-number">5.1</span> ggplot2 패키지 설치하기</h2>
+<div id="ggplot2-패키지-설치하기" class="section level2 hasAnchor" number="5.1">
+<h2><span class="header-section-number">5.1</span> ggplot2 패키지 설치하기<a href="ch-visualization.html#ggplot2-패키지-설치하기" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p><strong>R</strong>은 패키지란 단위로 <strong>R</strong>에서 사용할 수 있는 기능을 제공한다. <strong>R</strong>을 설치하면 <code>base</code>, <code>stat</code>, <code>dataset</code>, <code>graphics</code> 등의 기본 패키지가 자동으로 설치되고, <strong>R</strong>을 시작할 때마다 이러한 기본 패키지가 자동으로 적대되어 사용될 수 있도록 준비된다.
 만약 <strong>R</strong>에서 기본으로 제공하는 패키지 말고 다른 패키지를 사용하려면 그 패키지를 <strong>R</strong>에 설치해야 한다.
 <code>ggplot2</code> 패키지는 기본 기능에 포함되지 않으므로 먼저 설치를 해야 한다.</p>
 <p><code>ggplot2</code> 패키지를 설치하려면 다음 명령을 실행하면 된다. 패키지의 이름은 문자열이므로 따옴표 안에 기술해야 한다.</p>
-<div class="sourceCode" id="cb408"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb408-1"><a href="ch-visualization.html#cb408-1" aria-hidden="true" tabindex="-1"></a><span class="sc">&gt;</span> <span class="fu">install.packages</span>(<span class="st">&quot;ggplot2&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb482"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb482-1"><a href="ch-visualization.html#cb482-1" aria-hidden="true" tabindex="-1"></a><span class="sc">&gt;</span> <span class="fu">install.packages</span>(<span class="st">&quot;ggplot2&quot;</span>)</span></code></pre></div>
 <p>또는 RStudio의 우측 하단의 Packages 탭에서 [Install]을 클릭한 후 <code>ggplot2</code>라고 입력을 하면 된다. 패키지 설치는 한 번만 수행하면 된다.</p>
 <p>패키지를 사용하려면 메모리에 적재를 하여야 한다. 패키지를 메모리에 적재하는 것은 <code>library()</code> 함수를 사용한다. 이 때 주의할 점은 이미 설치된 패키지를 지정할 때는 따옴표 없이 변수처럼 패키지를 기술해야 한다는 것이다.</p>
-<div class="sourceCode" id="cb409"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb409-1"><a href="ch-visualization.html#cb409-1" aria-hidden="true" tabindex="-1"></a><span class="sc">&gt;</span> <span class="fu">library</span>(ggplot2)</span></code></pre></div>
+<div class="sourceCode" id="cb483"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb483-1"><a href="ch-visualization.html#cb483-1" aria-hidden="true" tabindex="-1"></a><span class="sc">&gt;</span> <span class="fu">library</span>(ggplot2)</span></code></pre></div>
 <p>패키지의 설치는 한 번만 수행하면 되지만, 패키지를 메모리에 적재하는 작업을 패키지를 사용할 때마다 수행하여야 한다. 한번 메모리에 적재된 패키지는 <strong>R</strong> 세션이 종료되기 전까지 유지된다. 그러므로 하나의 <strong>R</strong> 세션에서는 다시 <code>library()</code> 함수로 동일한 패키지를 적재하지 않아도 된다. 그러나 <strong>R</strong> 세션을 종료하고 다시 시작하였다면, 기본 패키지가 아니면 자동 적재되지 않으므로 사용하기 전에 패키지를 다시 적재하여야 한다.</p>
 </div>
-<div id="sec:getStarted-ggplot2" class="section level2" number="5.2">
-<h2><span class="header-section-number">5.2</span> ggplot2 시작하기</h2>
+<div id="sec-getStarted-ggplot2" class="section level2 hasAnchor" number="5.2">
+<h2><span class="header-section-number">5.2</span> ggplot2 시작하기<a href="ch-visualization.html#sec-getStarted-ggplot2" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>이 절에서는 <code>ggplot2</code>에서 제공하는 <code>mpg</code> 데이터를 이용하여 ‘배기량이 커지면 연비가 낮아지는가?’ 라는 물음을 그래프를 이용하여 탐색해 보자.
 <code>mpg</code>는 1999년과 2008년에 미국 EPA에서 조사하여 발표한 자동차 주요 모델별 연비 데이터이다.</p>
 <p>다음 명령을 이용하여 <code>mpg</code> 데이터를 출력해 보자. <code>mpg</code> 데이터는 <code>tibble</code>이라는 데이터 프레임의 일종으로, 사용자의 화면의 크기에 따라 출력 내용을 조정한다. 그러므로 화면의 크기에 따라 출력되는 내용이 책과는 조금 다를 수 있다.</p>
-<div class="sourceCode" id="cb410"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb410-1"><a href="ch-visualization.html#cb410-1" aria-hidden="true" tabindex="-1"></a><span class="sc">&gt;</span> mpg</span></code></pre></div>
-<pre><code># A tibble: 234 x 11
-   manufacturer model    displ  year   cyl trans   drv     cty   hwy fl    class
-   &lt;chr&gt;        &lt;chr&gt;    &lt;dbl&gt; &lt;int&gt; &lt;int&gt; &lt;chr&gt;   &lt;chr&gt; &lt;int&gt; &lt;int&gt; &lt;chr&gt; &lt;chr&gt;
- 1 audi         a4         1.8  1999     4 auto(l… f        18    29 p     comp…
- 2 audi         a4         1.8  1999     4 manual… f        21    29 p     comp…
- 3 audi         a4         2    2008     4 manual… f        20    31 p     comp…
- 4 audi         a4         2    2008     4 auto(a… f        21    30 p     comp…
- 5 audi         a4         2.8  1999     6 auto(l… f        16    26 p     comp…
- 6 audi         a4         2.8  1999     6 manual… f        18    26 p     comp…
- 7 audi         a4         3.1  2008     6 auto(a… f        18    27 p     comp…
- 8 audi         a4 quat…   1.8  1999     4 manual… 4        18    26 p     comp…
- 9 audi         a4 quat…   1.8  1999     4 auto(l… 4        16    25 p     comp…
-10 audi         a4 quat…   2    2008     4 manual… 4        20    28 p     comp…
-# … with 224 more rows</code></pre>
+<div class="sourceCode" id="cb484"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb484-1"><a href="ch-visualization.html#cb484-1" aria-hidden="true" tabindex="-1"></a><span class="sc">&gt;</span> mpg</span></code></pre></div>
+<pre><code># A tibble: 234 × 11
+   manufacturer model      displ  year   cyl trans drv     cty   hwy fl    class
+   &lt;chr&gt;        &lt;chr&gt;      &lt;dbl&gt; &lt;int&gt; &lt;int&gt; &lt;chr&gt; &lt;chr&gt; &lt;int&gt; &lt;int&gt; &lt;chr&gt; &lt;chr&gt;
+ 1 audi         a4           1.8  1999     4 auto… f        18    29 p     comp…
+ 2 audi         a4           1.8  1999     4 manu… f        21    29 p     comp…
+ 3 audi         a4           2    2008     4 manu… f        20    31 p     comp…
+ 4 audi         a4           2    2008     4 auto… f        21    30 p     comp…
+ 5 audi         a4           2.8  1999     6 auto… f        16    26 p     comp…
+ 6 audi         a4           2.8  1999     6 manu… f        18    26 p     comp…
+ 7 audi         a4           3.1  2008     6 auto… f        18    27 p     comp…
+ 8 audi         a4 quattro   1.8  1999     4 manu… 4        18    26 p     comp…
+ 9 audi         a4 quattro   1.8  1999     4 auto… 4        16    25 p     comp…
+10 audi         a4 quattro   2    2008     4 manu… 4        20    28 p     comp…
+# ℹ 224 more rows</code></pre>
 <p><code>mpg</code>는 1999년과 2008년에 미국 EPA에서 조사하여 발표한 자동차 주요 모델별 연비 데이터이다. 데이터는 234 개의 행이 있으며, 각 행은 다음과 같은 변수로 구성되어 있다.</p>
 <ul>
 <li>manufacturer: 자동차 제조사</li>
@@ -395,88 +410,88 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li>class: 자동차 분류</li>
 </ul>
 <p><code>mpg</code> 데이터에 대한 더 자세한 설명은 콘솔에 다음을 입력하여 R 도움말을 참조하기 바란다.</p>
-<div class="sourceCode" id="cb412"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb412-1"><a href="ch-visualization.html#cb412-1" aria-hidden="true" tabindex="-1"></a><span class="sc">&gt;</span> ?mpg</span></code></pre></div>
-<div id="subsec:tryGgplot" class="section level3" number="5.2.1">
-<h3><span class="header-section-number">5.2.1</span> ggplot2 그래프의 기본 문법</h3>
+<div class="sourceCode" id="cb486"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb486-1"><a href="ch-visualization.html#cb486-1" aria-hidden="true" tabindex="-1"></a><span class="sc">&gt;</span> ?mpg</span></code></pre></div>
+<div id="subsec-tryGgplot" class="section level3 hasAnchor" number="5.2.1">
+<h3><span class="header-section-number">5.2.1</span> ggplot2 그래프의 기본 문법<a href="ch-visualization.html#subsec-tryGgplot" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p><code>mpg</code> 데이터로부터 배기량과 고속도로 연비의 관계를 살펴보기 위해서 배기량(displ)을 x 축으로, 고속도로 연비(hwy)를 y 축으로 하는 산점도를 그려보자. 산점도에서 배기량이 커짐지면 연비가 줄어드는 경향을 관찰할 수 있다.</p>
-<div class="sourceCode" id="cb413"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb413-1"><a href="ch-visualization.html#cb413-1" aria-hidden="true" tabindex="-1"></a><span class="sc">&gt;</span> <span class="fu">ggplot</span>(mpg, <span class="fu">aes</span>(<span class="at">x=</span>displ, <span class="at">y=</span>hwy)) <span class="sc">+</span> <span class="fu">geom_point</span>()</span></code></pre></div>
+<div class="sourceCode" id="cb487"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb487-1"><a href="ch-visualization.html#cb487-1" aria-hidden="true" tabindex="-1"></a><span class="sc">&gt;</span> <span class="fu">ggplot</span>(mpg, <span class="fu">aes</span>(<span class="at">x=</span>displ, <span class="at">y=</span>hwy)) <span class="sc">+</span> <span class="fu">geom_point</span>()</span></code></pre></div>
 <p><img src="visualization_files/figure-html/unnamed-chunk-6-1.png" width="60%" style="display: block; margin: auto;" /></p>
 <p>그러면 이 산점도 그린 <code>ggplot2</code> 명령어의 문법을 살펴보자.</p>
 <ul>
 <li><p><code>ggplot2</code>의 명령어는 항상 <code>ggplot()</code> 함수로 시작하고, <code>+</code> 연산자를 사용하여 그래프에 추가될 요소를 덧붙여 나간다. 이렇게 함수를 <code>+</code>로 연결하여 사용하는 방식은 <code>ggplot2</code> 패키지의 독특한 문법으로 대부분의 다른 <strong>R</strong> 명령어에서는 이러한 방식을 사용하지 않는다.</p></li>
 <li><p><code>ggplot()</code> 함수는 그래프의 좌표축과 좌표평면을 만드는 함수이다. 그러므로 다음처럼 <code>ggplot()</code> 함수만 사용하고 그래프에 추가할 요소를 지정하지 않으면 좌표축과 좌표평면만 그린다.</p></li>
 </ul>
-<div class="sourceCode" id="cb414"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb414-1"><a href="ch-visualization.html#cb414-1" aria-hidden="true" tabindex="-1"></a><span class="sc">&gt;</span> <span class="fu">ggplot</span>(mpg, <span class="fu">aes</span>(<span class="at">x=</span>displ, <span class="at">y=</span>hwy))</span></code></pre></div>
+<div class="sourceCode" id="cb488"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb488-1"><a href="ch-visualization.html#cb488-1" aria-hidden="true" tabindex="-1"></a><span class="sc">&gt;</span> <span class="fu">ggplot</span>(mpg, <span class="fu">aes</span>(<span class="at">x=</span>displ, <span class="at">y=</span>hwy))</span></code></pre></div>
 <p><img src="visualization_files/figure-html/unnamed-chunk-7-1.png" width="60%" style="display: block; margin: auto;" /></p>
 <ul>
 <li><code>ggplot()</code> 함수의 첫번째 인수는 그래프를 그릴 때 사용할 데이터를 지정하고, 두번째 인수는 그래프 속성과 데이터 열의 관계를 지정한다. 그래프 속성과 데이터 열의 관계는 항상 <code>aes()</code> 함수 내에 기술되고, 다음처럼 <code>&lt;그래프 속성&gt;=&lt;데이터 열&gt;</code>의 형식으로 기술된다.</li>
 </ul>
 <pre><code>ggplot(데이터, aes(속성1=열1, 속성2=열2, ...)) + geom함수()</code></pre>
 <p>앞의 산점도에서는 <code>x</code>라는 그래프의 가로축 속성에 <code>mpg</code> 데이터의 배기량 열 <code>displ</code>이 매핑되었고, <code>y</code>라는 그래프의 세로축 속성에 고속도로 연비 열 <code>hwy</code>가 매핑되었다. 다음은 그래프의 가로축에 데이터의 도심 연비 열인 <code>cty</code>을 매핑하여 산점도를 그린 예이다. 도심 연비가 좋은 차가 고속도로 연비도 좋다는 것을 알 수 있다.</p>
-<div class="sourceCode" id="cb416"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb416-1"><a href="ch-visualization.html#cb416-1" aria-hidden="true" tabindex="-1"></a><span class="sc">&gt;</span> <span class="fu">ggplot</span>(mpg, <span class="fu">aes</span>(<span class="at">x=</span>cty, <span class="at">y=</span>hwy)) <span class="sc">+</span> <span class="fu">geom_point</span>()</span></code></pre></div>
+<div class="sourceCode" id="cb490"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb490-1"><a href="ch-visualization.html#cb490-1" aria-hidden="true" tabindex="-1"></a><span class="sc">&gt;</span> <span class="fu">ggplot</span>(mpg, <span class="fu">aes</span>(<span class="at">x=</span>cty, <span class="at">y=</span>hwy)) <span class="sc">+</span> <span class="fu">geom_point</span>()</span></code></pre></div>
 <p><img src="visualization_files/figure-html/unnamed-chunk-8-1.png" width="60%" style="display: block; margin: auto;" /></p>
 <ul>
 <li><code>ggplot()</code> 함수에 <code>+</code>로 연결되는 geom 함수는 그래프에 그릴 도형을 지정한다. <code>geom_point()</code> 함수는 <code>ggplot()</code> 함수에 정의된 그래프 속성과 열의 관계를 이용하여 그래프에 점(points)이라는 도형을 그린다. ggplot2에는 점을 그리는 <code>geom_point()</code> 함수뿐 아니라 다양한 도형을 그리는 geom 함수들이 있다. 만약 다음처럼 <code>geom_point()</code> 함수가 아니라 <code>geom_smooth()</code> 함수를 연결하면 점이 아니라 데이터의 추세선을 <code>ggplot()</code> 함수에 정의된 그래프 속성과 열의 관계를 이용하여 그래프에 그린다.</li>
 </ul>
-<div class="sourceCode" id="cb417"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb417-1"><a href="ch-visualization.html#cb417-1" aria-hidden="true" tabindex="-1"></a><span class="sc">&gt;</span> <span class="fu">ggplot</span>(mpg, <span class="fu">aes</span>(<span class="at">x=</span>displ, <span class="at">y=</span>hwy)) <span class="sc">+</span> <span class="fu">geom_smooth</span>()</span></code></pre></div>
-<pre><code>`geom_smooth()` using method = &#39;loess&#39; and formula &#39;y ~ x&#39;</code></pre>
+<div class="sourceCode" id="cb491"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb491-1"><a href="ch-visualization.html#cb491-1" aria-hidden="true" tabindex="-1"></a><span class="sc">&gt;</span> <span class="fu">ggplot</span>(mpg, <span class="fu">aes</span>(<span class="at">x=</span>displ, <span class="at">y=</span>hwy)) <span class="sc">+</span> <span class="fu">geom_smooth</span>()</span></code></pre></div>
+<pre><code>`geom_smooth()` using method = &#39;loess&#39; and formula = &#39;y ~ x&#39;</code></pre>
 <p><img src="visualization_files/figure-html/unnamed-chunk-9-1.png" width="60%" style="display: block; margin: auto;" /></p>
 <ul>
 <li><code>ggplot()</code> 함수에 여러 개의 geom 함수를 연결하여 두 개 이상의 그래픽적 도형을 그래프에 그릴 수 있다. 이 경우 먼저 기술된 geom 함수의 도형이 아래 층에 그려지고 뒤에 기술된 geom 함수의 도형이 윗 층에 그려진다.</li>
 </ul>
-<div class="sourceCode" id="cb419"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb419-1"><a href="ch-visualization.html#cb419-1" aria-hidden="true" tabindex="-1"></a><span class="sc">&gt;</span> <span class="fu">ggplot</span>(mpg, <span class="fu">aes</span>(<span class="at">x=</span>displ, <span class="at">y=</span>hwy)) <span class="sc">+</span> <span class="fu">geom_point</span>() <span class="sc">+</span> <span class="fu">geom_smooth</span>()</span></code></pre></div>
-<pre><code>`geom_smooth()` using method = &#39;loess&#39; and formula &#39;y ~ x&#39;</code></pre>
+<div class="sourceCode" id="cb493"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb493-1"><a href="ch-visualization.html#cb493-1" aria-hidden="true" tabindex="-1"></a><span class="sc">&gt;</span> <span class="fu">ggplot</span>(mpg, <span class="fu">aes</span>(<span class="at">x=</span>displ, <span class="at">y=</span>hwy)) <span class="sc">+</span> <span class="fu">geom_point</span>() <span class="sc">+</span> <span class="fu">geom_smooth</span>()</span></code></pre></div>
+<pre><code>`geom_smooth()` using method = &#39;loess&#39; and formula = &#39;y ~ x&#39;</code></pre>
 <p><img src="visualization_files/figure-html/unnamed-chunk-10-1.png" width="60%" style="display: block; margin: auto;" /></p>
 </div>
 </div>
-<div id="sec:aesMapping" class="section level2" number="5.3">
-<h2><span class="header-section-number">5.3</span> 그래프 속성과 데이터 열 매핑하기 (aesthetic mapping)</h2>
+<div id="sec-aesMapping" class="section level2 hasAnchor" number="5.3">
+<h2><span class="header-section-number">5.3</span> 그래프 속성과 데이터 열 매핑하기 (aesthetic mapping)<a href="ch-visualization.html#sec-aesMapping" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>앞의 산점도에서 배기량에 따라 연비가 줄어드는 관계를 조금 벗어나는 관측치들이 있다.</p>
 <p><img src="visualization_files/figure-html/unnamed-chunk-11-1.png" width="60%" style="display: block; margin: auto;" /></p>
 <p>이 예외적인 관측치들이 자동차 종류의 차이 때문에 발생했다, 라고 가설을 세웠다 하자. 이 가설을 확인해 보려면 자동차 종류별로 관측치를 시각화할 필요가 있다. 앞서 본 <code>geom_point()</code> 함수는 ’점’이라는 도형을 좌표평면 상에서 그린다. 점이라는 도형은 x-축의 위치(<code>x</code>)와 y-축의 위치(<code>y</code>)뿐 아니라 색상(<code>color</code>), 모양(<code>shape</code>), 크기(<code>size</code>), 투명도(<code>alpha</code>) 등의 다른 시각적 속성을 가지고 있다. 우리는 이러한 속성 중 하나에 <code>mpg</code> 데이터의 <code>class</code> 열을 대응시켜 자동차 종류 별로 좌표평면에서 시각적으로 구분되는 점으로 표현할 수 있다.</p>
-<div id="범주형-변수와-색상color-속성의-매핑" class="section level3" number="5.3.1">
-<h3><span class="header-section-number">5.3.1</span> 범주형 변수와 색상(<code>color</code>) 속성의 매핑</h3>
+<div id="범주형-변수와-색상color-속성의-매핑" class="section level3 hasAnchor" number="5.3.1">
+<h3><span class="header-section-number">5.3.1</span> 범주형 변수와 색상(<code>color</code>) 속성의 매핑<a href="ch-visualization.html#범주형-변수와-색상color-속성의-매핑" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>다음은 관측치의 종류(<code>class</code>)에 따라 점을 서로 다른 색상(<code>color</code>)으로 표현한 예이다. 자동차의 종류에 따라 점이 다른 색상으로 표현되고, 어떤 색상이 어떤 자동차 종류에 대응되었는지에 대한 범례가 자동 생성된다.</p>
-<div class="sourceCode" id="cb421"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb421-1"><a href="ch-visualization.html#cb421-1" aria-hidden="true" tabindex="-1"></a><span class="sc">&gt;</span> <span class="fu">ggplot</span>(mpg, <span class="fu">aes</span>(<span class="at">x=</span>displ, <span class="at">y=</span>hwy, <span class="at">color=</span>class)) <span class="sc">+</span> <span class="fu">geom_point</span>()</span></code></pre></div>
+<div class="sourceCode" id="cb495"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb495-1"><a href="ch-visualization.html#cb495-1" aria-hidden="true" tabindex="-1"></a><span class="sc">&gt;</span> <span class="fu">ggplot</span>(mpg, <span class="fu">aes</span>(<span class="at">x=</span>displ, <span class="at">y=</span>hwy, <span class="at">color=</span>class)) <span class="sc">+</span> <span class="fu">geom_point</span>()</span></code></pre></div>
 <p><img src="visualization_files/figure-html/unnamed-chunk-12-1.png" width="60%" style="display: block; margin: auto;" /></p>
 <p>앞선 그래프에서 이상치로 표현되었던 점들 중 한 점만 제외하고 모두 2seater 자동차의 관측치였음을 알 수 있다. 이 종류의 차는 스포츠카로 배기량에 비해 가벼운 몸체를 가지고 있어 예외적인 연비가 관측된 것으로 보인다.</p>
 <p>다음으로 <code>class</code> 열을 <code>shape</code>, <code>size</code>, <code>alpha</code> 등의 속성에 대응시켜 어떤 결과가 나오는지 살펴보자.</p>
 </div>
-<div id="범주형-변수와-모양shape-속성의-매핑" class="section level3" number="5.3.2">
-<h3><span class="header-section-number">5.3.2</span> 범주형 변수와 모양(<code>shape</code>) 속성의 매핑</h3>
+<div id="범주형-변수와-모양shape-속성의-매핑" class="section level3 hasAnchor" number="5.3.2">
+<h3><span class="header-section-number">5.3.2</span> 범주형 변수와 모양(<code>shape</code>) 속성의 매핑<a href="ch-visualization.html#범주형-변수와-모양shape-속성의-매핑" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p><code>shape</code> 속성은 점의 모양을 결정한다. 다음은 앞의 산점도를 구동 방식(<code>drv</code>)에 따라 점의 모양이 다르게 표시한 예이다.</p>
-<div class="sourceCode" id="cb422"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb422-1"><a href="ch-visualization.html#cb422-1" aria-hidden="true" tabindex="-1"></a><span class="sc">&gt;</span> <span class="fu">ggplot</span>(mpg, <span class="fu">aes</span>(<span class="at">x=</span>displ, <span class="at">y=</span>hwy, <span class="at">shape=</span>drv)) <span class="sc">+</span> <span class="fu">geom_point</span>()</span></code></pre></div>
+<div class="sourceCode" id="cb496"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb496-1"><a href="ch-visualization.html#cb496-1" aria-hidden="true" tabindex="-1"></a><span class="sc">&gt;</span> <span class="fu">ggplot</span>(mpg, <span class="fu">aes</span>(<span class="at">x=</span>displ, <span class="at">y=</span>hwy, <span class="at">shape=</span>drv)) <span class="sc">+</span> <span class="fu">geom_point</span>()</span></code></pre></div>
 <p><img src="visualization_files/figure-html/unnamed-chunk-13-1.png" width="60%" style="display: block; margin: auto;" /></p>
 <p>점의 모양과 색상을 하나의 데이터 열에 매핑하여 좀 더 데이터가 뚜렷이 구분되게 그래프를 그리기도 한다.</p>
-<div class="sourceCode" id="cb423"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb423-1"><a href="ch-visualization.html#cb423-1" aria-hidden="true" tabindex="-1"></a><span class="sc">&gt;</span> <span class="fu">ggplot</span>(mpg, <span class="fu">aes</span>(<span class="at">x=</span>displ, <span class="at">y=</span>hwy, <span class="at">shape=</span>drv, <span class="at">color=</span>drv)) <span class="sc">+</span> <span class="fu">geom_point</span>()</span></code></pre></div>
+<div class="sourceCode" id="cb497"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb497-1"><a href="ch-visualization.html#cb497-1" aria-hidden="true" tabindex="-1"></a><span class="sc">&gt;</span> <span class="fu">ggplot</span>(mpg, <span class="fu">aes</span>(<span class="at">x=</span>displ, <span class="at">y=</span>hwy, <span class="at">shape=</span>drv, <span class="at">color=</span>drv)) <span class="sc">+</span> <span class="fu">geom_point</span>()</span></code></pre></div>
 <p><img src="visualization_files/figure-html/unnamed-chunk-14-1.png" width="60%" style="display: block; margin: auto;" /></p>
 <p>물론 다음처런 점의 색상과 모양을 각각 데이터의 다른 열에 매핑할 수도 있다. 다음은 점의 색은 자동차의 종류(<code>class</code>)에 모양은 자동차의 구동방식(<code>drv</code>)에 매핑한 결과이다.</p>
-<div class="sourceCode" id="cb424"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb424-1"><a href="ch-visualization.html#cb424-1" aria-hidden="true" tabindex="-1"></a><span class="sc">&gt;</span> <span class="fu">ggplot</span>(mpg, <span class="fu">aes</span>(<span class="at">x=</span>displ, <span class="at">y=</span>hwy, <span class="at">shape=</span>drv, <span class="at">color=</span>class)) <span class="sc">+</span> <span class="fu">geom_point</span>()</span></code></pre></div>
+<div class="sourceCode" id="cb498"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb498-1"><a href="ch-visualization.html#cb498-1" aria-hidden="true" tabindex="-1"></a><span class="sc">&gt;</span> <span class="fu">ggplot</span>(mpg, <span class="fu">aes</span>(<span class="at">x=</span>displ, <span class="at">y=</span>hwy, <span class="at">shape=</span>drv, <span class="at">color=</span>class)) <span class="sc">+</span> <span class="fu">geom_point</span>()</span></code></pre></div>
 <p><img src="visualization_files/figure-html/unnamed-chunk-15-1.png" width="60%" style="display: block; margin: auto;" /></p>
 <p><code>shape</code>을 사용할 때 주의할 점은 <code>shape</code>은 최대 6개의 모양으로만 점을 구분하기 때문에 <code>class</code> 열처럼 6개보 많은 종류가 있는 열에 매핑되면 데이터가 제대로 표시가 되지 않는다. 다음 예처럼 <code>shape</code> 속성에 <code>class</code> 열을 매핑하니 경고가 나타나고 suv 데이터를 표시하지 못한 것을 확인할 수 있다.</p>
-<div class="sourceCode" id="cb425"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb425-1"><a href="ch-visualization.html#cb425-1" aria-hidden="true" tabindex="-1"></a><span class="sc">&gt;</span> <span class="fu">ggplot</span>(mpg, <span class="fu">aes</span>(<span class="at">x=</span>displ, <span class="at">y=</span>hwy, <span class="at">shape=</span>class)) <span class="sc">+</span> <span class="fu">geom_point</span>()</span></code></pre></div>
+<div class="sourceCode" id="cb499"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb499-1"><a href="ch-visualization.html#cb499-1" aria-hidden="true" tabindex="-1"></a><span class="sc">&gt;</span> <span class="fu">ggplot</span>(mpg, <span class="fu">aes</span>(<span class="at">x=</span>displ, <span class="at">y=</span>hwy, <span class="at">shape=</span>class)) <span class="sc">+</span> <span class="fu">geom_point</span>()</span></code></pre></div>
 <pre><code>Warning: The shape palette can deal with a maximum of 6 discrete values because
 more than 6 becomes difficult to discriminate; you have 7. Consider
 specifying shapes manually if you must have them.</code></pre>
-<pre><code>Warning: Removed 62 rows containing missing values (geom_point).</code></pre>
+<pre><code>Warning: Removed 62 rows containing missing values (`geom_point()`).</code></pre>
 <p><img src="visualization_files/figure-html/unnamed-chunk-16-1.png" width="60%" style="display: block; margin: auto;" /></p>
 </div>
-<div id="연속형-변수와-크기size-색상color-투명도alpha-속성의-매핑" class="section level3" number="5.3.3">
-<h3><span class="header-section-number">5.3.3</span> 연속형 변수와 크기(<code>size</code>), 색상(<code>color</code>), 투명도(<code>alpha</code>) 속성의 매핑</h3>
+<div id="연속형-변수와-크기size-색상color-투명도alpha-속성의-매핑" class="section level3 hasAnchor" number="5.3.3">
+<h3><span class="header-section-number">5.3.3</span> 연속형 변수와 크기(<code>size</code>), 색상(<code>color</code>), 투명도(<code>alpha</code>) 속성의 매핑<a href="ch-visualization.html#연속형-변수와-크기size-색상color-투명도alpha-속성의-매핑" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>모양(<code>shape</code>) 속성은 소수의 구분되는 값으로 표현되는 범주형 변수를 표현하기 좋다. 데이터의 열이 연속형 변수이면 연속적인 값을 표현하기 좋은 가로축(<code>x</code>), 세로축(<code>y</code>), 크기(<code>size</code>), 투명도(<code>alpha</code>) 등을 이용하는 것이 좋다. 색상(<code>color</code>)은 범주형 변수와 연속형 변수에 모두 매핑될 수 있다. 범주형 변수로 매핑되면 구분되는 색상으로, 연속형 변수로 매핑되면 색상의 그라데이션으로 값을 표시한다.</p>
 <p>다음은 도심 연비와 고속도로 연비를 가로축과 세로축으로 하는 그래프에서 점의 크기 속성을 배기량 열에 매핑한 결과이다. 도심 연비와 고속도로 연비가 좋은 차들은 배기량이 작은 차임을 알 수 있다.</p>
-<div class="sourceCode" id="cb428"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb428-1"><a href="ch-visualization.html#cb428-1" aria-hidden="true" tabindex="-1"></a><span class="sc">&gt;</span> <span class="fu">ggplot</span>(mpg, <span class="fu">aes</span>(<span class="at">x=</span>cty, <span class="at">y=</span>hwy, <span class="at">size=</span>displ)) <span class="sc">+</span> <span class="fu">geom_point</span>()</span></code></pre></div>
+<div class="sourceCode" id="cb502"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb502-1"><a href="ch-visualization.html#cb502-1" aria-hidden="true" tabindex="-1"></a><span class="sc">&gt;</span> <span class="fu">ggplot</span>(mpg, <span class="fu">aes</span>(<span class="at">x=</span>cty, <span class="at">y=</span>hwy, <span class="at">size=</span>displ)) <span class="sc">+</span> <span class="fu">geom_point</span>()</span></code></pre></div>
 <p><img src="visualization_files/figure-html/unnamed-chunk-17-1.png" width="60%" style="display: block; margin: auto;" /></p>
 <p>다음은 동일한 도심 연비와 고속도로 연비 산점도에서 그래프에서 점의 색상을 배기량 열에 매핑한 결과이다. 범주형 변수가 매핑될 때와는 달리 색상의 연속적인 변화인 그라데이션을 사용하여 배기량을 표현하고 있음을 볼 수 있다.</p>
-<div class="sourceCode" id="cb429"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb429-1"><a href="ch-visualization.html#cb429-1" aria-hidden="true" tabindex="-1"></a><span class="sc">&gt;</span> <span class="fu">ggplot</span>(mpg, <span class="fu">aes</span>(<span class="at">x=</span>cty, <span class="at">y=</span>hwy, <span class="at">color=</span>displ)) <span class="sc">+</span> <span class="fu">geom_point</span>()</span></code></pre></div>
+<div class="sourceCode" id="cb503"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb503-1"><a href="ch-visualization.html#cb503-1" aria-hidden="true" tabindex="-1"></a><span class="sc">&gt;</span> <span class="fu">ggplot</span>(mpg, <span class="fu">aes</span>(<span class="at">x=</span>cty, <span class="at">y=</span>hwy, <span class="at">color=</span>displ)) <span class="sc">+</span> <span class="fu">geom_point</span>()</span></code></pre></div>
 <p><img src="visualization_files/figure-html/unnamed-chunk-18-1.png" width="60%" style="display: block; margin: auto;" /></p>
 <p>다음은 동일한 도심 연비와 고속도로 연비 산점도에서 그래프에서 점의 투명도를 실린더 수 열에 매핑한 결과이다.</p>
-<div class="sourceCode" id="cb430"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb430-1"><a href="ch-visualization.html#cb430-1" aria-hidden="true" tabindex="-1"></a><span class="sc">&gt;</span> <span class="fu">ggplot</span>(mpg, <span class="fu">aes</span>(<span class="at">x=</span>cty, <span class="at">y=</span>hwy, <span class="at">alpha=</span>cyl)) <span class="sc">+</span> <span class="fu">geom_point</span>()</span></code></pre></div>
+<div class="sourceCode" id="cb504"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb504-1"><a href="ch-visualization.html#cb504-1" aria-hidden="true" tabindex="-1"></a><span class="sc">&gt;</span> <span class="fu">ggplot</span>(mpg, <span class="fu">aes</span>(<span class="at">x=</span>cty, <span class="at">y=</span>hwy, <span class="at">alpha=</span>cyl)) <span class="sc">+</span> <span class="fu">geom_point</span>()</span></code></pre></div>
 <p><img src="visualization_files/figure-html/unnamed-chunk-19-1.png" width="60%" style="display: block; margin: auto;" /></p>
 </div>
 </div>
-<div id="sec:commonProblems" class="section level2" number="5.4">
-<h2><span class="header-section-number">5.4</span> ggplot 명령문을 입력할 때 자주 발생하는 문제들</h2>
+<div id="sec-commonProblems" class="section level2 hasAnchor" number="5.4">
+<h2><span class="header-section-number">5.4</span> ggplot 명령문을 입력할 때 자주 발생하는 문제들<a href="ch-visualization.html#sec-commonProblems" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>ggplot은 매우 강력한 기능을 가지고 있지만 Excel 등의 GUI 프로그램에만 익숙한 사람은 문자 기반 명령어를 입력하는 것에 어려움을 느낄 수 있다. 컴퓨터는 사람만큼의 유연성을 발휘하지 못하므로 컴퓨터는 자신이 실행해야 할 명령문의 문법에 매우 까다롭게 반응한다. ggplot 명령어 입력시 흔히 발생하는 문제들은 다음과 같다.</p>
 <ul>
 <li><p>R 명령문은 대소문자를 구분한다. 따라서 <code>Color</code>와 <code>color</code>는 ggplot에서 서로 다른 인수로 인식되어 오류가 발생한다.</p></li>
@@ -484,39 +499,41 @@ specifying shapes manually if you must have them.</code></pre>
 <li><p><code>ggplot2</code>의 명령문을 입력할 때 여러 함수를 합쳐서 실행하기 위하여 <code>+</code> 연산자를 이용한다.<a href="#fn4" class="footnote-ref" id="fnref4"><sup>4</sup></a> <code>ggplot2</code>의 명령문이 길어지면 명령문을 여러 줄로 쓰는 것이 필요한데, 보통 <code>+</code>로 연결되는 곳에서 줄바꿈하는 것이 읽기에 좋다. 이 때 주의할 점이, 줄바꿈을 <code>+</code> 앞이 아니라 뒤에서 해야 한다는 것이다. <code>+</code> 앞에서 하면 R은 명령문의 입력이 완성된 것으로 간주하기 때문이다.</p></li>
 </ul>
 <p>다음은 산점도와 추세선을 한 그래프에 그린 예이다.</p>
-<div class="sourceCode" id="cb431"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb431-1"><a href="ch-visualization.html#cb431-1" aria-hidden="true" tabindex="-1"></a><span class="sc">&gt;</span> <span class="fu">ggplot</span>(mpg, <span class="fu">aes</span>(<span class="at">x=</span>displ, <span class="at">y=</span>hwy, <span class="at">color=</span>drv)) <span class="sc">+</span> <span class="fu">geom_point</span>() <span class="sc">+</span> <span class="fu">geom_smooth</span>()</span></code></pre></div>
-<pre><code>`geom_smooth()` using method = &#39;loess&#39; and formula &#39;y ~ x&#39;</code></pre>
+<div class="sourceCode" id="cb505"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb505-1"><a href="ch-visualization.html#cb505-1" aria-hidden="true" tabindex="-1"></a><span class="sc">&gt;</span> <span class="fu">ggplot</span>(mpg, <span class="fu">aes</span>(<span class="at">x=</span>displ, <span class="at">y=</span>hwy, <span class="at">color=</span>drv)) <span class="sc">+</span> <span class="fu">geom_point</span>() <span class="sc">+</span> <span class="fu">geom_smooth</span>()</span></code></pre></div>
+<pre><code>`geom_smooth()` using method = &#39;loess&#39; and formula = &#39;y ~ x&#39;</code></pre>
 <p><img src="visualization_files/figure-html/unnamed-chunk-20-1.png" width="60%" style="display: block; margin: auto;" /></p>
 <p>그런데 위의 명령어는 길기 때문에 스크립트 파일을 작성할 때 보기에 불편하다. 이러한 경우에 위의 명령은 다음처럼 세 줄로 나누어 기술될 수 있다. 세 함수를 연결하는 <code>+</code> 위치가 어디에 있는지 살펴보라. (다음 예에서 왼쪽의 <code>&gt;</code> 프롬프트 아래 있는 <code>+</code>는 R 콘솔에서 명령문이 계속되고 있음을 나타내는 표시이다. 이 표시와 사용자가 입력한 <code>+</code>를 혼동하면 안 된다.)</p>
-<div class="sourceCode" id="cb433"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb433-1"><a href="ch-visualization.html#cb433-1" aria-hidden="true" tabindex="-1"></a><span class="sc">&gt;</span> <span class="fu">ggplot</span>(mpg, <span class="fu">aes</span>(<span class="at">x=</span>displ, <span class="at">y=</span>hwy, <span class="at">color=</span>drv)) <span class="sc">+</span> </span>
-<span id="cb433-2"><a href="ch-visualization.html#cb433-2" aria-hidden="true" tabindex="-1"></a><span class="sc">+</span>   <span class="fu">geom_point</span>() <span class="sc">+</span> </span>
-<span id="cb433-3"><a href="ch-visualization.html#cb433-3" aria-hidden="true" tabindex="-1"></a><span class="sc">+</span>   <span class="fu">geom_smooth</span>()</span></code></pre></div>
+<div class="sourceCode" id="cb507"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb507-1"><a href="ch-visualization.html#cb507-1" aria-hidden="true" tabindex="-1"></a><span class="sc">&gt;</span> <span class="fu">ggplot</span>(mpg, <span class="fu">aes</span>(<span class="at">x=</span>displ, <span class="at">y=</span>hwy, <span class="at">color=</span>drv)) <span class="sc">+</span> </span>
+<span id="cb507-2"><a href="ch-visualization.html#cb507-2" aria-hidden="true" tabindex="-1"></a><span class="sc">+</span>   <span class="fu">geom_point</span>() <span class="sc">+</span> </span>
+<span id="cb507-3"><a href="ch-visualization.html#cb507-3" aria-hidden="true" tabindex="-1"></a><span class="sc">+</span>   <span class="fu">geom_smooth</span>()</span></code></pre></div>
 <p>만약 다음처럼 <code>+</code> 위치가 잘못되면 오류가 발생한다. 왜 이런 결과가 나왔고 오류 메시지의 의미는 무엇일까? <strong>R</strong>은 <strong>Enter</strong>로 명령문을 구분한다. 그러므로 첫번째 줄은 <code>+</code>가 없으므로 완벽한 명령문이기 입력된 것으로 간주하고 실행이되어 좌표평면만 그린 것이다. 그러고 나서 두번째 줄을 새로운 명령문으로 실행을 한다. 그런데 다자꼬자 명령문이 <code>+</code>로 시작하니 <strong>R</strong>은 명령문에 오류가 있다고 판단한다. 왜냐하면 <code>+</code> 연산은 왼편과 오른편에 더할 요소가 있어야 하는데, 왼편의 요소가 기술되지 않았기 때문이다.</p>
-<div class="sourceCode" id="cb434"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb434-1"><a href="ch-visualization.html#cb434-1" aria-hidden="true" tabindex="-1"></a><span class="sc">&gt;</span> <span class="fu">ggplot</span>(mpg, <span class="fu">aes</span>(<span class="at">x=</span>displ, <span class="at">y=</span>hwy, <span class="at">color=</span>drv))  </span>
-<span id="cb434-2"><a href="ch-visualization.html#cb434-2" aria-hidden="true" tabindex="-1"></a><span class="sc">&gt;</span>   <span class="sc">+</span> <span class="fu">geom_point</span>()  </span></code></pre></div>
-<pre><code>Error: Cannot use `+.gg()` with a single argument. Did you accidentally put + on a new line?</code></pre>
+<div class="sourceCode" id="cb508"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb508-1"><a href="ch-visualization.html#cb508-1" aria-hidden="true" tabindex="-1"></a><span class="sc">&gt;</span> <span class="fu">ggplot</span>(mpg, <span class="fu">aes</span>(<span class="at">x=</span>displ, <span class="at">y=</span>hwy, <span class="at">color=</span>drv))  </span>
+<span id="cb508-2"><a href="ch-visualization.html#cb508-2" aria-hidden="true" tabindex="-1"></a><span class="sc">&gt;</span>   <span class="sc">+</span> <span class="fu">geom_point</span>()  </span></code></pre></div>
+<pre><code>Error:
+! Cannot use `+` with a single argument
+ℹ Did you accidentally put `+` on a new line?</code></pre>
 <p><img src="visualization_files/figure-html/unnamed-chunk-22-1.png" width="60%" style="display: block; margin: auto;" /></p>
 <ul>
 <li>R 명령문이 조금 길어지면 가장 흔하게 발생하는 실수가 <code>( )</code>와 <code>"  "</code>을 짝을 맞추어 제대로 입력하지 못하는 것이다. <code>ggplot2</code>의 명령문도 많은 함수를 사용하다 보니 이를 주의하여야 한다. R 콘솔은 명령이 계속 입력 중이라고 생각하여 <code>&gt;</code>가 아니라 <code>+</code>를 콘솔의 프롬프트로 표시한다. 이 경우 가장 간단한 해결책은 <code>Esc</code> 키를 눌러 명령 입력에서 빠져나와 다시 명령문을 입력하는 것이다.</li>
 </ul>
 </div>
-<div id="sec:layerAndGeom" class="section level2" number="5.5">
-<h2><span class="header-section-number">5.5</span> geom 함수와 그래프 계층</h2>
+<div id="sec-layerAndGeom" class="section level2 hasAnchor" number="5.5">
+<h2><span class="header-section-number">5.5</span> geom 함수와 그래프 계층<a href="ch-visualization.html#sec-layerAndGeom" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p><code>ggplot2</code>의 장점은 필요에 따라 다양한 형식의 그래프를 쉽게 만들 수 있고, 만들 수 있는 형식도 무궁무진하다는데 있다. 그리고 <code>ggplot2</code> 그래프의 계층적 구조가 이러한 무궁무진한 그래프 형식을 만들어 내는 핵심 요소라 할 수 있다.
 <code>ggplot2</code>는 좌표평면 위에 여러 계층으로 그래프를 그려서 하나의 좌표평명에 나타냄으로써 복잡한 형식의 그래프를 만들어 낼 수 있다.</p>
 <p>다음 그래프는 배기량과 고속도로 연비의 산점도와 추세선을 한 그래프에 그렸다. <code>ggplot()</code> 함수에 지정한 데이터와 그래프 속성과 데이터 열 매핑이 산점도(<code>geom_point()</code>)와 추세선(<code>geom_smooth()</code>)에 모두 동일하게 정의되었음을 볼 수 있다.</p>
-<div class="sourceCode" id="cb436"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb436-1"><a href="ch-visualization.html#cb436-1" aria-hidden="true" tabindex="-1"></a><span class="sc">&gt;</span> <span class="fu">ggplot</span>(mpg, <span class="fu">aes</span>(<span class="at">x=</span>displ, <span class="at">y=</span>hwy, <span class="at">color=</span>drv)) <span class="sc">+</span> <span class="fu">geom_point</span>() <span class="sc">+</span> <span class="fu">geom_smooth</span>()</span></code></pre></div>
-<pre><code>`geom_smooth()` using method = &#39;loess&#39; and formula &#39;y ~ x&#39;</code></pre>
+<div class="sourceCode" id="cb510"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb510-1"><a href="ch-visualization.html#cb510-1" aria-hidden="true" tabindex="-1"></a><span class="sc">&gt;</span> <span class="fu">ggplot</span>(mpg, <span class="fu">aes</span>(<span class="at">x=</span>displ, <span class="at">y=</span>hwy, <span class="at">color=</span>drv)) <span class="sc">+</span> <span class="fu">geom_point</span>() <span class="sc">+</span> <span class="fu">geom_smooth</span>()</span></code></pre></div>
+<pre><code>`geom_smooth()` using method = &#39;loess&#39; and formula = &#39;y ~ x&#39;</code></pre>
 <p><img src="visualization_files/figure-html/unnamed-chunk-23-1.png" width="60%" style="display: block; margin: auto;" /></p>
 <p><code>ggplot()</code> 함수가 여러 개의 geom 함수와 연결되면, 하나의 좌표평면에 각각의 geom() 함수의 결과를 층층이 그린다. 이 때, 명령문에 나타나는 순서에 따라 첫번째 나온 geom 함수의 도형이 가장 아래 계층에, 다음에 나오는 geom 함수의 도형이 차례로 그 윗 계층에 그려진다.</p>
-<div id="geom-함수에서-속성-매핑하기" class="section level3" number="5.5.1">
-<h3><span class="header-section-number">5.5.1</span> geom 함수에서 속성 매핑하기</h3>
+<div id="geom-함수에서-속성-매핑하기" class="section level3 hasAnchor" number="5.5.1">
+<h3><span class="header-section-number">5.5.1</span> geom 함수에서 속성 매핑하기<a href="ch-visualization.html#geom-함수에서-속성-매핑하기" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>앞의 배기량과 고속도로 연비의 산점도와 추세선을 그린 그래프에서 추세선을 선 종류(<code>linttype</code>)가 구동 방식(<code>drv</code>)에 따라 다르게 표현하고 싶다. 그런데 산점도는 점이라는 도형으로 그래프를 그리므로 선 종류라는 속성을 가지고 있지 않다. 그리고 산점도도 점의 모양(<code>shape</code>)이 구동 방식에 따라 다르게 표현하고 싶다. 마찬가지로 추세선은 선이라는 도형으로 그래프를 그리므로 점의 모양이라는 속성을 가지고 있지 않다.</p>
 <p>이렇듯 여러 geom 함수를 연결하여 그래프를 그릴 때, 특정 geom 함수에만 해당하는 속성은 해당 geom 함수에서 속성과 데이터 열을 매핑하는 것이 좋다. geom 함수도 <code>gglot()</code> 함수처럼 <code>aes()</code> 함수를 이용하여 그래프 속성과 데이터 열을 매핑하는데, 이 매핑이 geom 함수의 첫 번째 인수로 기술된다는 점만 다르다.</p>
-<div class="sourceCode" id="cb438"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb438-1"><a href="ch-visualization.html#cb438-1" aria-hidden="true" tabindex="-1"></a><span class="sc">&gt;</span> <span class="fu">ggplot</span>(mpg, <span class="fu">aes</span>(<span class="at">x=</span>displ, <span class="at">y=</span>hwy, <span class="at">color=</span>drv)) <span class="sc">+</span> </span>
-<span id="cb438-2"><a href="ch-visualization.html#cb438-2" aria-hidden="true" tabindex="-1"></a><span class="sc">+</span>   <span class="fu">geom_point</span>(<span class="fu">aes</span>(<span class="at">shape=</span>drv)) <span class="sc">+</span> </span>
-<span id="cb438-3"><a href="ch-visualization.html#cb438-3" aria-hidden="true" tabindex="-1"></a><span class="sc">+</span>   <span class="fu">geom_smooth</span>(<span class="fu">aes</span>(<span class="at">linetype=</span>drv))</span></code></pre></div>
-<pre><code>`geom_smooth()` using method = &#39;loess&#39; and formula &#39;y ~ x&#39;</code></pre>
+<div class="sourceCode" id="cb512"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb512-1"><a href="ch-visualization.html#cb512-1" aria-hidden="true" tabindex="-1"></a><span class="sc">&gt;</span> <span class="fu">ggplot</span>(mpg, <span class="fu">aes</span>(<span class="at">x=</span>displ, <span class="at">y=</span>hwy, <span class="at">color=</span>drv)) <span class="sc">+</span> </span>
+<span id="cb512-2"><a href="ch-visualization.html#cb512-2" aria-hidden="true" tabindex="-1"></a><span class="sc">+</span>   <span class="fu">geom_point</span>(<span class="fu">aes</span>(<span class="at">shape=</span>drv)) <span class="sc">+</span> </span>
+<span id="cb512-3"><a href="ch-visualization.html#cb512-3" aria-hidden="true" tabindex="-1"></a><span class="sc">+</span>   <span class="fu">geom_smooth</span>(<span class="fu">aes</span>(<span class="at">linetype=</span>drv))</span></code></pre></div>
+<pre><code>`geom_smooth()` using method = &#39;loess&#39; and formula = &#39;y ~ x&#39;</code></pre>
 <p><img src="visualization_files/figure-html/unnamed-chunk-24-1.png" width="60%" style="display: block; margin: auto;" />
 따라서 지금까지 배운 내용으로 ggplot2 그래프를 그리는 문법을 확장하면 다음과 같다.</p>
 <pre><code>ggplot(데이터, aes(공통속성1=열1, 공통속성2=열2, ...)) + 
@@ -524,12 +541,12 @@ specifying shapes manually if you must have them.</code></pre>
   geom함수2(aes(geom함수2의 속성1=열1, geom함수2의 속성2=열2, ...)) +
   ....</code></pre>
 <p>확장된 문법으로 맨처음 그린 배기량과 고속도로 연비의 산점도와 추세선 그래프에서, 산점도의 점은 구동 방식에 따라 다른 색으로 표시하지만, 추세선은 모든 데이터에 대하여 하나만 그리려면 어떻게 해야 할까? 답은 다음처럼 색상 속성을 공통 속성으로 <code>ggplot()</code>에 매핑하지 않고 산점도만의 속성 매핑이 되도록 <code>geom_point()</code>에 기술하는 것이다.</p>
-<div class="sourceCode" id="cb441"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb441-1"><a href="ch-visualization.html#cb441-1" aria-hidden="true" tabindex="-1"></a><span class="sc">&gt;</span> <span class="fu">ggplot</span>(mpg, <span class="fu">aes</span>(<span class="at">x=</span>displ, <span class="at">y=</span>hwy)) <span class="sc">+</span> <span class="fu">geom_point</span>(<span class="fu">aes</span>(<span class="at">color=</span>drv)) <span class="sc">+</span> <span class="fu">geom_smooth</span>()</span></code></pre></div>
-<pre><code>`geom_smooth()` using method = &#39;loess&#39; and formula &#39;y ~ x&#39;</code></pre>
+<div class="sourceCode" id="cb515"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb515-1"><a href="ch-visualization.html#cb515-1" aria-hidden="true" tabindex="-1"></a><span class="sc">&gt;</span> <span class="fu">ggplot</span>(mpg, <span class="fu">aes</span>(<span class="at">x=</span>displ, <span class="at">y=</span>hwy)) <span class="sc">+</span> <span class="fu">geom_point</span>(<span class="fu">aes</span>(<span class="at">color=</span>drv)) <span class="sc">+</span> <span class="fu">geom_smooth</span>()</span></code></pre></div>
+<pre><code>`geom_smooth()` using method = &#39;loess&#39; and formula = &#39;y ~ x&#39;</code></pre>
 <p><img src="visualization_files/figure-html/unnamed-chunk-25-1.png" width="60%" style="display: block; margin: auto;" /></p>
 <p>마찬가지로 추세선을 구동 방식에 따라 다른 색상으로 표시하나 점은 모두 동일한 색으로 표시하고 싶으면 다음처럼 색상이 추세선만의 속성 매핑이 되도록 <code>geom_smooth()</code>에 기술하는 것이다.</p>
-<div class="sourceCode" id="cb443"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb443-1"><a href="ch-visualization.html#cb443-1" aria-hidden="true" tabindex="-1"></a><span class="sc">&gt;</span> <span class="fu">ggplot</span>(mpg, <span class="fu">aes</span>(<span class="at">x=</span>displ, <span class="at">y=</span>hwy)) <span class="sc">+</span> <span class="fu">geom_point</span>() <span class="sc">+</span> <span class="fu">geom_smooth</span>(<span class="fu">aes</span>(<span class="at">color=</span>drv))</span></code></pre></div>
-<pre><code>`geom_smooth()` using method = &#39;loess&#39; and formula &#39;y ~ x&#39;</code></pre>
+<div class="sourceCode" id="cb517"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb517-1"><a href="ch-visualization.html#cb517-1" aria-hidden="true" tabindex="-1"></a><span class="sc">&gt;</span> <span class="fu">ggplot</span>(mpg, <span class="fu">aes</span>(<span class="at">x=</span>displ, <span class="at">y=</span>hwy)) <span class="sc">+</span> <span class="fu">geom_point</span>() <span class="sc">+</span> <span class="fu">geom_smooth</span>(<span class="fu">aes</span>(<span class="at">color=</span>drv))</span></code></pre></div>
+<pre><code>`geom_smooth()` using method = &#39;loess&#39; and formula = &#39;y ~ x&#39;</code></pre>
 <p><img src="visualization_files/figure-html/unnamed-chunk-26-1.png" width="60%" style="display: block; margin: auto;" /></p>
 <p>또한 <code>ggplot()</code> 함수에 그래프를 그릴 때 사용한 데이터와 공통속성 매핑이 되어 있어도, geom 함수에서 데이터와 속성 매핑을 재지정할 수도 있다. 이 경우 각 geom 함수에서 사용하는 <code>data</code>와 <code>mapping</code>은 다음 규칙에 의해 결정된다.</p>
 <ul>
@@ -537,62 +554,62 @@ specifying shapes manually if you must have them.</code></pre>
 <li>만약 geom 함수에 <code>data</code> 인수가 설정되면 <code>ggplot()</code> 함수에 설정된 <code>data</code>는 무시된다.</li>
 <li>만약 geom 함수에 <code>mapping</code> 인수가 설정되면 <code>ggplot()</code> 함수에 설정된 <code>mapping</code>에 geom 함수에 설정된 <code>mapping</code>이 추가된다. 만약 동일한 도형 속성에 대한 정의가 두 군데 나타나면 geom 함수의 설정이 사용된다.</li>
 </ul>
-<p>자세한 내용은 R 프로그래밍의 <a href="https://kilhwan.github.io/rprogramming/ch-visualization.html#sec:layerAndGeom">그래프 계층(layers)과 도형(geoms)</a> 절을 참조하기 바란다.</p>
+<p>자세한 내용은 R 프로그래밍의 <a href="https://kilhwan.github.io/rprogramming/ch-visualization.html#sec-layerAndGeom">그래프 계층(layers)과 도형(geoms)</a> 절을 참조하기 바란다.</p>
 </div>
 </div>
-<div id="sec:facets" class="section level2" number="5.6">
-<h2><span class="header-section-number">5.6</span> 측면(facets)으로 나누어 그리기</h2>
+<div id="sec-facets" class="section level2 hasAnchor" number="5.6">
+<h2><span class="header-section-number">5.6</span> 측면(facets)으로 나누어 그리기<a href="ch-visualization.html#sec-facets" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>다음 그래프는 배기량과 고속도로 연비의 관계를 살펴보기 위하여 이 두 변수의 관계를 산점도와 추세선으로 살펴보고 나서, 이 두 변수의 관계가 자동차 종류에 따라 어떻게 달라지는지를 살펴보기 위해 그래프의 색상 속성을 자동차 종류를 나타내는 열에 매핑하여 다르게 표시되도록 하였다.</p>
-<div class="sourceCode" id="cb445"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb445-1"><a href="ch-visualization.html#cb445-1" aria-hidden="true" tabindex="-1"></a><span class="sc">&gt;</span> <span class="fu">ggplot</span>(mpg, <span class="fu">aes</span>(<span class="at">x=</span>displ, <span class="at">y=</span>hwy)) <span class="sc">+</span> <span class="fu">geom_point</span>() <span class="sc">+</span> <span class="fu">geom_smooth</span>()</span>
-<span id="cb445-2"><a href="ch-visualization.html#cb445-2" aria-hidden="true" tabindex="-1"></a><span class="sc">&gt;</span> <span class="fu">ggplot</span>(mpg, <span class="fu">aes</span>(<span class="at">x=</span>displ, <span class="at">y=</span>hwy, <span class="at">color=</span>drv)) <span class="sc">+</span> <span class="fu">geom_point</span>() <span class="sc">+</span> <span class="fu">geom_smooth</span>()</span></code></pre></div>
+<div class="sourceCode" id="cb519"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb519-1"><a href="ch-visualization.html#cb519-1" aria-hidden="true" tabindex="-1"></a><span class="sc">&gt;</span> <span class="fu">ggplot</span>(mpg, <span class="fu">aes</span>(<span class="at">x=</span>displ, <span class="at">y=</span>hwy)) <span class="sc">+</span> <span class="fu">geom_point</span>() <span class="sc">+</span> <span class="fu">geom_smooth</span>()</span>
+<span id="cb519-2"><a href="ch-visualization.html#cb519-2" aria-hidden="true" tabindex="-1"></a><span class="sc">&gt;</span> <span class="fu">ggplot</span>(mpg, <span class="fu">aes</span>(<span class="at">x=</span>displ, <span class="at">y=</span>hwy, <span class="at">color=</span>drv)) <span class="sc">+</span> <span class="fu">geom_point</span>() <span class="sc">+</span> <span class="fu">geom_smooth</span>()</span></code></pre></div>
 <p><img src="visualization_files/figure-html/unnamed-chunk-27-1.png" width="45%" style="display: block; margin: auto;" /><img src="visualization_files/figure-html/unnamed-chunk-27-2.png" width="45%" style="display: block; margin: auto;" /></p>
 <p>이렇듯 두 변수의 관계를 제삼의 변수 관점에서 세분화하여 살펴보는 방법으로 제삼의 변수를 그래프 속성에 매핑하는 방법 말고도 제삼의 변수의 변수값에 따라 데이터를 별도의 그래프로 나누어 그려보는 방법이 있다.
 <code>ggplot2</code>에서는 이러한 방식을 측면(facets)으로 나누어 그래프를 그린다고 한다.</p>
-<div id="facet_wrap로-일차원-측면-그래프-그리기" class="section level3" number="5.6.1">
-<h3><span class="header-section-number">5.6.1</span> <code>facet_wrap()</code>로 일차원 측면 그래프 그리기</h3>
+<div id="facet_wrap로-일차원-측면-그래프-그리기" class="section level3 hasAnchor" number="5.6.1">
+<h3><span class="header-section-number">5.6.1</span> <code>facet_wrap()</code>로 일차원 측면 그래프 그리기<a href="ch-visualization.html#facet_wrap로-일차원-측면-그래프-그리기" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>다음은 <code>facet_wrap()</code> 함수의 사용법을 보여준다. <code>~</code> 은 R에서 수식을 표현할 때 사용되는데, <code>facet_wrap()</code> 함수는 수식을 첫 번재 인수로 입력받는다. <code>facet_wrap()</code> 함수는 <code>~</code> 우변에 서술된 변수의 변수값 별로 데이터를 나누어 그래프를 각각 그린다. 이 때 측면(facets)을 지정하는데 사용되는 변수는 범주형 데이터이어야 한다. <code>facet_wrap()</code>은 측면 그래프가 많아지면 줄바꿈하여 그래프를 표시한다. <code>ncol</code>이나 <code>ncol</code>을 설정하면 그래프의 행과 열의 수를 지정하여 줄바꿈 처리를 제어할 수 있다.</p>
-<div class="sourceCode" id="cb446"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb446-1"><a href="ch-visualization.html#cb446-1" aria-hidden="true" tabindex="-1"></a><span class="sc">&gt;</span> <span class="fu">ggplot</span>(mpg, <span class="fu">aes</span>(<span class="at">x=</span>displ, <span class="at">y=</span>hwy)) <span class="sc">+</span> <span class="fu">geom_point</span>() <span class="sc">+</span></span>
-<span id="cb446-2"><a href="ch-visualization.html#cb446-2" aria-hidden="true" tabindex="-1"></a><span class="sc">+</span>   <span class="fu">facet_wrap</span>(<span class="sc">~</span>class, <span class="at">nrow =</span> <span class="dv">2</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb520"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb520-1"><a href="ch-visualization.html#cb520-1" aria-hidden="true" tabindex="-1"></a><span class="sc">&gt;</span> <span class="fu">ggplot</span>(mpg, <span class="fu">aes</span>(<span class="at">x=</span>displ, <span class="at">y=</span>hwy)) <span class="sc">+</span> <span class="fu">geom_point</span>() <span class="sc">+</span></span>
+<span id="cb520-2"><a href="ch-visualization.html#cb520-2" aria-hidden="true" tabindex="-1"></a><span class="sc">+</span>   <span class="fu">facet_wrap</span>(<span class="sc">~</span>class, <span class="at">nrow =</span> <span class="dv">2</span>)</span></code></pre></div>
 <p><img src="visualization_files/figure-html/unnamed-chunk-28-1.png" width="60%" style="display: block; margin: auto;" />
 측면으로 나누어 그려진 그래프는 서로 비교가 용이하도록 동일한 좌표축으로 그려진다. 측면 그래프의 상단에는 어떤 측면의 데이터의 그래프인지를 보여준다. 맨 처음 측면 그래프는 2seater 측면에서 배기량과 고속도로 연비의 산점도를 보여주고, 맨 마지막 측면 그래프는 SUV 측면에서 배기량과 고속도로 연비의 산점도를 보여준다.</p>
 <p>두 개 이상의 변수를 조합하여 측면 그래프을 만드려면 다음처럼 수식의 우변에 두 개의 변수를 <code>+</code>로 연결하여 기술하면 된다. 다음은 구동 방식(<code>drv</code>)와 조사 년도(<code>year</code>)의 값에 따라 그래프를 나누어 그린 예이다. 역시 모든 그래프의 좌표축은 동일하고 그래프 상단에 어떤 측면의 그래프인지를 표시하고 있는데 윗줄에 표시된 내용은 구동 방식의 값이고 아랫줄은 조사년도의 값이다. 따라서 첫 번째 측면 그래프는 4륜 구동이고 1999년도 조사한 데이터 측면에서 배기량과 고속도로 연비의 산점도를 보여준다.</p>
-<div class="sourceCode" id="cb447"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb447-1"><a href="ch-visualization.html#cb447-1" aria-hidden="true" tabindex="-1"></a><span class="sc">&gt;</span> <span class="fu">ggplot</span>(mpg, <span class="fu">aes</span>(<span class="at">x=</span>displ, <span class="at">y=</span>hwy)) <span class="sc">+</span> <span class="fu">geom_point</span>() <span class="sc">+</span></span>
-<span id="cb447-2"><a href="ch-visualization.html#cb447-2" aria-hidden="true" tabindex="-1"></a><span class="sc">+</span>   <span class="fu">facet_wrap</span>(<span class="sc">~</span>drv <span class="sc">+</span> year, <span class="at">nrow =</span> <span class="dv">2</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb521"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb521-1"><a href="ch-visualization.html#cb521-1" aria-hidden="true" tabindex="-1"></a><span class="sc">&gt;</span> <span class="fu">ggplot</span>(mpg, <span class="fu">aes</span>(<span class="at">x=</span>displ, <span class="at">y=</span>hwy)) <span class="sc">+</span> <span class="fu">geom_point</span>() <span class="sc">+</span></span>
+<span id="cb521-2"><a href="ch-visualization.html#cb521-2" aria-hidden="true" tabindex="-1"></a><span class="sc">+</span>   <span class="fu">facet_wrap</span>(<span class="sc">~</span>drv <span class="sc">+</span> year, <span class="at">nrow =</span> <span class="dv">2</span>)</span></code></pre></div>
 <p><img src="visualization_files/figure-html/unnamed-chunk-29-1.png" width="60%" style="display: block; margin: auto;" /></p>
 </div>
-<div id="facet_grid로-이차원-측면-그래프-그리기" class="section level3" number="5.6.2">
-<h3><span class="header-section-number">5.6.2</span> <code>facet_grid()</code>로 이차원 측면 그래프 그리기</h3>
+<div id="facet_grid로-이차원-측면-그래프-그리기" class="section level3 hasAnchor" number="5.6.2">
+<h3><span class="header-section-number">5.6.2</span> <code>facet_grid()</code>로 이차원 측면 그래프 그리기<a href="ch-visualization.html#facet_grid로-이차원-측면-그래프-그리기" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>그래프를 두 변수의 측면에서 나누어 그릴 때는 <code>face_wrap()</code> 보다는 <code>facet_grid()</code>를 사용하는 것이 좋다.
 <code>facet_grid()</code>도 수식을 첫 번재 인수로 입력 받는데, 수식의 좌변과 우변에 측면으로 나누는데 사용할 변수를 지정할 수 있다.
 수식의 좌변에 기술된 변수를 기준으로 측면 그래프를 행으로 배열하고, 우변에 기술된 변수를 기준으로 측면 그래프를 열로 배열한다.
 다음 그래프는 행은 구동 방식으로, 열은 실린더 수를 기준으로 나누어 측면 그래프를 그린 예이다. 그러므로 두 번째 행-세 번째 열의 그래프는 전륜 구동(f)이고 실린더가 6자동차의 산점도를 나타낸다.</p>
-<div class="sourceCode" id="cb448"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb448-1"><a href="ch-visualization.html#cb448-1" aria-hidden="true" tabindex="-1"></a><span class="sc">&gt;</span> <span class="fu">ggplot</span>(mpg, <span class="fu">aes</span>(<span class="at">x=</span>displ, <span class="at">y=</span>hwy)) <span class="sc">+</span> <span class="fu">geom_point</span>() <span class="sc">+</span></span>
-<span id="cb448-2"><a href="ch-visualization.html#cb448-2" aria-hidden="true" tabindex="-1"></a><span class="sc">+</span>   <span class="fu">facet_grid</span>(drv<span class="sc">~</span>cyl)</span></code></pre></div>
+<div class="sourceCode" id="cb522"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb522-1"><a href="ch-visualization.html#cb522-1" aria-hidden="true" tabindex="-1"></a><span class="sc">&gt;</span> <span class="fu">ggplot</span>(mpg, <span class="fu">aes</span>(<span class="at">x=</span>displ, <span class="at">y=</span>hwy)) <span class="sc">+</span> <span class="fu">geom_point</span>() <span class="sc">+</span></span>
+<span id="cb522-2"><a href="ch-visualization.html#cb522-2" aria-hidden="true" tabindex="-1"></a><span class="sc">+</span>   <span class="fu">facet_grid</span>(drv<span class="sc">~</span>cyl)</span></code></pre></div>
 <p><img src="visualization_files/figure-html/unnamed-chunk-30-1.png" width="60%" style="display: block; margin: auto;" /></p>
 <p><code>facet_wrap()</code> 함수와 마찬가지로 수식의 좌변과 우변에 <code>+</code>로 하나 이상의 변수를 지정할 수도 있다.</p>
-<div class="sourceCode" id="cb449"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb449-1"><a href="ch-visualization.html#cb449-1" aria-hidden="true" tabindex="-1"></a><span class="sc">&gt;</span> <span class="fu">ggplot</span>(mpg, <span class="fu">aes</span>(<span class="at">x=</span>displ, <span class="at">y=</span>hwy)) <span class="sc">+</span> <span class="fu">geom_point</span>() <span class="sc">+</span></span>
-<span id="cb449-2"><a href="ch-visualization.html#cb449-2" aria-hidden="true" tabindex="-1"></a><span class="sc">+</span>   <span class="fu">facet_grid</span>(drv<span class="sc">+</span>year<span class="sc">~</span>cyl)</span></code></pre></div>
+<div class="sourceCode" id="cb523"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb523-1"><a href="ch-visualization.html#cb523-1" aria-hidden="true" tabindex="-1"></a><span class="sc">&gt;</span> <span class="fu">ggplot</span>(mpg, <span class="fu">aes</span>(<span class="at">x=</span>displ, <span class="at">y=</span>hwy)) <span class="sc">+</span> <span class="fu">geom_point</span>() <span class="sc">+</span></span>
+<span id="cb523-2"><a href="ch-visualization.html#cb523-2" aria-hidden="true" tabindex="-1"></a><span class="sc">+</span>   <span class="fu">facet_grid</span>(drv<span class="sc">+</span>year<span class="sc">~</span>cyl)</span></code></pre></div>
 <p><img src="visualization_files/figure-html/unnamed-chunk-31-1.png" width="60%" style="display: block; margin: auto;" /></p>
 </div>
 </div>
-<div id="기타-ggplot2의-문법-요소" class="section level2" number="5.7">
-<h2><span class="header-section-number">5.7</span> 기타 ggplot2의 문법 요소</h2>
+<div id="기타-ggplot2의-문법-요소" class="section level2 hasAnchor" number="5.7">
+<h2><span class="header-section-number">5.7</span> 기타 ggplot2의 문법 요소<a href="ch-visualization.html#기타-ggplot2의-문법-요소" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>ggplot2에는 지금까지 설명한 문법 요소 외에도 통계 변환(stat), 위치 조정(position), 스케일 변환(scale), 좌표축 변환(coord), 테마(theme) 등의 요소가 있다.
 ggplot2를 사용하여 복잡한 시각화를 수행하려면 이러한 문법 요소에 대한 체계적 이해와 습득이 필요하다.
 그러나 이 책은 데이터 시각화 전반을 소개하는 것이 목적이 아니기 때문에, 통계데이터 분석을 위한 그래프를 그릴 때 이러한 문법 요소가 필요하면 그 요소를 단편적으로 설명할 예정이다.
 그러므로 좀 더 ggplot2 그래프에 대한 체계적인 이해를 원하는 독자는 R 프로그래밍의 <a href="https://kilhwan.github.io/rprogramming/ch-visualization.html">ggplot2를 이용한 데이터 시각화</a>를 참조하기 바란다.</p>
 <p>이 절의 나머지 부분에서는 나머지 문법 요소 중 그래프의 외양을 변경하는 매우 간단한 한 가지 문법 요소만 살펴보도록 한다.</p>
-<div id="labelsmodification" class="section level3" number="5.7.1">
-<h3><span class="header-section-number">5.7.1</span> 그래프 레이블을 조정하기</h3>
+<div id="labelsmodification" class="section level3 hasAnchor" number="5.7.1">
+<h3><span class="header-section-number">5.7.1</span> 그래프 레이블을 조정하기<a href="ch-visualization.html#labelsmodification" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p><code>ggplot2</code> 패키지의 <code>labs()</code> 함수는 그래프의 제목, 좌표축 이름, 범례의 이름을 쉽게 바꿀 수 있게 해준다.
 다음은 <code>mpg</code> 데이터의 배기량과 고속도로 연비의 산점도를 자동차 종류 별로 다른 색상으로 그린 예이다. 그런데 <code>ggplot2</code>에서는 기본적으로 좌표축 레이블과 색상의 범례 레이블로, 좌표축과 색상에 매핑된 열의 이름을 사용한다. 그리고 그래프에 제목은 달지 않는다.</p>
-<div class="sourceCode" id="cb450"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb450-1"><a href="ch-visualization.html#cb450-1" aria-hidden="true" tabindex="-1"></a><span class="sc">&gt;</span> <span class="fu">ggplot</span>(mpg, <span class="fu">aes</span>(<span class="at">x=</span>displ, <span class="at">y=</span>hwy, <span class="at">color=</span>class)) <span class="sc">+</span> <span class="fu">geom_point</span>()</span></code></pre></div>
+<div class="sourceCode" id="cb524"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb524-1"><a href="ch-visualization.html#cb524-1" aria-hidden="true" tabindex="-1"></a><span class="sc">&gt;</span> <span class="fu">ggplot</span>(mpg, <span class="fu">aes</span>(<span class="at">x=</span>displ, <span class="at">y=</span>hwy, <span class="at">color=</span>class)) <span class="sc">+</span> <span class="fu">geom_point</span>()</span></code></pre></div>
 <p><img src="visualization_files/figure-html/unnamed-chunk-32-1.png" width="60%" style="display: block; margin: auto;" /></p>
 <p>만약 자동으로 부여된 레이블이 마음에 들지 않으면 이를 <code>labs()</code> 함수로 변경할 수 있다.
 위 그래프에서 다음처럼 범례 이름, 축의 이름 한글로 바꾸고, 그래프의 제목도 달아 보자.</p>
-<div class="sourceCode" id="cb451"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb451-1"><a href="ch-visualization.html#cb451-1" aria-hidden="true" tabindex="-1"></a><span class="sc">&gt;</span> <span class="fu">ggplot</span>(mpg, <span class="fu">aes</span>(<span class="at">x=</span>displ, <span class="at">y=</span>hwy, <span class="at">color=</span>class)) <span class="sc">+</span> <span class="fu">geom_point</span>() <span class="sc">+</span> </span>
-<span id="cb451-2"><a href="ch-visualization.html#cb451-2" aria-hidden="true" tabindex="-1"></a><span class="sc">+</span>   <span class="fu">labs</span>(<span class="at">title=</span><span class="st">&quot;배기량과 고속도로 연비 산점도&quot;</span>, </span>
-<span id="cb451-3"><a href="ch-visualization.html#cb451-3" aria-hidden="true" tabindex="-1"></a><span class="sc">+</span>          <span class="at">x=</span><span class="st">&quot;배기량(리터)&quot;</span>, <span class="at">y=</span><span class="st">&quot;고속도로 연비&quot;</span>, <span class="at">color=</span><span class="st">&quot;자동차 종류&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb525"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb525-1"><a href="ch-visualization.html#cb525-1" aria-hidden="true" tabindex="-1"></a><span class="sc">&gt;</span> <span class="fu">ggplot</span>(mpg, <span class="fu">aes</span>(<span class="at">x=</span>displ, <span class="at">y=</span>hwy, <span class="at">color=</span>class)) <span class="sc">+</span> <span class="fu">geom_point</span>() <span class="sc">+</span> </span>
+<span id="cb525-2"><a href="ch-visualization.html#cb525-2" aria-hidden="true" tabindex="-1"></a><span class="sc">+</span>   <span class="fu">labs</span>(<span class="at">title=</span><span class="st">&quot;배기량과 고속도로 연비 산점도&quot;</span>, </span>
+<span id="cb525-3"><a href="ch-visualization.html#cb525-3" aria-hidden="true" tabindex="-1"></a><span class="sc">+</span>          <span class="at">x=</span><span class="st">&quot;배기량(리터)&quot;</span>, <span class="at">y=</span><span class="st">&quot;고속도로 연비&quot;</span>, <span class="at">color=</span><span class="st">&quot;자동차 종류&quot;</span>)</span></code></pre></div>
 <p><img src="visualization_files/figure-html/unnamed-chunk-33-1.png" width="60%" style="display: block; margin: auto;" /></p>
 <p><code>labs()</code> 함수는 <code>ggplot2</code> 그래프에 <code>+</code> 연산으로 결합하여 사용되면, 그래픽 속성 매핑에 사용된 <code>x</code>, <code>y</code>, <code>color</code> 인수에 사용할 이름을 지정하면 된다. 그래프의 제목을 지정하려면 <code>title</code>이라는 인수를 사용한다.</p>
 
@@ -615,7 +632,6 @@ ggplot2를 사용하여 복잡한 시각화를 수행하려면 이러한 문법 
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
-<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
 <script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
 <script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
 <script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
@@ -655,6 +671,10 @@ gitbook.start({
 "text": null
 },
 "download": ["biztext-book.epub"],
+"search": {
+"engine": "fuse",
+"options": null
+},
 "toc": {
 "collapse": "subsection"
 }
@@ -668,7 +688,7 @@ gitbook.start({
     var script = document.createElement("script");
     script.type = "text/javascript";
     var src = "true";
-    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (src === "" || src === "true") src = "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/latest.js?config=TeX-MML-AM_CHTML";
     if (location.protocol !== "file:")
       if (/^https?:/.test(src))
         src = src.replace(/^https?:/, '');
